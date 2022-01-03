@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-03T13:11:09+09:00</updated>
+  <updated>2022-01-03T17:24:08+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,57 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[ECMAScript6] let, const 키워드(미완성, const 남음)</title>
+    <link href="http://localhost:4000/posts/javascript-04/" rel="alternate" type="text/html" title="[ECMAScript6] let, const 키워드(미완성, const 남음)" />
+    <published>2022-01-02T00:00:00+09:00</published>
+  
+    <updated>2022-01-02T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/javascript-04/</id>
+    <content src="http://localhost:4000/posts/javascript-04/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Javascript" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      ES6(2015) 이전에는 자바스크립트에서 변수를 선언할 수 있는 방법은 var뿐이었습니다.
+
+이것은 많은 문제를 발생시켰습니다.
+
+
+  전역 변수로 인한 스코프 충돌
+    
+      ES6이전에 스코프는 전역 스코프(Global Scope) 와 함수 스코프(Function Scope)만 있었습니다. 자바스크립트는 함수 스코프 외에는 모두 전역 스코프로 적용되기 때문에 전역 변수를 남발하여 스코프 충돌의 문제를 발생시켰습니다.
+    
+  
+  변수 중복 선언
+    
+      자바스크립트의 코드양이 많으면 많을 수록 스코프 충돌의 문제를 발생시킵니다. 이미 선언된 변수를 또 재선언을 하거나 다른 값을 넣거나하는 문제를 발생할 수 있습니다.
+    
+  
+
+
+보통 전역변수로 인해 발생하는 문제로,...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -256,58 +307,6 @@ Babel의 동작원리
 
   파싱(Parsing) - 코드를 토큰별로 분해
   변환(Transfor...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념</title>
-    <link href="http://localhost:4000/posts/Web-SSR-CSR/" rel="alternate" type="text/html" title="[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념" />
-    <published>2021-12-21T00:00:00+09:00</published>
-  
-    <updated>2021-12-21T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Web-SSR-CSR/</id>
-    <content src="http://localhost:4000/posts/Web-SSR-CSR/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Web" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      요즘 기업이 SSR을 선택하는 이유가 있을까?
-
-우리가 많이 알고 있는 네이버 블로그 모바일 서비스도 2019년 5월 29일 “내 동영상 페이지”를 시작으로 Node.js 기반의 SSR 아키텍처가 네이버 모바일 블로그에 적용되었다고 합니다.
-
-또한, 월마트도 SEO 최적화와 좋은 퍼포먼스를 위해 SSR 아키텍처를 선택했다고 합니다.
-
-왜!? Why!?
-
-밑의 자료를 통해 저의 궁굼증을 해결했습니다.
-
-참고자료 :어서 와, SSR은 처음이지? - 도입 편
-
-
-
-SSR(server-side rendering)이란 무엇인가?
-
-
-
-서버 사이드 렌더링은 서버에서 클라이언트(브라우저)에게 보여줄 페이지를 모두 구성하여 클라이언트(브라우저)에게 페이지를 보여주는 방식입니다. JSP/Servlet의 아키텍처에서 이...
     </summary>
   
 
