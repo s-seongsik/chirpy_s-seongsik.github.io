@@ -1,1 +1,309 @@
-<feed xmlns="http://www.w3.org/2005/Atom"> <id>https://s-seongsik.github.io/</id><title>SeongSik Seo</title><subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle> <updated>2021-12-30T15:27:38+09:00</updated> <author> <name>seongsik seo</name> <uri>https://s-seongsik.github.io/</uri> </author><link rel="self" type="application/atom+xml" href="https://s-seongsik.github.io/feed.xml"/><link rel="alternate" type="text/html" hreflang="ko" href="https://s-seongsik.github.io/"/> <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator> <rights> © 2021 seongsik seo </rights> <icon>/assets/img/favicons/favicon.ico</icon> <logo>/assets/img/favicons/favicon-96x96.png</logo> <entry><title>[Babel] Webpack에 통합하여 사용하기</title><link href="https://s-seongsik.github.io/posts/Babel-03/" rel="alternate" type="text/html" title="[Babel] Webpack에 통합하여 사용하기" /><published>2021-12-28T00:00:00+09:00</published> <updated>2021-12-28T00:00:00+09:00</updated> <id>https://s-seongsik.github.io/posts/Babel-03/</id> <content src="https://s-seongsik.github.io/posts/Babel-03/" /> <author> <name>seongsik seo</name> </author> <category term="Babel" /> <summary> babel-loader 바벨을 직접사용하여 변환하는 것보다는 Webpack과 통합여 사용하는 것이 일반적입니다. 바벨 로더를 사용하면 Babel 및 Webpack을 사용하여 Javascript 파일을 변환할 수 있습니다. install : npm install -D babel-loader ./src/app.js : const a = 30; let b = 20; const alert_func = msg =&amp;gt; window.alert(msg); alert_func(a+b); const aa = new Promise(); webpack.config.js : babel-loader는 .js 확장자로 끝나는 파일들을 모... </summary> </entry> <entry><title>[Babel] 바벨의 프레셋(Presets) 사용</title><link href="https://s-seongsik.github.io/posts/Babel-02/" rel="alternate" type="text/html" title="[Babel] 바벨의 프레셋(Presets) 사용" /><published>2021-12-23T00:00:00+09:00</published> <updated>2021-12-23T00:00:00+09:00</updated> <id>https://s-seongsik.github.io/posts/Babel-02/</id> <content src="https://s-seongsik.github.io/posts/Babel-02/" /> <author> <name>seongsik seo</name> </author> <category term="Babel" /> <summary> 프레셋(Presets)이란? 플러그인으로 코드 변환을 하기 위해서는 필요한 플러그인을 각각 설정해야 했습니다. module.exports = { plugins: [ "@babel/plugin-transform-block-scoping", "@babel/plugin-transform-arrow-functions", "@babel/plugin-transform-strict-mode", ] } 혹은 build : &amp;gt; npx app.js --plugins=@babel/plugin-transform-block-scoping --plugins=@babel/plugin-transfor... </summary> </entry> <entry><title>[Babel] 바벨의 이해와 동작원리 파악하기</title><link href="https://s-seongsik.github.io/posts/Babel-01/" rel="alternate" type="text/html" title="[Babel] 바벨의 이해와 동작원리 파악하기" /><published>2021-12-23T00:00:00+09:00</published> <updated>2021-12-23T00:00:00+09:00</updated> <id>https://s-seongsik.github.io/posts/Babel-01/</id> <content src="https://s-seongsik.github.io/posts/Babel-01/" /> <author> <name>seongsik seo</name> </author> <category term="Babel" /> <summary> Babel의 등장 배경 브라우저마다 사용하는 언어가 다르다. ECMAScript2015+ 이후의 Javascript 언어를 특정 브라우저 및 버전에 따라 사용할 수 없는 문제 예를 들어, 크롬 79버전 기준으로 개발했으나, IE에서는 작동이 안되는 크로스브라우징이 발생한다. Babel은 이러한 크로스브라우징 이슈를 해결해준다. ECMAScript2015+ 로 작성한 코드를 모든 브라우저에 호환할 수 있도록 코드를 변환해준다. Babel의 동작원리 교육자료 : 프론트엔드 개발환경의 이해: Babel 참고자료 : Babel 공식사이트 참고자료 : Babel Plugin Handbook 기본 동작 파싱(Parsing) - 코드를 토큰별로 분해 변환(Transfor... </summary> </entry> <entry><title>[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념</title><link href="https://s-seongsik.github.io/posts/Web-SSR-CSR/" rel="alternate" type="text/html" title="[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념" /><published>2021-12-21T00:00:00+09:00</published> <updated>2021-12-21T00:00:00+09:00</updated> <id>https://s-seongsik.github.io/posts/Web-SSR-CSR/</id> <content src="https://s-seongsik.github.io/posts/Web-SSR-CSR/" /> <author> <name>seongsik seo</name> </author> <category term="Web" /> <summary> 요즘 기업이 SSR을 선택하는 이유가 있을까? 우리가 많이 알고 있는 네이버 블로그 모바일 서비스도 2019년 5월 29일 “내 동영상 페이지”를 시작으로 Node.js 기반의 SSR 아키텍처가 네이버 모바일 블로그에 적용되었다고 합니다. 또한, 월마트도 SEO 최적화와 좋은 퍼포먼스를 위해 SSR 아키텍처를 선택했다고 합니다. 왜!? Why!? 밑의 자료를 통해 저의 궁굼증을 해결했습니다. 참고자료 :어서 와, SSR은 처음이지? - 도입 편 SSR(server-side rendering)이란 무엇인가? 서버 사이드 렌더링은 서버에서 클라이언트(브라우저)에게 보여줄 페이지를 모두 구성하여 클라이언트(브라우저)에게 페이지를 보여주는 방식입니다. JSP/Servlet의 아키텍처에서 이... </summary> </entry> <entry><title>[Webpack] plugin</title><link href="https://s-seongsik.github.io/posts/Webpack-05/" rel="alternate" type="text/html" title="[Webpack] plugin" /><published>2021-12-17T00:00:00+09:00</published> <updated>2021-12-17T00:00:00+09:00</updated> <id>https://s-seongsik.github.io/posts/Webpack-05/</id> <content src="https://s-seongsik.github.io/posts/Webpack-05/" /> <author> <name>seongsik seo</name> </author> <category term="Webpack" /> <summary> plugin란? 파일단위로 처리하는 loader와 다르게 플러그인은 번들링된 결과를 처리합니다. 번들링된 자바스크립트를 난독화하거나 텍스트를 추출하는 등의 용도로 사용합니다. 플러그인을 빌드하는 것은 로더를 빌드하는 것보다 조금 더 고급입니다. 플러그인을 이해하려면 webpack 저수준 내부의 이해가 필요합니다. 이해를 위해 플러그인을 직접 만들어보고 내부적으로 어떻게 작동하는지 알아보겠습니다! plugin 만들기 plugin은 apply 메소드가 있는 javascript 객체입니다. apply 메서드는 웹팩 컴파일러에 의해 한 번 호출되어 전체 컴파일에 대한 엑서스를 제공합니다. class HelloWorldPlugin { apply(compiler) ... </summary> </entry> </feed>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>SeongSik Seo</title>
+  <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
+  <updated>2022-01-03T09:52:57+09:00</updated>
+  <author>
+    <name>seongsik seo</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="ko"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
+  <rights> © 2022 seongsik seo </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>[Babel] Webpack에 통합하여 사용하기</title>
+    <link href="http://localhost:4000/posts/Babel-03/" rel="alternate" type="text/html" title="[Babel] Webpack에 통합하여 사용하기" />
+    <published>2021-12-28T00:00:00+09:00</published>
+  
+    <updated>2021-12-28T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Babel-03/</id>
+    <content src="http://localhost:4000/posts/Babel-03/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Babel" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      babel-loader
+
+
+
+
+  바벨을 직접사용하여 변환하는 것보다는 Webpack과 통합여 사용하는 것이 일반적입니다.
+  바벨 로더를 사용하면 Babel 및 Webpack을 사용하여 Javascript 파일을 변환할 수 있습니다.
+
+
+
+
+install :
+    npm install -D babel-loader
+
+
+
+
+./src/app.js :
+    const a = 30;
+    let b = 20;
+
+    const alert_func = msg =&amp;gt; window.alert(msg);
+    alert_func(a+b);
+
+    const aa = new Promise();
+
+
+
+
+webpack.config.js :
+
+
+  babel-loader는 .js 확장자로 끝나는 파일들을 모...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>[Babel] 바벨의 프레셋(Presets) 사용</title>
+    <link href="http://localhost:4000/posts/Babel-02/" rel="alternate" type="text/html" title="[Babel] 바벨의 프레셋(Presets) 사용" />
+    <published>2021-12-23T00:00:00+09:00</published>
+  
+    <updated>2021-12-23T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Babel-02/</id>
+    <content src="http://localhost:4000/posts/Babel-02/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Babel" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      프레셋(Presets)이란?
+
+
+
+플러그인으로 코드 변환을 하기 위해서는 필요한 플러그인을 각각 설정해야 했습니다.
+
+    module.exports = {
+        plugins: [
+            "@babel/plugin-transform-block-scoping",
+            "@babel/plugin-transform-arrow-functions",
+            "@babel/plugin-transform-strict-mode",
+        ]
+    }
+
+
+혹은
+
+build :
+    &amp;gt; npx app.js --plugins=@babel/plugin-transform-block-scoping --plugins=@babel/plugin-transfor...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>[Babel] 바벨의 이해와 동작원리 파악하기</title>
+    <link href="http://localhost:4000/posts/Babel-01/" rel="alternate" type="text/html" title="[Babel] 바벨의 이해와 동작원리 파악하기" />
+    <published>2021-12-23T00:00:00+09:00</published>
+  
+    <updated>2021-12-23T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Babel-01/</id>
+    <content src="http://localhost:4000/posts/Babel-01/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Babel" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Babel의 등장 배경
+
+
+
+
+  브라우저마다 사용하는 언어가 다르다.
+  ECMAScript2015+ 이후의 Javascript 언어를 특정 브라우저 및 버전에 따라 사용할 수 없는 문제
+  예를 들어, 크롬 79버전 기준으로 개발했으나, IE에서는 작동이 안되는 크로스브라우징이 발생한다.
+  Babel은 이러한 크로스브라우징 이슈를 해결해준다. ECMAScript2015+ 로 작성한 코드를 모든 브라우저에 호환할 수 있도록 코드를 변환해준다.
+
+
+
+
+Babel의 동작원리
+
+
+교육자료 : 프론트엔드 개발환경의 이해: Babel
+참고자료 : Babel 공식사이트
+참고자료 : Babel Plugin Handbook
+
+기본 동작
+
+
+  파싱(Parsing) - 코드를 토큰별로 분해
+  변환(Transfor...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념</title>
+    <link href="http://localhost:4000/posts/Web-SSR-CSR/" rel="alternate" type="text/html" title="[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념" />
+    <published>2021-12-21T00:00:00+09:00</published>
+  
+    <updated>2021-12-21T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Web-SSR-CSR/</id>
+    <content src="http://localhost:4000/posts/Web-SSR-CSR/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Web" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      요즘 기업이 SSR을 선택하는 이유가 있을까?
+
+우리가 많이 알고 있는 네이버 블로그 모바일 서비스도 2019년 5월 29일 “내 동영상 페이지”를 시작으로 Node.js 기반의 SSR 아키텍처가 네이버 모바일 블로그에 적용되었다고 합니다.
+
+또한, 월마트도 SEO 최적화와 좋은 퍼포먼스를 위해 SSR 아키텍처를 선택했다고 합니다.
+
+왜!? Why!?
+
+밑의 자료를 통해 저의 궁굼증을 해결했습니다.
+
+참고자료 :어서 와, SSR은 처음이지? - 도입 편
+
+
+
+SSR(server-side rendering)이란 무엇인가?
+
+
+
+서버 사이드 렌더링은 서버에서 클라이언트(브라우저)에게 보여줄 페이지를 모두 구성하여 클라이언트(브라우저)에게 페이지를 보여주는 방식입니다. JSP/Servlet의 아키텍처에서 이...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>[Webpack] plugin</title>
+    <link href="http://localhost:4000/posts/Webpack-05/" rel="alternate" type="text/html" title="[Webpack] plugin" />
+    <published>2021-12-17T00:00:00+09:00</published>
+  
+    <updated>2021-12-17T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Webpack-05/</id>
+    <content src="http://localhost:4000/posts/Webpack-05/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Webpack" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      plugin란?
+
+
+
+파일단위로 처리하는 loader와 다르게 플러그인은 번들링된 결과를 처리합니다. 번들링된 자바스크립트를 난독화하거나 텍스트를 추출하는 등의 용도로 사용합니다.
+플러그인을 빌드하는 것은 로더를 빌드하는 것보다 조금 더 고급입니다. 플러그인을 이해하려면 webpack 저수준 내부의 이해가 필요합니다.
+
+이해를 위해 플러그인을 직접 만들어보고 내부적으로 어떻게 작동하는지 알아보겠습니다!
+
+
+
+
+plugin 만들기
+
+
+
+
+  plugin은 apply 메소드가 있는 javascript 객체입니다.
+  apply 메서드는 웹팩 컴파일러에 의해 한 번 호출되어 전체 컴파일에 대한 엑서스를 제공합니다.
+
+
+
+
+   class HelloWorldPlugin {
+    apply(compiler) ...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+

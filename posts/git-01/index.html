@@ -1,4 +1,1360 @@
-<!DOCTYPE html><html lang="ko" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="days ago"><meta name="hour-prompt" content="hours ago"><meta name="minute-prompt" content="minutes ago"><meta name="justnow-prompt" content="just now"><meta name="generator" content="Jekyll v4.2.1" /><meta property="og:title" content="[Git] Git 이해하기" /><meta property="og:locale" content="ko" /><meta name="description" content="Git과 Github를 활용하여 버전관리를 하는거에 익숙하지만, Git의 원리에 대해 묻는다면 정확하게 답변할 수 없습니다." /><meta property="og:description" content="Git과 Github를 활용하여 버전관리를 하는거에 익숙하지만, Git의 원리에 대해 묻는다면 정확하게 답변할 수 없습니다." /><link rel="canonical" href="https://s-seongsik.github.io/posts/git-01/" /><meta property="og:url" content="https://s-seongsik.github.io/posts/git-01/" /><meta property="og:site_name" content="SeongSik Seo" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-12-02T00:00:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="[Git] Git 이해하기" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"description":"Git과 Github를 활용하여 버전관리를 하는거에 익숙하지만, Git의 원리에 대해 묻는다면 정확하게 답변할 수 없습니다.","mainEntityOfPage":{"@type":"WebPage","@id":"https://s-seongsik.github.io/posts/git-01/"},"@type":"BlogPosting","url":"https://s-seongsik.github.io/posts/git-01/","headline":"[Git] Git 이해하기","dateModified":"2021-12-02T00:00:00+09:00","datePublished":"2021-12-02T00:00:00+09:00","@context":"https://schema.org"}</script><title>[Git] Git 이해하기 | SeongSik Seo</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="SeongSik Seo"><meta name="application-name" content="SeongSik Seo"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end" lang="en"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img//avatar/seongsik.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">SeongSik Seo</a></div><div class="site-subtitle font-italic">full-stack developer</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/s-seongsik" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['sungsik9831','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>[Git] Git 이해하기</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3C/svg%3E" data-proofer-ignore data-src="/assets/img//post/git.png" class="preview-img bg" alt="Preview Image" width="800" height="500" ><h1 data-toc-skip>[Git] Git 이해하기</h1><div class="post-meta text-muted"><div> By <em> <a href="https://github.com/s-seongsik">seongsik seo</a> </em></div><div class="d-flex"><div> <span> Posted <em class="timeago" date="2021-12-02 00:00:00 +0900" data-toggle="tooltip" data-placement="bottom" title="Thu, Dec 2, 2021, 12:00 AM +0900" >Dec 2</em> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="2785 words"> <em>15 min</em> read</span></div></div></div><div class="post-content"><p>Git과 Github를 활용하여 버전관리를 하는거에 익숙하지만, Git의 원리에 대해 묻는다면 정확하게 답변할 수 없습니다.</p><p>이번 포스팅은 Git의 배경과 원리를 이해하여 정리해보는 시간을 갖게 되었습니다.</p><p>목차는 아래와 같이 진행합니다.</p><ol><li><code class="language-plaintext highlighter-rouge">버전 관리란?</code><li><code class="language-plaintext highlighter-rouge">Git의 배경</code><li><code class="language-plaintext highlighter-rouge">Git의 원리</code></ol><p><br /></p><h2 id="버전-관리란"><strong>버전 관리란?</strong><a href="#버전-관리란"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>버전 관리 시스템이란? 파일 변화를 시간에 따라 기록했다가 나중에 특정 시점의 버전을 다시 꺼내올 수 있는 시스템입니다. 버전 관리 방법은 크게 3가지로 나뉩니다.</p><h3 id="로컬-버전-관리"><strong>로컬 버전 관리</strong><a href="#로컬-버전-관리"><i class="fas fa-hashtag"></i></a></h3></h3><ul><li>디렉토리로 파일을 복사하는 방법<li>이 방법은 가장 간단하므로, 많은 사람들이 사용한다.<li>하지만, 작업 디렉토리를 삭제하거나, 실수로 인한 수정 및 복사가 발생할 수 있다는 단점이 있다.</ul><h3 id="중앙집중식-버전-관리cvcs"><strong>중앙집중식 버전 관리(CVCS)</strong><a href="#중앙집중식-버전-관리cvcs"><i class="fas fa-hashtag"></i></a></h3></h3><ul><li>CVCS는 파일을 관리하는 중앙서버가 별도로 있고, 클라이언트가 중앙 서버에서 파일을 받아서 사용(Checkout)합니다.<li>CVCS는 모두 누가 무엇을 하고 있는지 알 수 있다는 장점이 있습니다.<li>치명적인 결점은, 중앙 서버에 문제가 발생했을 때 그 시간동안 아무도 다른 사람과 협업할 수 없으며 사람들이 하는 일을 백업할 방법도 없습니다.<li>그리고, 중앙 데이터베이스가 있는 하드디스크에 문제가 생기면 프로젝트의 모든 히스토리를 잃습니다.<li>즉, 중앙서버가 문제가 생기면 모든 것을 잃습니다.<li>대표적으로 SVN이 있습니다.</ul><h3 id="분산-버전-관리-시스템dvcs"><strong>분산 버전 관리 시스템(DVCS)</strong><a href="#분산-버전-관리-시스템dvcs"><i class="fas fa-hashtag"></i></a></h3></h3><ul><li>Git이 DVCS에 속하며, DVCS에서의 클라이언트는 단순히 파일의 마지막 스냅샷을 Checkout하지 않습니다.<li>그냥 저장소를 히스토리와 더불어 전부 복제합니다.<li>서버에 문제가 생겨도 이 복제물로 다시 작업을 할 수 있습니다.<li>클라이언트 중에서 아무거나 골라도 서버를 복원할 수 있습니다.<li>clone은 모든 데이터를 가진 진정한 백업입니다.<li>DVCS 환경에서는 리모트 저장소가 존재합니다. 리모트 저장소는 많을 수도 있습니다. 따라서 동시에 다양한 그룹과 다양한 방법으로 협업이 가능합니다.</ul><p><br /> <br /></p><h2 id="git의-배경"><strong>Git의 배경</strong><a href="#git의-배경"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Linux 커널은 굉장히 규모가 큰 오픈소스 프로젝트다. Linux 커널의 삶 대부분은(1991–2002) Patch와 단순 압축 파일로만 관리했다. 2002년에 드디어 Linux 커널은 BitKeeper라고 불리는 상용 DVCS를 사용하기 시작했다. 2005년에 커뮤니티가 만드는 Linux 커널과 이익을 추구하는 회사가 개발한 BitKeeper의 관계는 틀어졌다. BitKeeper의 무료 사용이 재고된 것이다. 이 사건은 Linux 개발 커뮤니티(특히 Linux 창시자 Linus Torvalds)가 자체 도구를 만드는 계기가 됐다. Git은 BitKeeper를 사용하면서 배운 교훈을 기초로 아래와 같은 목표를 세웠다.</p><ul><li>빠른 속도<li>단순한 구조<li>비선형적인 개발(수천 개의 동시 다발적인 브랜치)<li>완벽한 분산<li>Linux 커널 같은 대형 프로젝트에도 유용할 것(속도나 데이터 크기 면에서)</ul><p><br /> <br /></p><h2 id="git의-원리"><strong>Git의 원리</strong><a href="#git의-원리"><i class="fas fa-hashtag"></i></a></h2></h2><p>Git을 사용하기 전에 Git의 원리를 먼저 이해하는 것이 중요할 것 같다. 기존의 VCS, CVCS와의 차이점은 무엇인지 알아보자.</p><hr /><h3 id="스냅샷"><strong>스냅샷</strong><a href="#스냅샷"><i class="fas fa-hashtag"></i></a></h3></h3><p>Git이 다른 버전 관리 도구와 다른 점은 <code class="language-plaintext highlighter-rouge">스냅샷(snapshot)</code> 방식을 이용한다는 것입니다. CVS, Subversion, Perforce, Bazaar 등의 시스템들은 각 파일의 변화를 시간순으로 관리하면서 파일들의 집합을 관리합니다. 쉽게 말해 이전에 파일을 복사하여 관리합니다. 파일을 복사하는 방식으로 수정본을 관리하게 되면 같은 내용을 반복 저장하기 때문에 용량을 많이 차지합니다. 또 수정된 부분들을 일일이 찾아야 하므로 검색할 때 불편합니다.</p><p>Git은 이러한 시스템적인 단점을 보완하고자 변경된 파일 전체를 저장하지 않고, <code class="language-plaintext highlighter-rouge">파일에서 변경된 부분만 찾아 수정된 내용만 저장</code>합니다. 마치 변화된 부분만 찾아 사진을 찍는 것과 같다고 해서 스냅샷 방식이라고 말합니다.</p><p>스냅샷 방식은 커밋을 기반으로 사진을 찍습니다. 커밋은 파일 변화를 깃 저장소에 영구적으로 기록합니다. 또한, 빠르게 버전의 차이점을 처리하고, 용량을 적게 사용합니다.</p><p><br /></p><h3 id="거의-모든-명령은-로컬에서-실행"><strong>거의 모든 명령은 로컬에서 실행</strong><a href="#거의-모든-명령은-로컬에서-실행"><i class="fas fa-hashtag"></i></a></h3></h3><p>거의 모든 명령이 로컬의 파일과 데이터만 사용하기 때문에 네트워크에 영향을 받지 않습니다. 이는 네트워크 속도에 영향을 받는 CVCS보다 월등히 높은 속도를 자랑합니다. Git은 프로젝트의 모든 히스토리가 로컬 디스크에 있기 때문에 모든 명령이 순식간에 실행됩니다.</p><ul><li><code class="language-plaintext highlighter-rouge">Git은 프로젝트의 히스토리를 서버없이 조회합니다. 그냥 로컬 데이터베이스에서 읽기 때문에 속도가 빠릅니다.</code><li><code class="language-plaintext highlighter-rouge">Git은 현재버전과 예전버전 상태를 비교할 때 로컬에서 찾기 때문에 리모트에 있는 서버에 접근할 필요가 없습니다. </code></ul><p>즉, 오프라인 상태거나, VPN이 없어거나, 네트워크가 안되도 막힘 없이 일 할 수 있는 장점을 가지고 있습니다.</p><p><br /></p><h3 id="무결성"><strong>무결성</strong><a href="#무결성"><i class="fas fa-hashtag"></i></a></h3></h3><p>Git은 데이터를 저장하기 전에 항상 체크섬을 구하고 그 체그섬으로 데이터를 관리합니다. <code class="language-plaintext highlighter-rouge">체크섬이란 Git에서 사용하는 가장 기본적인 데이터 단위이자 Git의 기본 철학</code>입니다. Git 없이는 체크섬을 다룰 수 없어서 파일의 상태도 알 수 없고, 데이터를 잃어버릴 수도 없습니다.</p><p>Git은 <code class="language-plaintext highlighter-rouge">SHA-1 해시</code>를 사용하여 체크섬을 생성합니다. 생성한 체크섬은 40자 길이의 16진수 문자열입니다. 파일의 내용이나, 디렉토리 구조를 이용하여 체크섬을 생성합니다.</p><p>(체크섬 예시 : 24b9da6552252987aa493b52f8696cd6d3b00373)</p><p>Git은 <code class="language-plaintext highlighter-rouge">모든 것을 해시로 식별</code>합니다. 그렇기 때문에 Git은 파일을 이름으로 저장하지 않고 <code class="language-plaintext highlighter-rouge">해시로 저장</code>합니다.</p><p><br /></p><h3 id="git은-데이터를-추가할-뿐이다"><strong>Git은 데이터를 추가할 뿐이다</strong><a href="#git은-데이터를-추가할-뿐이다"><i class="fas fa-hashtag"></i></a></h3></h3><p>Git은 어떤 작업을 하던 <code class="language-plaintext highlighter-rouge">Git 로컬 데이터베이스에 데이터를 추가</code>합니다. 하지만, 되돌리거나 삭제할 방법이 없습니다. 또한 커밋하지 않으면 변경사항을 잃어버릴 수 있습니다. 하지만, 스냅샷을 커밋하고 나면 데이터를 잃어버리기 어렵습니다.</p><p><br /></p><h3 id="git의-3가지-상태"><strong>Git의 3가지 상태</strong><a href="#git의-3가지-상태"><i class="fas fa-hashtag"></i></a></h3></h3><p>Git은 파일을 Committed, Modified, Staged 이렇게 3가지 상태로만 관리합니다.</p><ul><li><code class="language-plaintext highlighter-rouge">Committed</code>는 데이터가 로컬 데이터베이스에 안전하게 저장됐다는 것을 말합니다.<li><code class="language-plaintext highlighter-rouge">Modified</code>는 수정한 파일을 아직 로컬 데이터베이스에 커밋하지 않은 것을 말합니다.<li><code class="language-plaintext highlighter-rouge">Staged</code>는 현재 수정한 파일을 곧 커밋할 것이라고 표시한 상태를 의미합니다.</ul><p><br /></p><h3 id="git-프로젝트의-3가지-단계"><strong>Git 프로젝트의 3가지 단계</strong><a href="#git-프로젝트의-3가지-단계"><i class="fas fa-hashtag"></i></a></h3></h3><p>Git 프로젝트는 아래와 같은 3가지 단계로 나뉩니다.</p><ol><li>Git 디렉토리<ul><li>Git 디렉토리가 Git의 핵심입니다. 다른 컴퓨터에 있는 저장소를 clone할 때 Git 디렉토리가 생성됩니다.<li>Git 디렉토리는 프로젝트의 메타데이터와 객체 데이터베이스를 저장하는 곳을 말합니다.<li>Git 디렉토리는 현재 작업하는 디스크에 있으며, 그 디렉토리 안에 압축된 데이터베이스에서 파일을 가져와 Working 디렉토리를 생성합니다.</ul><li>working 디렉토리<ul><li>Working 디렉토리는 특정 버전을 Checkout한 것입니다.<li>Git 디렉토리에서 생성됩니다.</ul><li>Staging Area<ul><li>Staging Area는 Git 디렉토리 안에 있습니다.<li>Working 디렉토리에서 파일을 수정하면 Staging Area로 추가됩니다.<li>단순한 파일이며, 곧 커밋할 파일에 대한 정보를 저장합니다.</ul></ol><ul><li>Git 디렉토리에 있는 파일들은 <code class="language-plaintext highlighter-rouge">Committed</code>된 상태입니다.<li>파일을 수정하고 Staging Area에 추가했으면, <code class="language-plaintext highlighter-rouge">Staged</code> 상태입니다.<li>Checkout 하고 수정했지만, 아직 Staging Area에 추가하지 않으면 <code class="language-plaintext highlighter-rouge">Modified</code> 상태입니다.</ul><p><br /> <br /></p><h2 id="git의-3가지-상태-실습해보기"><strong>Git의 3가지 상태 실습해보기</strong><a href="#git의-3가지-상태-실습해보기"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><ul><li><p>test branch에 <code class="language-plaintext highlighter-rouge">test.py</code>라는 파일이 있습니다.</p><p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145543337-495ebead-b35c-454d-b054-d14f4230dc78.png" alt="image" /></p></ul><p><br /></p><ul><li><p><code class="language-plaintext highlighter-rouge">test.py</code>을 수정합니다.</p><p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145543649-728ba336-4116-428d-8dc7-205ddefd1e45.png" alt="image" /></p></ul><p><br /></p><ul><li><code class="language-plaintext highlighter-rouge">Git 상태</code> 확인<ul><li>Changes not staged for commit: 에 있다고 합니다. 즉, 아직 staged 상태가 아니라는 것입니다.<li><code class="language-plaintext highlighter-rouge">modified: test.py</code> 라고 되어있는 것을 확인할 수 있습니다.</ul><div class="language-shell highlighter-rouge"><div class="code-header"> <span label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html lang="ko"
+  
+>
+
+  <!--
+  The Head
+-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+    <!-- i18n for `_javascript/utils/timeago.js` -->
+    <meta name="day-prompt" content="days ago">
+    <meta name="hour-prompt" content="hours ago">
+    <meta name="minute-prompt" content="minutes ago">
+    <meta name="justnow-prompt" content="just now">
+
+    
+
+    
+
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="[Git] Git 이해하기" />
+<meta property="og:locale" content="ko" />
+<meta name="description" content="Git과 Github를 활용하여 버전관리를 하는거에 익숙하지만, Git의 원리에 대해 묻는다면 정확하게 답변할 수 없습니다." />
+<meta property="og:description" content="Git과 Github를 활용하여 버전관리를 하는거에 익숙하지만, Git의 원리에 대해 묻는다면 정확하게 답변할 수 없습니다." />
+<link rel="canonical" href="http://localhost:4000/posts/git-01/" />
+<meta property="og:url" content="http://localhost:4000/posts/git-01/" />
+<meta property="og:site_name" content="SeongSik Seo" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-12-02T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[Git] Git 이해하기" />
+<meta name="google-site-verification" content="google_meta_tag_verification" />
+<script type="application/ld+json">
+{"headline":"[Git] Git 이해하기","dateModified":"2021-12-02T00:00:00+09:00","datePublished":"2021-12-02T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/git-01/"},"url":"http://localhost:4000/posts/git-01/","description":"Git과 Github를 활용하여 버전관리를 하는거에 익숙하지만, Git의 원리에 대해 묻는다면 정확하게 답변할 수 없습니다.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <title>[Git] Git 이해하기 | SeongSik Seo
+  </title>
+
+  <!--
+  The Favicons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps
+  Generated by: https://realfavicongenerator.net/
+-->
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="SeongSik Seo">
+<meta name="application-name" content="SeongSik Seo">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- GA -->
+  
+
+  <!-- jsDelivr CDN -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css">
+
+  <!--
+  CSS selector for site.
+-->
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
+
+
+
+  <!-- Manific Popup -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
+
+
+
+  <!-- JavaScript -->
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+</head>
+
+
+  
+    <!--
+  Switch the mode between dark and light.
+-->
+
+<script type="text/javascript">
+  class ModeToggle {
+    static get MODE_KEY() { return "mode"; }
+    static get DARK_MODE() { return "dark"; }
+    static get LIGHT_MODE() { return "light"; }
+    static get ID() { return "mode-toggle"; }
+
+    constructor() {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener("change", () => {
+        if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
+          self.clearMode();
+        }
+
+        self.notify();
+
+      });
+
+    } /* constructor() */
+
+    get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); }
+
+    get isSysDarkPrefer() { return this.sysDarkPrefers.matches; }
+
+    get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; }
+
+    get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; }
+
+    get hasMode() { return this.mode != null; }
+
+    get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode
+        || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
+      } else {
+        return ModeToggle.LIGHT_MODE;
+      }
+    }
+
+    setDark() {
+      $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+    }
+
+    setLight() {
+      $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+    }
+
+    clearMode() {
+      $('html').removeAttr(ModeToggle.MODE_KEY);
+      sessionStorage.removeItem(ModeToggle.MODE_KEY);
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
+      window.postMessage({
+        direction: ModeToggle.ID,
+        message: this.modeStatus
+      }, "*");
+    }
+
+  } /* ModeToggle */
+
+  const toggle = new ModeToggle();
+
+  function flipMode() {
+    if (toggle.hasMode) {
+      if (toggle.isSysDarkPrefer) {
+        if (toggle.isLightMode) {
+          toggle.clearMode();
+        } else {
+          toggle.setLight();
+        }
+
+      } else {
+        if (toggle.isDarkMode) {
+          toggle.clearMode();
+        } else {
+          toggle.setDark();
+        }
+      }
+
+    } else {
+      if (toggle.isSysDarkPrefer) {
+        toggle.setLight();
+      } else {
+        toggle.setDark();
+      }
+    }
+
+    toggle.notify();
+
+  } /* flipMode() */
+
+</script>
+
+  
+
+  <body data-spy="scroll" data-target="#toc">
+
+    <!--
+  The Side Bar
+-->
+
+<div id="sidebar" class="d-flex flex-column align-items-end" lang="en">
+  <div class="profile-wrapper text-center">
+    <div id="avatar">
+      <a href="/" alt="avatar" class="mx-auto">
+        
+          
+          <img src="/assets/img//avatar/seongsik.jpg" alt="avatar" onerror="this.style.display='none'">
+        
+      </a>
+    </div>
+
+    <div class="site-title mt-3">
+      <a href="/">SeongSik Seo</a>
+    </div>
+    <div class="site-subtitle font-italic">full-stack developer</div>
+
+  </div><!-- .profile-wrapper -->
+
+  <ul class="w-100">
+
+    <!-- home -->
+    <li class="nav-item">
+      <a href="/" class="nav-link">
+        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>HOME</span>
+      </a>
+    </li>
+    <!-- the real tabs -->
+    
+    <li class="nav-item">
+      <a href="/categories/" class="nav-link">
+        <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
+        
+
+        <span>CATEGORIES</span>
+      </a>
+    </li> <!-- .nav-item -->
+    
+    <li class="nav-item">
+      <a href="/tags/" class="nav-link">
+        <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
+        
+
+        <span>TAGS</span>
+      </a>
+    </li> <!-- .nav-item -->
+    
+    <li class="nav-item">
+      <a href="/archives/" class="nav-link">
+        <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
+        
+
+        <span>ARCHIVES</span>
+      </a>
+    </li> <!-- .nav-item -->
+    
+    <li class="nav-item">
+      <a href="/about/" class="nav-link">
+        <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
+        
+
+        <span>ABOUT</span>
+      </a>
+    </li> <!-- .nav-item -->
+    
+
+  </ul> <!-- ul.nav.flex-column -->
+
+  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+
+    
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      
+        <span class="icon-border"></span>
+      
+    
+
+    
+      
+
+      
+      <a href="https://github.com/s-seongsik" aria-label="github"
+        target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+      
+
+    
+      
+
+      
+      <a href="https://twitter.com/" aria-label="twitter"
+        target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+      
+
+    
+      
+
+      
+      <a href="
+          javascript:location.href = 'mailto:' + ['sungsik9831','gmail.com'].join('@')" aria-label="email"
+        >
+        <i class="fas fa-envelope"></i>
+      </a>
+      
+
+    
+      
+
+      
+      <a href="/feed.xml" aria-label="rss"
+        >
+        <i class="fas fa-rss"></i>
+      </a>
+      
+
+    
+
+  </div> <!-- .sidebar-bottom -->
+
+</div><!-- #sidebar -->
+
+
+    <!--
+  The Top Bar
+-->
+
+<div id="topbar-wrapper" class="row justify-content-center topbar-down">
+  <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
+    <span id="breadcrumb">
+
+    
+
+    
+
+      
+
+        
+          <span>
+            <a href="/">
+              Home
+            </a>
+          </span>
+
+        
+
+      
+
+        
+
+      
+
+        
+
+          
+            <span>[Git] Git 이해하기</span>
+          
+
+        
+
+      
+
+    
+
+    </span><!-- endof #breadcrumb -->
+
+    <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+
+    <div id="topbar-title">
+      Post
+    </div>
+
+    <i id="search-trigger" class="fas fa-search fa-fw"></i>
+    <span id="search-wrapper" class="align-items-center">
+      <i class="fas fa-search fa-fw"></i>
+      <input class="form-control" id="search-input" type="search"
+        aria-label="search" autocomplete="off" placeholder="Search...">
+      <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i>
+    </span>
+    <span id="search-cancel" >Cancel</span>
+  </div>
+
+</div>
+
+
+    <div id="main-wrapper">
+      <div id="main">
+
+        
+
+
+
+<div class="row">
+
+  <!-- core -->
+  <div id="core-wrapper" class="col-12 col-lg-11 col-xl-8">
+    <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+    
+      
+        <!--
+  Refactor the HTML structure.
+-->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Add attribute 'hide-bullet' to the checkbox list -->
+
+
+
+
+<!-- images -->
+
+
+
+  <!-- add CDN prefix if it exists -->
+
+  
+
+  
+
+  <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+  
+
+  <!-- add image placehoder to prevent layout reflow -->
+
+  
+
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+        
+        
+        
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+  
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3C/svg%3E" data-proofer-ignore data-src="/assets/img//post/git.png" class="preview-img bg"
+      alt="Preview Image"
+
+      
+        width="800"
+      
+
+      
+        height="500"
+      >
+
+
+<h1 data-toc-skip>[Git] Git 이해하기</h1>
+
+<div class="post-meta text-muted">
+
+  <!-- author -->
+  <div>
+    
+    
+
+    
+
+    By
+    <em>
+      
+        <a href="https://github.com/s-seongsik">seongsik seo</a>
+      
+    </em>
+  </div>
+
+  <div class="d-flex">
+    <div>
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2021-12-02 00:00:00 +0900"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Thu, Dec  2, 2021, 12:00 AM +0900"
+    >Dec  2, 2021</em>
+
+      </span>
+
+      <!-- lastmod date -->
+      
+
+      <!-- read time -->
+      <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="2785 words">
+  <em>15 min</em> read</span>
+
+
+      <!-- page views -->
+      
+    </div>
+
+  </div> <!-- .d-flex -->
+
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  <p>Git과 Github를 활용하여 버전관리를 하는거에 익숙하지만, Git의 원리에 대해 묻는다면 정확하게 답변할 수 없습니다.</p>
+
+<p>이번 포스팅은 Git의 배경과 원리를 이해하여 정리해보는 시간을 갖게 되었습니다.</p>
+
+<p>목차는 아래와 같이 진행합니다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">버전 관리란?</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Git의 배경</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Git의 원리</code></li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="버전-관리란"><strong>버전 관리란?</strong><a href="#버전-관리란"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<hr />
+
+<p>버전 관리 시스템이란? 파일 변화를 시간에 따라 기록했다가 나중에 특정 시점의 버전을 다시 꺼내올 수 있는 시스템입니다. 버전 관리 방법은 크게 3가지로 나뉩니다.</p>
+
+<h3 id="로컬-버전-관리"><strong>로컬 버전 관리</strong><a href="#로컬-버전-관리"><i class="fas fa-hashtag"></i></a></h3></h3>
+<ul>
+  <li>디렉토리로 파일을 복사하는 방법</li>
+  <li>이 방법은 가장 간단하므로, 많은 사람들이 사용한다.</li>
+  <li>하지만, 작업 디렉토리를 삭제하거나, 실수로 인한 수정 및 복사가 발생할 수 있다는 단점이 있다.</li>
+</ul>
+
+<h3 id="중앙집중식-버전-관리cvcs"><strong>중앙집중식 버전 관리(CVCS)</strong><a href="#중앙집중식-버전-관리cvcs"><i class="fas fa-hashtag"></i></a></h3></h3>
+<ul>
+  <li>CVCS는 파일을 관리하는 중앙서버가 별도로 있고, 클라이언트가 중앙 서버에서 파일을 받아서 사용(Checkout)합니다.</li>
+  <li>CVCS는 모두 누가 무엇을 하고 있는지 알 수 있다는 장점이 있습니다.</li>
+  <li>치명적인 결점은, 중앙 서버에 문제가 발생했을 때 그 시간동안 아무도 다른 사람과 협업할 수 없으며 사람들이 하는 일을 백업할 방법도 없습니다.</li>
+  <li>그리고, 중앙 데이터베이스가 있는 하드디스크에 문제가 생기면 프로젝트의 모든 히스토리를 잃습니다.</li>
+  <li>즉, 중앙서버가 문제가 생기면 모든 것을 잃습니다.</li>
+  <li>대표적으로 SVN이 있습니다.</li>
+</ul>
+
+<h3 id="분산-버전-관리-시스템dvcs"><strong>분산 버전 관리 시스템(DVCS)</strong><a href="#분산-버전-관리-시스템dvcs"><i class="fas fa-hashtag"></i></a></h3></h3>
+<ul>
+  <li>Git이 DVCS에 속하며, DVCS에서의 클라이언트는 단순히 파일의 마지막 스냅샷을 Checkout하지 않습니다.</li>
+  <li>그냥 저장소를 히스토리와 더불어 전부 복제합니다.</li>
+  <li>서버에 문제가 생겨도 이 복제물로 다시 작업을 할 수 있습니다.</li>
+  <li>클라이언트 중에서 아무거나 골라도 서버를 복원할 수 있습니다.</li>
+  <li>clone은 모든 데이터를 가진 진정한 백업입니다.</li>
+  <li>DVCS 환경에서는 리모트 저장소가 존재합니다. 리모트 저장소는 많을 수도 있습니다. 따라서 동시에 다양한 그룹과 다양한 방법으로 협업이 가능합니다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="git의-배경"><strong>Git의 배경</strong><a href="#git의-배경"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<hr />
+
+<p>Linux 커널은 굉장히 규모가 큰 오픈소스 프로젝트다. Linux 커널의 삶 대부분은(1991–2002) Patch와 단순 압축 파일로만 관리했다. 
+2002년에 드디어 Linux 커널은 BitKeeper라고 불리는 상용 DVCS를 사용하기 시작했다. 
+2005년에 커뮤니티가 만드는 Linux 커널과 이익을 추구하는 회사가 개발한 BitKeeper의 관계는 틀어졌다. 
+BitKeeper의 무료 사용이 재고된 것이다. 이 사건은 Linux 개발 커뮤니티(특히 Linux 창시자 Linus Torvalds)가 자체 도구를 만드는 계기가 됐다. 
+Git은 BitKeeper를 사용하면서 배운 교훈을 기초로 아래와 같은 목표를 세웠다.</p>
+
+<ul>
+  <li>빠른 속도</li>
+  <li>단순한 구조</li>
+  <li>비선형적인 개발(수천 개의 동시 다발적인 브랜치)</li>
+  <li>완벽한 분산</li>
+  <li>Linux 커널 같은 대형 프로젝트에도 유용할 것(속도나 데이터 크기 면에서)</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="git의-원리"><strong>Git의 원리</strong><a href="#git의-원리"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Git을 사용하기 전에 Git의 원리를 먼저 이해하는 것이 중요할 것 같다. 기존의 VCS, CVCS와의 차이점은 무엇인지 알아보자.</p>
+
+<hr />
+
+<h3 id="스냅샷"><strong>스냅샷</strong><a href="#스냅샷"><i class="fas fa-hashtag"></i></a></h3></h3>
+<p>Git이 다른 버전 관리 도구와 다른 점은 <code class="language-plaintext highlighter-rouge">스냅샷(snapshot)</code> 방식을 이용한다는 것입니다. CVS, Subversion, Perforce, Bazaar 등의 시스템들은 각 파일의 변화를 시간순으로 관리하면서 파일들의 집합을 관리합니다. 쉽게 말해 이전에 파일을 복사하여 관리합니다. 파일을 복사하는 방식으로 수정본을 관리하게 되면 같은 내용을 반복 저장하기 때문에 용량을 많이 차지합니다. 또 수정된 부분들을 일일이 찾아야 하므로 검색할 때 불편합니다.</p>
+
+<p>Git은 이러한 시스템적인 단점을 보완하고자 변경된 파일 전체를 저장하지 않고, <code class="language-plaintext highlighter-rouge">파일에서 변경된 부분만 찾아 수정된 내용만 저장</code>합니다. 마치 변화된 부분만 찾아 사진을 찍는 것과 같다고 해서 스냅샷 방식이라고 말합니다.</p>
+
+<p>스냅샷 방식은 커밋을 기반으로 사진을 찍습니다. 커밋은 파일 변화를 깃 저장소에 영구적으로 기록합니다. 또한, 빠르게 버전의 차이점을 처리하고, 용량을 적게 사용합니다.</p>
+
+<p><br /></p>
+
+<h3 id="거의-모든-명령은-로컬에서-실행"><strong>거의 모든 명령은 로컬에서 실행</strong><a href="#거의-모든-명령은-로컬에서-실행"><i class="fas fa-hashtag"></i></a></h3></h3>
+<p>거의 모든 명령이 로컬의 파일과 데이터만 사용하기 때문에 네트워크에 영향을 받지 않습니다. 이는 네트워크 속도에 영향을 받는 CVCS보다 월등히 높은 속도를 자랑합니다.
+Git은 프로젝트의 모든 히스토리가 로컬 디스크에 있기 때문에 모든 명령이 순식간에 실행됩니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Git은 프로젝트의 히스토리를 서버없이 조회합니다. 그냥 로컬 데이터베이스에서 읽기 때문에 속도가 빠릅니다.</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Git은 현재버전과 예전버전 상태를 비교할 때 로컬에서 찾기 때문에 리모트에 있는 서버에 접근할 필요가 없습니다. </code></li>
+</ul>
+
+<p>즉, 오프라인 상태거나, VPN이 없어거나, 네트워크가 안되도 막힘 없이 일 할 수 있는 장점을 가지고 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="무결성"><strong>무결성</strong><a href="#무결성"><i class="fas fa-hashtag"></i></a></h3></h3>
+<p>Git은 데이터를 저장하기 전에 항상 체크섬을 구하고 그 체그섬으로 데이터를 관리합니다. <code class="language-plaintext highlighter-rouge">체크섬이란 Git에서 사용하는 가장 기본적인 데이터 단위이자 Git의 기본 철학</code>입니다.
+Git 없이는 체크섬을 다룰 수 없어서 파일의 상태도 알 수 없고, 데이터를 잃어버릴 수도 없습니다.</p>
+
+<p>Git은 <code class="language-plaintext highlighter-rouge">SHA-1 해시</code>를 사용하여 체크섬을 생성합니다. 생성한 체크섬은 40자 길이의 16진수 문자열입니다. 
+파일의 내용이나, 디렉토리 구조를 이용하여 체크섬을 생성합니다.</p>
+
+<p>(체크섬 예시 : 24b9da6552252987aa493b52f8696cd6d3b00373)</p>
+
+<p>Git은 <code class="language-plaintext highlighter-rouge">모든 것을 해시로 식별</code>합니다. 그렇기 때문에 Git은 파일을 이름으로 저장하지 않고 <code class="language-plaintext highlighter-rouge">해시로 저장</code>합니다.</p>
+
+<p><br /></p>
+
+<h3 id="git은-데이터를-추가할-뿐이다"><strong>Git은 데이터를 추가할 뿐이다</strong><a href="#git은-데이터를-추가할-뿐이다"><i class="fas fa-hashtag"></i></a></h3></h3>
+<p>Git은 어떤 작업을 하던 <code class="language-plaintext highlighter-rouge">Git 로컬 데이터베이스에 데이터를 추가</code>합니다. 하지만, 되돌리거나 삭제할 방법이 없습니다. 또한 커밋하지 않으면 변경사항을 잃어버릴 수 있습니다.
+하지만, 스냅샷을 커밋하고 나면 데이터를 잃어버리기 어렵습니다.</p>
+
+<p><br /></p>
+
+<h3 id="git의-3가지-상태"><strong>Git의 3가지 상태</strong><a href="#git의-3가지-상태"><i class="fas fa-hashtag"></i></a></h3></h3>
+<p>Git은 파일을 Committed, Modified, Staged 이렇게 3가지 상태로만 관리합니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Committed</code>는 데이터가 로컬 데이터베이스에 안전하게 저장됐다는 것을 말합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Modified</code>는 수정한 파일을 아직 로컬 데이터베이스에 커밋하지 않은 것을 말합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Staged</code>는 현재 수정한 파일을 곧 커밋할 것이라고 표시한 상태를 의미합니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="git-프로젝트의-3가지-단계"><strong>Git 프로젝트의 3가지 단계</strong><a href="#git-프로젝트의-3가지-단계"><i class="fas fa-hashtag"></i></a></h3></h3>
+
+<p>Git 프로젝트는 아래와 같은 3가지 단계로 나뉩니다.</p>
+
+<ol>
+  <li>Git 디렉토리
+    <ul>
+      <li>Git 디렉토리가 Git의 핵심입니다. 다른 컴퓨터에 있는 저장소를 clone할 때 Git 디렉토리가 생성됩니다.</li>
+      <li>Git 디렉토리는 프로젝트의 메타데이터와 객체 데이터베이스를 저장하는 곳을 말합니다.</li>
+      <li>Git 디렉토리는 현재 작업하는 디스크에 있으며, 그 디렉토리 안에 압축된 데이터베이스에서 파일을 가져와 Working 디렉토리를 생성합니다.</li>
+    </ul>
+  </li>
+  <li>working 디렉토리
+    <ul>
+      <li>Working 디렉토리는 특정 버전을 Checkout한 것입니다.</li>
+      <li>Git 디렉토리에서 생성됩니다.</li>
+    </ul>
+  </li>
+  <li>Staging Area
+    <ul>
+      <li>Staging Area는 Git 디렉토리 안에 있습니다.</li>
+      <li>Working 디렉토리에서 파일을 수정하면 Staging Area로 추가됩니다.</li>
+      <li>단순한 파일이며, 곧 커밋할 파일에 대한 정보를 저장합니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>Git 디렉토리에 있는 파일들은 <code class="language-plaintext highlighter-rouge">Committed</code>된 상태입니다.</li>
+  <li>파일을 수정하고 Staging Area에 추가했으면, <code class="language-plaintext highlighter-rouge">Staged</code> 상태입니다.</li>
+  <li>Checkout 하고 수정했지만, 아직 Staging Area에 추가하지 않으면 <code class="language-plaintext highlighter-rouge">Modified</code> 상태입니다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="git의-3가지-상태-실습해보기"><strong>Git의 3가지 상태 실습해보기</strong><a href="#git의-3가지-상태-실습해보기"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<hr />
+
+<ul>
+  <li>
+    <p>test branch에 <code class="language-plaintext highlighter-rouge">test.py</code>라는 파일이 있습니다.</p>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145543337-495ebead-b35c-454d-b054-d14f4230dc78.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">test.py</code>을 수정합니다.</p>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145543649-728ba336-4116-428d-8dc7-205ddefd1e45.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Git 상태</code> 확인
+    <ul>
+      <li>Changes not staged for commit: 에 있다고 합니다. 즉, 아직 staged 상태가 아니라는 것입니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">modified: test.py</code> 라고 되어있는 것을 확인할 수 있습니다.</li>
+    </ul>
+
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -12,7 +1368,7 @@
 12
 13
 14
-</pre><td class="rouge-code"><pre>        <span class="nv">$ </span>git status
+</pre></td><td class="rouge-code"><pre>        <span class="nv">$ </span>git status
         On branch <span class="nb">test
         </span>Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/test'</span><span class="nb">.</span>
 
@@ -26,7 +1382,25 @@
                 sample_01/
 
         no changes added to commit <span class="o">(</span>use <span class="s2">"git add"</span> and/or <span class="s2">"git commit -a"</span><span class="o">)</span>
-</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145543919-7cc98f61-a10a-4ef8-81dc-68176860afbc.png" alt="image" /></p></ul><p><br /></p><ul><li><code class="language-plaintext highlighter-rouge">Staging Area</code>에 추가하기<ul><li>staged 상태로 추가하기 위해서는 git add로 Staging Area에 추가해줘야 합니다.<li>git add test.py를 해주고 git status로 상태를 확인해 보니, <code class="language-plaintext highlighter-rouge">Changes to be committed:</code> 라고 되어있습니다.<li>즉, Staged 상태로 변경되었습니다.</ul><div class="language-shell highlighter-rouge"><div class="code-header"> <span label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145543919-7cc98f61-a10a-4ef8-81dc-68176860afbc.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Staging Area</code>에 추가하기
+    <ul>
+      <li>staged 상태로 추가하기 위해서는 git add로 Staging Area에 추가해줘야 합니다.</li>
+      <li>git add test.py를 해주고 git status로 상태를 확인해 보니, <code class="language-plaintext highlighter-rouge">Changes to be committed:</code> 라고 되어있습니다.</li>
+      <li>즉, Staged 상태로 변경되었습니다.</li>
+    </ul>
+
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -39,7 +1413,7 @@
 11
 12
 13
-</pre><td class="rouge-code"><pre>    <span class="nv">$ </span>git add test.py
+</pre></td><td class="rouge-code"><pre>    <span class="nv">$ </span>git add test.py
 
     <span class="nv">$ </span>git status
     On branch <span class="nb">test
@@ -52,4 +1426,2725 @@
     Untracked files:
     <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include <span class="k">in </span>what will be committed<span class="o">)</span>
             sample_01/
-</pre></table></code></div></div><p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145545329-5099a56d-cfd8-49e4-8022-b6152c41a37d.png" alt="image" /></p></ul><p><br /></p><ul><li><code class="language-plaintext highlighter-rouge">commit</code> 하기<ul><li>git commit -m “test.py” 으로 커밋을 실행합니다.<li>git status에 없는 것을 확인할 수 있습니다.</ul><p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145546099-357ac8f7-dddb-4032-a0ac-4858f12ce52a.png" alt="image" /></p></ul><p><br /></p><ul><li><p><code class="language-plaintext highlighter-rouge">git log</code>를 통해 commit history를 확인할 수 있습니다.</p><p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145546588-135b35b5-4ab8-46e0-a4a1-42ca184c84fc.png" alt="image" /></p></ul></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/git/'>Git</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/git/" class="post-tag no-text-decoration" >Git</a> <a href="/tags/github/" class="post-tag no-text-decoration" >Github</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=[Git] Git 이해하기 - SeongSik Seo&url=https://s-seongsik.github.io/posts/git-01/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=[Git] Git 이해하기 - SeongSik Seo&u=https://s-seongsik.github.io/posts/git-01/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=[Git] Git 이해하기 - SeongSik Seo&url=https://s-seongsik.github.io/posts/git-01/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/javascript/">Javascript</a> <a class="post-tag" href="/tags/node-js/">Node.js</a> <a class="post-tag" href="/tags/webpack/">Webpack</a> <a class="post-tag" href="/tags/babel/">Babel</a> <a class="post-tag" href="/tags/git/">Git</a> <a class="post-tag" href="/tags/github/">Github</a> <a class="post-tag" href="/tags/python/">Python</a> <a class="post-tag" href="/tags/web/">Web</a> <a class="post-tag" href="/tags/cron/">Cron</a> <a class="post-tag" href="/tags/crontab/">Crontab</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/git-02/"><div class="card-body"> <em class="timeago small" date="2021-12-12 00:00:00 +0900" >Dec 12</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Git] Git 되돌리기(undo)</h3><div class="text-muted small"><p> 개발을 하다보면 이전으로 되돌려야 하는 상황이 오기 마련입니다. Git에서도 undo의 기능을 제공합니다. commit 재작성 방금 commit하고 나서, 너무 일찍 commit 했거나 파일을 뺴먹었거나 commit 메시지를 잘못 입력했을 경우 사용합니다. --amend 옵션을 사용하여 커밋을 재작성 할 수 있습니다. 다시 c...</p></div></div></a></div><div class="card"> <a href="/posts/git-03/"><div class="card-body"> <em class="timeago small" date="2021-12-03 00:00:00 +0900" >Dec 3</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Git] Github 원격저장소와 로컬저장소 연동하기</h3><div class="text-muted small"><p> 깃허브 원격저장소와 로컬저장소 연동을 머리속에서만 알고있었고, git 관련 명령어도 필요할 때마다 구글링으로 찾아서 처리했었는데… 날잡고 정리해서 내것으로 만들어야지 생각만하다가 오늘 정리하기로 맘먹었다. 오늘은! 로컬 저장소(workspace)를 깃허브 원격저장소에 연동하는 방법에 대해 포스팅 해보겠습니다. 참고로, git이 설치가 안되신분들은...</p></div></div></a></div><div class="card"> <a href="/posts/git-04/"><div class="card-body"> <em class="timeago small" date="2021-12-04 00:00:00 +0900" >Dec 4</em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Git] branch의 이해와 사용(미완성)</h3><div class="text-muted small"><p> 코드를 복사하고 나서 원래 코드와는 상관없이 독립적으로 개발을 할 수 있게 만드는 것이 “브랜치” 입니다. Git의 최고의 장점이라고 말하는 “브랜치”에 대해 알아볼까요? Gti branch란? 모든 형상관리 시스템은 브랜치를 지원합니다. 팀 단위로 개발을 하다보면 각자 독립적인 공간에서 개발을 진행해야 서로의 소스코드가 섞이거나 충돌되는 것을...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/python-scheduler-windows/" class="btn btn-outline-primary" prompt="Older"><p>[python] Windows 스케줄러 기능으로 파이썬 스크립트 작업 등록하기</p></a> <a href="/posts/git-03/" class="btn btn-outline-primary" prompt="Newer"><p>[Git] Github 원격저장소와 로컬저장소 연동하기</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2021 <a href="https://github.com/s-seongsik">seongsik seo</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/javascript/">Javascript</a> <a class="post-tag" href="/tags/node-js/">Node.js</a> <a class="post-tag" href="/tags/webpack/">Webpack</a> <a class="post-tag" href="/tags/babel/">Babel</a> <a class="post-tag" href="/tags/git/">Git</a> <a class="post-tag" href="/tags/github/">Github</a> <a class="post-tag" href="/tags/python/">Python</a> <a class="post-tag" href="/tags/web/">Web</a> <a class="post-tag" href="/tags/cron/">Cron</a> <a class="post-tag" href="/tags/crontab/">Crontab</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145545329-5099a56d-cfd8-49e4-8022-b6152c41a37d.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">commit</code> 하기
+    <ul>
+      <li>git commit -m “test.py” 으로 커밋을 실행합니다.</li>
+      <li>git status에 없는 것을 확인할 수 있습니다.</li>
+    </ul>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145546099-357ac8f7-dddb-4032-a0ac-4858f12ce52a.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">git log</code>를 통해 commit history를 확인할 수 있습니다.</p>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145546588-135b35b5-4ab8-46e0-a4a1-42ca184c84fc.png" alt="image" /></p>
+  </li>
+</ul>
+
+</div>
+
+<div class="post-tail-wrapper text-muted">
+
+  <!-- categories -->
+  
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw mr-1"></i>
+    
+      <a href='/categories/git/'>Git</a>
+  </div>
+  
+
+  <!-- tags -->
+  
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/git/"
+          class="post-tag no-text-decoration" >Git</a>
+      
+      <a href="/tags/github/"
+          class="post-tag no-text-decoration" >Github</a>
+      
+  </div>
+  
+
+  <div class="post-tail-bottom
+    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
+
+      
+
+        
+
+        This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+
+      
+    </div>
+
+    <!--
+ Post sharing snippet
+-->
+
+<div class="share-wrapper">
+  <span class="share-label text-muted mr-1">Share</span>
+  <span class="share-icons">
+    
+    
+
+    
+      
+        <a href="https://twitter.com/intent/tweet?text=[Git] Git 이해하기 - SeongSik Seo&url=http://localhost:4000/posts/git-01/" data-toggle="tooltip" data-placement="top"
+          title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
+          <i class="fa-fw fab fa-twitter"></i>
+        </a>
+    
+      
+        <a href="https://www.facebook.com/sharer/sharer.php?title=[Git] Git 이해하기 - SeongSik Seo&u=http://localhost:4000/posts/git-01/" data-toggle="tooltip" data-placement="top"
+          title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-fw fab fa-facebook-square"></i>
+        </a>
+    
+      
+        <a href="https://telegram.me/share?text=[Git] Git 이해하기 - SeongSik Seo&url=http://localhost:4000/posts/git-01/" data-toggle="tooltip" data-placement="top"
+          title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
+          <i class="fa-fw fab fa-telegram"></i>
+        </a>
+    
+
+    <i id="copy-link" class="fa-fw fas fa-link small"
+        data-toggle="tooltip" data-placement="top"
+        title="Copy link"
+        title-succeed="Link copied successfully!">
+    </i>
+
+  </span>
+</div>
+
+
+  </div><!-- .post-tail-bottom -->
+
+</div><!-- div.post-tail-wrapper -->
+
+
+      
+    
+    </div>
+  </div> <!-- #core-wrapper -->
+
+  <!-- pannel -->
+  <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down">
+
+    <div class="access">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <div id="access-tags">
+    <div class="panel-heading">Trending Tags</div>
+    <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
+
+    
+      
+      <a class="post-tag" href="/tags/javascript/">Javascript</a>
+    
+      
+      <a class="post-tag" href="/tags/node-js/">Node.js</a>
+    
+      
+      <a class="post-tag" href="/tags/webpack/">Webpack</a>
+    
+      
+      <a class="post-tag" href="/tags/babel/">Babel</a>
+    
+      
+      <a class="post-tag" href="/tags/git/">Git</a>
+    
+      
+      <a class="post-tag" href="/tags/github/">Github</a>
+    
+      
+      <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/web/">Web</a>
+    
+      
+      <a class="post-tag" href="/tags/cron/">Cron</a>
+    
+      
+      <a class="post-tag" href="/tags/crontab/">Crontab</a>
+    
+
+    </div>
+  </div>
+
+
+    </div>
+
+    
+      
+      
+
+
+
+<!-- BS-toc.js will be loaded at medium priority -->
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
+  <nav id="toc" data-toggle="toc"></nav>
+</div>
+
+
+    
+  </div>
+
+</div>
+
+<!-- tail -->
+
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+      
+        
+        <!--
+ Recommend the other 3 posts according to the tags and categories of the current post,
+ if the number is not enough, use the other latest posts to supplement.
+-->
+
+<!-- The total size of related posts  -->
+
+
+<!-- An random integer that bigger than 0  -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy}  -->
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+<!-- Fill with the other newlest posts  -->
+
+
+
+
+
+
+  <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
+    <h3 class="pt-2 mt-1 mb-4 ml-1"
+      data-toc-skip>Further Reading</h3>
+    <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/git-02/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2021-12-12 00:00:00 +0900"
+    >Dec 12, 2021</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Git] Git 되돌리기(undo)</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                개발을 하다보면 이전으로 되돌려야 하는 상황이 오기 마련입니다.
+
+Git에서도 undo의 기능을 제공합니다.
+
+
+
+commit 재작성
+
+
+
+
+  방금 commit하고 나서, 너무 일찍 commit 했거나 파일을 뺴먹었거나 commit 메시지를 잘못 입력했을 경우 사용합니다.
+  --amend 옵션을 사용하여 커밋을 재작성 할 수 있습니다.
+  다시 c...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/git-03/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2021-12-03 00:00:00 +0900"
+    >Dec  3, 2021</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Git] Github 원격저장소와 로컬저장소 연동하기</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                깃허브 원격저장소와 로컬저장소 연동을 머리속에서만 알고있었고, git 관련 명령어도 필요할 때마다 구글링으로 찾아서 처리했었는데…
+
+날잡고 정리해서 내것으로 만들어야지 생각만하다가 오늘 정리하기로 맘먹었다.
+
+오늘은! 로컬 저장소(workspace)를 깃허브 원격저장소에 연동하는 방법에 대해 포스팅 해보겠습니다.
+
+참고로, git이 설치가 안되신분들은...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/git-04/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2021-12-04 00:00:00 +0900"
+    >Dec  4, 2021</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Git] branch의 이해와 사용(미완성)</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                코드를 복사하고 나서 원래 코드와는 상관없이 독립적으로 개발을 할 수 있게 만드는 것이 “브랜치” 입니다.
+
+Git의 최고의 장점이라고 말하는 “브랜치”에 대해 알아볼까요?
+
+
+
+Gti branch란?
+모든 형상관리 시스템은 브랜치를 지원합니다. 팀 단위로 개발을 하다보면 각자 독립적인 공간에서 개발을 진행해야 서로의 소스코드가 섞이거나 충돌되는 것을...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+    </div> <!-- .card-deck -->
+  </div> <!-- #related-posts -->
+
+
+      
+        
+        <!--
+  Navigation buttons at the bottom of the post.
+-->
+
+<div class="post-navigation d-flex justify-content-between">
+  
+  <a href="/posts/python-scheduler-windows/" class="btn btn-outline-primary"
+    prompt="Older">
+    <p>[python] Windows 스케줄러 기능으로 파이썬 스크립트 작업 등록하기</p>
+  </a>
+  
+
+  
+  <a href="/posts/git-03/" class="btn btn-outline-primary"
+    prompt="Newer">
+    <p>[Git] Github 원격저장소와 로컬저장소 연동하기</p>
+  </a>
+  
+
+</div>
+
+      
+        
+        <!--
+  The Disqus lazy loading.
+-->
+
+
+
+      
+    </div>
+  </div>
+</div> <!-- .row -->
+
+
+
+        <!--
+  The Footer
+-->
+
+<footer class="d-flex w-100 justify-content-center">
+  <div class="d-flex justify-content-between align-items-center text-muted">
+    <div class="footer-left">
+      <p class="mb-0">
+        © 2022
+        <a href="https://github.com/s-seongsik">seongsik seo</a>.
+        
+        <span data-toggle="tooltip" data-placement="top"
+          title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span>
+        
+      </p>
+    </div>
+
+    <div class="footer-right">
+      <p class="mb-0">
+        
+
+        
+
+        Powered by 
+          <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+         with 
+          <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+         theme.
+
+      </p>
+    </div>
+
+  </div> <!-- div.d-flex -->
+</footer>
+
+
+      </div>
+
+      <!--
+  The Search results
+-->
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+  <div class="col-12 col-sm-11 post-content">
+    <div id="search-hints">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <div id="access-tags">
+    <div class="panel-heading">Trending Tags</div>
+    <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
+
+    
+      
+      <a class="post-tag" href="/tags/javascript/">Javascript</a>
+    
+      
+      <a class="post-tag" href="/tags/node-js/">Node.js</a>
+    
+      
+      <a class="post-tag" href="/tags/webpack/">Webpack</a>
+    
+      
+      <a class="post-tag" href="/tags/babel/">Babel</a>
+    
+      
+      <a class="post-tag" href="/tags/git/">Git</a>
+    
+      
+      <a class="post-tag" href="/tags/github/">Github</a>
+    
+      
+      <a class="post-tag" href="/tags/python/">Python</a>
+    
+      
+      <a class="post-tag" href="/tags/web/">Web</a>
+    
+      
+      <a class="post-tag" href="/tags/cron/">Cron</a>
+    
+      
+      <a class="post-tag" href="/tags/crontab/">Crontab</a>
+    
+
+    </div>
+  </div>
+
+
+    </div>
+    <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+  </div>
+</div>
+
+
+    </div> <!-- #main-wrapper -->
+
+    
+
+    <div id="mask"></div>
+
+    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!--
+  Jekyll Simple Search loader
+  See: <https://github.com/christian-fei/Simple-Jekyll-Search>
+-->
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('search-results'),
+  json: '/assets/js/data/search.json',
+  searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
+  noResultsText: '<p class="mt-5">Oops! No result founds.</p>',
+  templateMiddleware: function(prop, value, template) {
+    if (prop === 'categories') {
+      if (value === '') {
+        return `${value}`;
+      } else {
+        return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+      }
+    }
+
+    if (prop === 'tags') {
+      if (value === '') {
+        return `${value}`;
+      } else {
+        return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+      }
+    }
+  }
+});
+</script>
+
+
+    <!--
+  JS selector for site.
+-->
+
+<!-- layout specified -->
+
+
+  
+
+
+
+  <!-- image lazy-loading & popup -->
+  <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+
+
+<script defer src="/assets/js/dist/post.min.js"></script>
+
+
+
+<!-- commons -->
+
+<script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
+
+
+
+
+  </body>
+
+</html>
+
