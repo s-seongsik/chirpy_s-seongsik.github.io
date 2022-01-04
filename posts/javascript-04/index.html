@@ -643,6 +643,39 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
 
     
 
@@ -752,8 +785,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1635 words">
-  <em>9 min</em> read</span>
+  title="2737 words">
+  <em>15 min</em> read</span>
 
 
       <!-- page views -->
@@ -886,7 +919,7 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>전역 스코프를 갖는 <code class="language-plaintext highlighter-rouge">let x='Global'</code>는 <code class="language-plaintext highlighter-rouge">{ }</code> 코드 내부에 선언한 <code class="language-plaintext highlighter-rouge">let x = 'x Local'</code>로 재선언되지 않으며
-<code class="language-plaintext highlighter-rouge">y</code>는 <code class="language-plaintext highlighter-rouge">블록 스코프</code>를 따르기 때문에 외부에서 접근할 수 없기 때문에 <code class="language-plaintext highlighter-rouge">console.log</code>시 정의되지 않는다는 오류 문구를 확인할 수 있습니다.</p>
+<code class="language-plaintext highlighter-rouge">y</code>는 <code class="language-plaintext highlighter-rouge">블록 스코프</code>를 따르기 때문에 외부에서 접근할 수 없기 때문에 <code class="language-plaintext highlighter-rouge">console.log</code>시 <code class="language-plaintext highlighter-rouge">ReferenceError</code> 오류를 확인할 수 있습니다.</p>
 
 <p><br /></p>
 
@@ -925,7 +958,7 @@
 <h2 id="d"><strong>호이스팅</strong><a href="#d"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <p>자바스크립트에서 선언된 모든 것(<code class="language-plaintext highlighter-rouge">var</code>, <code class="language-plaintext highlighter-rouge">let</code>, <code class="language-plaintext highlighter-rouge">const</code>, <code class="language-plaintext highlighter-rouge">function</code>, <code class="language-plaintext highlighter-rouge">class</code>)을 호이스팅이라고 합니다. 
-호이스팅(Hoisting)이란, var 선언문이나 function 선언문 등을 해당 스코프의 선두로 옮긴 것처럼 동작하는 특성을 말한다.</p>
+호이스팅(Hoisting)이란, <code class="language-plaintext highlighter-rouge">var</code> 선언문이나 <code class="language-plaintext highlighter-rouge">function</code> 선언문 등을 해당 스코프의 선두로 옮긴 것처럼 동작하는 특성을 말한다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">예시</code>를 먼저 보겠습니다.</p>
 
@@ -962,7 +995,7 @@
 </ul>
 
 <p><code class="language-plaintext highlighter-rouge">var</code>는 <code class="language-plaintext highlighter-rouge">선언 단계</code>와 <code class="language-plaintext highlighter-rouge">초기화 단계</code>가 한 번에 실행됩니다. 스코프에 변수를 <code class="language-plaintext highlighter-rouge">등록(선언 단계)</code>하여 메모리에 공간을 확보한 뒤,
-<code class="language-plaintext highlighter-rouge">undefined</code>로 <code class="language-plaintext highlighter-rouge">초기화(초기화 단계)</code>합니다. 이러한 이유로 변수가 선언되기 전에 변수에 접근하여도 에러가 발생하지 않고 <code class="language-plaintext highlighter-rouge">undefined</code>를 반환한 것입니다.
+<code class="language-plaintext highlighter-rouge">undefined</code>로 <code class="language-plaintext highlighter-rouge">초기화(초기화 단계)</code>합니다. 이러한 이유로 변수선언문 이전에 변수에 접근하여도 에러가 발생하지 않고 <code class="language-plaintext highlighter-rouge">undefined</code>를 반환한 것입니다.
 이후 변수에 값을 <code class="language-plaintext highlighter-rouge">할당(할당 단계)</code>해야 비로소 값이 할당 되는 것입니다. 이런 현상을 변수 호이스팅(Variable Hoisting)이라 합니다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="code-header">
@@ -1041,10 +1074,254 @@
 
 <p><br /></p>
 
+<p>그럼 let은 호이스팅이 안되는게 아닐까?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>  <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+  <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">  10
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>결과를 보면 <code class="language-plaintext highlighter-rouge">선언단계</code>와 <code class="language-plaintext highlighter-rouge">초기화단계</code>가 먼저 이루어졌기 때문에 정상적으로 결과값이 출력됩니다.</p>
+
+<p><br /></p>
+
+<p>아래 코드에 <code class="language-plaintext highlighter-rouge">let</code> 선언을 추가해봅니다.</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>  <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+  <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+      <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">  Uncaught ReferenceError: Cannot access 'x' before initialization
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>전역변수 <code class="language-plaintext highlighter-rouge">x</code>가 <code class="language-plaintext highlighter-rouge">console.log</code>에 출력될 것 처럼 보일 수 있다. 하지만, <code class="language-plaintext highlighter-rouge">{ }</code> 블록안에서 호이스팅이 발생하기 때문에 <code class="language-plaintext highlighter-rouge">참조 에러(ReferenceError)</code>가 발생하게 됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ES6</code>의 <code class="language-plaintext highlighter-rouge">let</code>과 <code class="language-plaintext highlighter-rouge">const</code> 키워드는 코드블록 내에서는 블록 스코프를 따르므로 <code class="language-plaintext highlighter-rouge">{ }</code>블록 내에 선언 된 <code class="language-plaintext highlighter-rouge">let x</code>는 지역 변수로 적용됩니다. 따라서 <code class="language-plaintext highlighter-rouge">{ }</code> 블록 안 스코프에서 호이스팅이 적용되고 코드 블록의 선두에서 초기화가 이루어 지는 지점까지는 <code class="language-plaintext highlighter-rouge">일시적 사각지대(TDZ)</code>에 빠지게 됩니다. 그렇기 때문에 <code class="language-plaintext highlighter-rouge">참조 에러(ReferenceError)</code>가 발생하게 됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="let은-전역-객체가-아니다"><strong>let은 전역 객체가 아니다</strong><a href="#let은-전역-객체가-아니다"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p id="e"><code class="language-plaintext highlighter-rouge">전역 객체(Global Object)</code>란 모든 객체의 최상위 객체를 의미합니다.</p>
+
+<p>Browser-side에서는 <code class="language-plaintext highlighter-rouge">window 객체</code>, Server-side(Node.js)에서는 <code class="language-plaintext highlighter-rouge">global 객체</code>를 의미합니다.</p>
+
+<p>여기서 <code class="language-plaintext highlighter-rouge">var</code>로 선언된 변수를 전역 변수로 사용하게 된다면 <code class="language-plaintext highlighter-rouge">전역 객체</code>의 프로퍼티가 됩니다.</p>
+
+<p>하지만, <code class="language-plaintext highlighter-rouge">let</code>로 선언된 변수를 전역 변수로 사용하게 되더라도 <code class="language-plaintext highlighter-rouge">전역 객체</code>의 프로퍼티가 아닙니다.</p>
+
+<p>다시말해, <code class="language-plaintext highlighter-rouge">window 객체</code>로 접근할 수 없으며, <code class="language-plaintext highlighter-rouge">global 객체</code>에만 접근할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Global Object</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// var 키워드 선언</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>   <span class="c1">// var 키워드는 전역 객체(Global Object)의 프로퍼티가 되므로 window 객체 접근 가능</span>
+</pre></td></tr></tbody></table></code></div></div>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">  Global Object
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Global Object</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// let 키워드 선언</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>  <span class="c1">// let 키워드는 전역 객체(Global Object)의 프로퍼티가 되므로 window 객체 접근 불가능</span>
+</pre></td></tr></tbody></table></code></div></div>
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">  undefined
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
 <h1 id="f"><strong>const</strong></h1>
 
 <hr />
 
+<p><code class="language-plaintext highlighter-rouge">const</code>는 상수(변하지 않는 값)을 위해 사용하는 키워드입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">const</code>는 <code class="language-plaintext highlighter-rouge">let</code>과 대부분 비슷하지만 다른점에 대해서만 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h2 id="선언과-초기화"><strong>선언과 초기화</strong><a href="#선언과-초기화"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p id="g"><code class="language-plaintext highlighter-rouge">let</code> 의 특징</p>
+<ul>
+  <li>중복선언 불가능
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">x</span><span class="o">=</span><span class="mi">20</span><span class="p">;</span>  <span class="c1">// 최초 선언</span>
+<span class="kd">let</span> <span class="nx">x</span><span class="o">=</span><span class="mi">50</span><span class="p">;</span>  <span class="c1">// 중복 선언</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">Uncaught SyntaxError: Identifier 'x' has already been declared
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>재할당 가능
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">x</span><span class="o">=</span><span class="mi">30</span><span class="p">;</span>   <span class="c1">// 최초 선언</span>
+<span class="nx">x</span> <span class="o">=</span><span class="mi">20</span><span class="p">;</span>      <span class="c1">// 재할당</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 20 출력 </span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">20
+</span></pre></td></tr></tbody></table></code></div>    </div>
+    <p><br /></p>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">const</code>의 특징</p>
+
+<ul>
+  <li>중복선언 불가능
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">x</span><span class="o">=</span><span class="mi">20</span><span class="p">;</span>  <span class="c1">// 최초 선언</span>
+<span class="kd">const</span> <span class="nx">x</span><span class="o">=</span><span class="mi">50</span><span class="p">;</span>  <span class="c1">// 중복 선언</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">Uncaught SyntaxError: Identifier 'x' has already been declared
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>재할당 불가능
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">x</span><span class="o">=</span><span class="mi">30</span><span class="p">;</span>   <span class="c1">// 최초 선언</span>
+<span class="nx">x</span> <span class="o">=</span><span class="mi">20</span><span class="p">;</span>      <span class="c1">// 재할당시 문법 에러 발생</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">Uncaught TypeError: Assignment to constant variable.
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">const의 키워드는 반드시 선언과 동시에 할당이 이루어져야 합니다.</code> 그렇지 않으면 이미 선언된 변수에 값을 할당할 수 없습니다. 
+그 이유는 재할당이 안되기 때문입니다.
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">x</span><span class="p">;</span>    <span class="c1">// 초기화</span>
+<span class="nx">x</span> <span class="o">=</span><span class="mi">20</span><span class="p">;</span>      <span class="c1">// 할당</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">Uncaught SyntaxError: Missing initializer in const declaration
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="h"><strong>const의 객체</strong><a href="#h"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">const</code>는 재할당이 되지 않는다고 말씀드렸습니다. 하지만, 객체의 프로퍼티는 변경할 수 있습니다.
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">seongsik</span><span class="dl">'</span><span class="p">};</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">good</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="go">{name: 'good'}
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p>const 키워드는 객체의 내용이 변경(추가, 변경, 삭제)되더라도 객체 타입 변수에 할당된 메모리 주소값은 변경되지 않습니다.
+따라서, 객체 타입 변수 선언에는 <code class="language-plaintext highlighter-rouge">const</code>를 사용하는 것이 좋습니다. 만약 객체 타입 변수의 주소값을 변경(재할당)해야 한다면 <code class="language-plaintext highlighter-rouge">let</code>을 사용합니다.</p>
+
+<p><br /></p>
+
+<h1 id="i"><strong>끝으로</strong></h1>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ES6(2015)+</code>를 사용한다면 <code class="language-plaintext highlighter-rouge">var</code>를 사용하지 않는 것이 좋습니다.</li>
+  <li>자바스크립트 코드양이 많아질 수록 의도치 않은 재할당 실수를 하게되는데 이를 방지하기 위해 <code class="language-plaintext highlighter-rouge">const</code>를 사용합니다.</li>
+  <li>재할당이 필요한 경우에는 <code class="language-plaintext highlighter-rouge">let</code>을 사용합니다.</li>
+</ul>
 
 </div>
 
