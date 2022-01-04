@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-04T14:30:40+09:00</updated>
+  <updated>2022-01-04T14:43:25+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>[ECMAScript6] let, const 키워드(미완성, const 남음)</title>
-    <link href="http://localhost:4000/posts/javascript-04/" rel="alternate" type="text/html" title="[ECMAScript6] let, const 키워드(미완성, const 남음)" />
+    <title>[ECMAScript6] let, const 키워드</title>
+    <link href="http://localhost:4000/posts/javascript-04/" rel="alternate" type="text/html" title="[ECMAScript6] let, const 키워드" />
     <published>2022-01-02T00:00:00+09:00</published>
   
     <updated>2022-01-02T00:00:00+09:00</updated>
