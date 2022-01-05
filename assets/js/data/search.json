@@ -1,6 +1,36 @@
 [
   
   {
+    "title": "[ESLint] ESLint 시작하기",
+    "url": "/posts/eslint-01/",
+    "categories": "ESLint",
+    "tags": "Webpack, Babel, Node.js, Javascript",
+    "date": "2022-01-05 00:00:00 +0900",
+    
+
+
+
+
+
+    "snippet": "ESLint란?  ESLint란 코딩 컨벤션에 위배되는 코드나 안티 패턴을 자동으로 검출하는 분석 도구이다.  코드를 분석하여 문법적인 오류나 안티 패턴을 찾고 일관된 코드 스타일로 작성할 수 있도록 도와준다.  ESLint는 유용하게 사용할 수 있도록 style-guide를 제공한다.  대표적으로 Airbnb Style Guide, Google Style Guide이 있다.  개발자가 직접 style-guide를 작성할 수도 있다.Install   $ npm install eslint --save-dev   $ mkdir eslint_sample  // 프로젝트 폴더 생성   $ cd eslint_sample/    // 프로젝트 이동   $ npm init             // 프로젝트 생성     // eslint 설치    $ npm install eslint --save-dev 프로젝트 구조    eslint_sample/        ├── node_modules/        ├── package-lock.json        └── package.jsonConfiguration Files환경설정 파일에 대한 자세한 설명은 Configuration File Formats를 참조.ESLint는 여러 형식의 구성 파일을 제공한다.  JavaScript  JavaScript (ESM)  YAML  JSON  package.json프로젝트 최상위 디렉토리에 여러 구성 파일이 있는 경우에는 ESLint는 하나의 구성파일만 사용한다. 그 우선순위는 다음과 같다.  .eslintrc.js  .eslintrc.cjs  .eslintrc.yaml  .eslintrc.yml  .eslintrc.json  package.json  .eslintrc.js를 최상위 디렉토리에 생성합니다.    Configuration Files 작성방법rulesESLint는 검사 규칙을 제공한다. 자세한 내용은 Rules를 참조.그 중 하나인 no-extra-semi를 적용.밑에 disallow unnecessary semicolons라고 되어있다. 즉 불필요한 세미콜론을 허용하지 않겠다는건데 어떻게 적용되는지 확인해보자.규칙을 설정하는 값은 3가지로  “off” or 0 - turn the rule off, 규칙을 끔  “warn” or 1 - turn the rule on as a warning (doesn’t affect exit code), 규칙을 경고로 설정(종료 코드에 영향을 주지 않음)  “error” or 2 - turn the rule on as an error (exit code is 1 when triggered), 규칙을 오류로 설정(트리거될 때 종료 코드는 1)    module.exports = {        rules: {            &quot;no-extra-semi&quot;: &quot;error&quot;,        },    }./app.js 를 생성하여 세미클론을 여러개 작성해본다.    var x = 30;;    console.log(x);;실행해보면 불필요한 세미클론 수 만큼 error 메시지를 출력한다.    $ npx eslint app.js            E:\\study\\frontend\\eslint_sample\\app.js    1:12  error  Unnecessary semicolon  no-extra-semi    3:16  error  Unnecessary semicolon  no-extra-semi    ✖ 2 problems (2 errors, 0 warnings)    2 errors and 0 warnings potentially fixable with the `--fix` option.error 메시지 맨 밑에“2 errors and 0 warnings potentially fixable with the --fix option.” 문구를 보면 --fix 옵션을 줘서 자동으로 수정할 수 있는 옵션이 있다.    $ npx eslint app.js --fix자동으로 세미클론을 수정.    var x = 30;    console.log(x);eslint:recommendedESLint은 규칙의 목적에 맞게 유형별로 그룹화하여 제공한다.그것이 eslint:recommended이다. babel의 프리셋이라고 생각하면 된다.이것을 사용하기 위해서는 extends 설정을 추가한다.    module.exports = {        extends: [            &quot;eslint:recommended&quot;,         ],    }–initconfiguration file을 구성하는 가장 쉬운 방법은, --init 플래그를 사용하는 것이다.--init을 명령하면 대화식 명령으로 어떻게 구성할 건지 물어보는데, 목적에 맞게 선택하면 된다.    $ npx eslint --init    √ How would you like to use ESLint? · problems    √ What type of modules does your project use? · esm    √ Which framework does your project use? · none    √ Does your project use TypeScript? · No / Yes    √ Where does your code run? · browser    √ What format do you want your config file to be in? · JavaScript    Successfully created .eslintrc.js file in E:\\study\\frontend\\eslint_sample자동으로 생성    module.exports = {        &quot;env&quot;: {            &quot;browser&quot;: true,            &quot;es2021&quot;: true        },        &quot;extends&quot;: &quot;eslint:recommended&quot;,        &quot;parserOptions&quot;: {            &quot;ecmaVersion&quot;: 13,            &quot;sourceType&quot;: &quot;module&quot;        },        &quot;rules&quot;: {        }    };"
+  },
+  
+  {
+    "title": "[기록] 나의 첫, 단독 SI프로젝트에서 생긴 문제들과 해결(미완성)",
+    "url": "/posts/issue-01/",
+    "categories": "Issue",
+    "tags": "",
+    "date": "2022-01-02 00:00:00 +0900",
+    
+
+
+
+
+
+    "snippet": "인트로2021-01 ~ 2021-099개월간의 대장정의 서사시를 지금에서야 기록하게 된다.본론전에, 나의 첫 번째 SI프로젝트는 만도였다. 6개월 동안 선배들과 상주하였고 동고동락하면서 선배들의 지식과 경험들을 흡수하기위해 노력했다.1년차도 안된 주니어가 큰 프로젝트에 투입할 수 있다는것에 감사함과 행운을 가지고 어떻게 해서든 배워나갔다. 자바스크립트, 제이쿼리, HTML, CSS 등과 같은 기술들 그리고 소통과 협업… 그렇게, 나의 첫 실무경험이 시작되었다.어느덧 6개월이 지나 끝나지않을 것 같았던 대장정이 마무리가 되었고, 다시 본사로 복귀하여 새로운 일거리를 찾아 서성였다.그렇게 시작된 나의 첫 단독 프로젝트PS테크놀로지의 환경안전 모니터링 시스템 프로젝트!!문제 01 - 개발자의 영역이 맞아?현재 근무중인 위즈코어는 스마트팩토리를 전문적으로 구축하는 회사이다. 나는 여기서 웹 기반의 모니터링 시스템을 구축하는 팀에서 일을 하고 있다.중소기업이다보니 팀 단위의 업무환경을 기대하기 힘들다 특히 2021년 상반기까지만해도 일이 밀려 1인당 1개의 프로젝트를 맡아 처리를 했어야 했다.그래서 주니어인 나도 프로젝트를 혼자 맡을 수 있었던 것이었다.밑에 사진을 보면, 나는 모니터링 시스템 섹터를 담당한다.그리고 아주 밑단으로 내려가면 데이터수집영역은 PLC팀이 따로 있다.회사에 PLC 팀이 있지만, 프로젝트를 여러개 맡아서 하다보니 타업체를 끼고 진행하게 되었다.사건의 발단데이터 수집을 하기 위한 준비 단계는 설비 I/F, 센서 I/F이다.모든 I/F가 끝나면 본격적으로 데이터 수집 단계로 들어가게 되는데 데이터 수집의 단계도 3단계로 나뉜다.1.설비데이터, 센서데이터(PLC업체담당)-&amp;gt; 2.MASTER PLC(PLC업체담당) -&amp;gt; Edge device(PLC업체담당) -&amp;gt; 3.Database(나의 담당)간단하게 설명하자면, I/F된 설비와 센서에서 ROW 데이터가 생성되면 MASTER PLC에서 데이터를 모아옵니다.MASTER PLC는 모아온 데이터들을 메모리에 들고만 있을 뿐 DB로 넣어주지 않는다.DB로 넣어주는 역할이 바로 Edge device!, 엣지 디바이스는 마스터 PLC의 데이터를 가져와 DB로 INSERT해준다!DB로 Insert 하는 방법은 크게 2가지로 알고 있다.  직접 Insert  DB 프로시저 호출(현재 사업에서 사용된 방법)자! 이렇게 Database에 데이터가 수집되면 이제부터 시작이다…스마트팩토리 사업에서 가장 중요하면서 동시에 사건의 발단인 데이터 정합성!!DB의 데이터를 가지고 모니터링 시스템을 구축하게 되는데 사용자는 사용하면서 이런말을 자주 내뱉게 된다.데이터가 안맞는데요?우리는 프로시저 호출시 넘겨주는 파라미터 그대로 테이블에 Insert하고 그걸 가공하여 차트로 화면에 보여준다."
+  },
+  
+  {
     "title": "[ECMAScript6] let, const 키워드",
     "url": "/posts/javascript-04/",
     "categories": "Javascript",

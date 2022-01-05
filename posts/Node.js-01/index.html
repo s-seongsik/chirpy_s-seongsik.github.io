@@ -2462,6 +2462,32 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -2653,112 +2679,6 @@
       
       
       <div class="card">
-        <a href="/posts/Webpack-02/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago small"
-    date="2021-12-14 00:00:00 +0900"
-    >Dec 14, 2021</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] entry, output</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                webpack의 번들링 작업을 실행하는 방법은 2가지가 있습니다.
-
-
-  콘솔 실행
-  ./webpack.config.js 파일로 실행
-
-
-2가지 실행 방법과 결과에 대해 알아보겠습니다.
-
-
-
-프로젝트 구조 확인
-
-
-
-1
-2
-3
-4
-5
-6
-7
-8
-    webpack-demo
-        |- /moda_modules
-        |- packag...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/Webpack-03/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago small"
-    date="2021-12-15 00:00:00 +0900"
-    >Dec 15, 2021</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] loader (1)</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                loader란
-
-
-
-로더는 파일을 다른언어(예:TypeScript)에서 javascript로 변환하거나 인라인 이미지를 데이터 URL로 로드할 수 있습니다. 로더를 사용하면 import javascript 모듈에서 직접 CSS, HTML 파일과 같은 작업을 수행할 수 있습니다.
-
-
-
-loader의 기능
-
-
-
-
-  로더는 Node.js에서 실행되며, 가...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/Webpack-04/">
           <div class="card-body">
             <!--
@@ -2794,6 +2714,89 @@ css-loader
   ./src/app.css 를 생성하여 밑의 코드를 저장합니다.
   ./src/app.js에서 app.css를 import 구문을 추가합니다.
   html에 css 태그를 넣지 않아도 적용되는지 확인...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Webpack-05/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2021-12-17 00:00:00 +0900"
+    >Dec 17, 2021</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] plugin</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                plugin란?
+
+
+
+파일단위로 처리하는 loader와 다르게 플러그인은 번들링된 결과를 처리합니다. 번들링된 자바스크립트를 난독화하거나 텍스트를 추출하는 등의 용도로 사용합니다.
+플러그인을 빌드하는 것은 로더를 빌드하는 것보다 조금 더 고급입니다. 플러그인을 이해하려면 webpack 저수준 내부의 이해가 필요합니다.
+
+이해를 위해 플러그인을 직접 만...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Babel-01/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2021-12-23 00:00:00 +0900"
+    >Dec 23, 2021</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Babel] 바벨의 이해와 동작원리 파악하기</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Babel의 등장 배경
+
+
+
+
+  브라우저마다 사용하는 언어가 다르다.
+  ECMAScript2015+ 이후의 Javascript 언어를 특정 브라우저 및 버전에 따라 사용할 수 없는 문제
+  예를 들어, 크롬 79버전 기준으로 개발했으나, IE에서는 작동이 안되는 크로스브라우징이 발생한다.
+  Babel은 이러한 크로스브라우징 이슈를 해결해준다. E...
               </p>
             </div>
           </div>

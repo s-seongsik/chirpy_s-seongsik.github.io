@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-04T14:43:25+09:00</updated>
+  <updated>2022-01-05T17:29:35+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,116 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[ESLint] ESLint 시작하기</title>
+    <link href="http://localhost:4000/posts/eslint-01/" rel="alternate" type="text/html" title="[ESLint] ESLint 시작하기" />
+    <published>2022-01-05T00:00:00+09:00</published>
+  
+    <updated>2022-01-05T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/eslint-01/</id>
+    <content src="http://localhost:4000/posts/eslint-01/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="ESLint" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      ESLint란?
+
+
+
+
+  ESLint란 코딩 컨벤션에 위배되는 코드나 안티 패턴을 자동으로 검출하는 분석 도구이다.
+  코드를 분석하여 문법적인 오류나 안티 패턴을 찾고 일관된 코드 스타일로 작성할 수 있도록 도와준다.
+  ESLint는 유용하게 사용할 수 있도록 style-guide를 제공한다.
+  대표적으로 Airbnb Style Guide, Google Style Guide이 있다.
+  개발자가 직접 style-guide를 작성할 수도 있다.
+
+
+Install
+
+
+
+   $ npm install eslint --save-dev
+
+
+   $ mkdir eslint_sample  // 프로젝트 폴더 생성
+   $ cd eslint_sample/    // 프로젝트 이동
+
+   $ npm init  ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>[기록] 나의 첫, 단독 SI프로젝트에서 생긴 문제들과 해결(미완성)</title>
+    <link href="http://localhost:4000/posts/issue-01/" rel="alternate" type="text/html" title="[기록] 나의 첫, 단독 SI프로젝트에서 생긴 문제들과 해결(미완성)" />
+    <published>2022-01-02T00:00:00+09:00</published>
+  
+    <updated>2022-01-02T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/issue-01/</id>
+    <content src="http://localhost:4000/posts/issue-01/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Issue" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      인트로
+
+
+
+2021-01 ~ 2021-09
+
+9개월간의 대장정의 서사시를 지금에서야 기록하게 된다.
+
+본론전에, 나의 첫 번째 SI프로젝트는 만도였다. 6개월 동안 선배들과 상주하였고 동고동락하면서 선배들의 지식과 경험들을 흡수하기위해 노력했다.
+
+1년차도 안된 주니어가 큰 프로젝트에 투입할 수 있다는것에 감사함과 행운을 가지고 어떻게 해서든 배워나갔다. 자바스크립트, 제이쿼리, HTML, CSS 등과 같은 기술들 그리고 소통과 협업… 그렇게, 나의 첫 실무경험이 시작되었다.
+
+어느덧 6개월이 지나 끝나지않을 것 같았던 대장정이 마무리가 되었고, 다시 본사로 복귀하여 새로운 일거리를 찾아 서성였다.
+
+그렇게 시작된 나의 첫 단독 프로젝트
+
+PS테크놀로지의 환경안전 모니터링 시스템 프로젝트!!
+
+
+
+문...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -197,116 +307,6 @@ webpack.config.js :
 
 
   babel-loader는 .js 확장자로 끝나는 파일들을 모...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Babel] 바벨의 프레셋(Presets) 사용</title>
-    <link href="http://localhost:4000/posts/Babel-02/" rel="alternate" type="text/html" title="[Babel] 바벨의 프레셋(Presets) 사용" />
-    <published>2021-12-23T00:00:00+09:00</published>
-  
-    <updated>2021-12-23T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Babel-02/</id>
-    <content src="http://localhost:4000/posts/Babel-02/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Babel" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      프레셋(Presets)이란?
-
-
-
-플러그인으로 코드 변환을 하기 위해서는 필요한 플러그인을 각각 설정해야 했습니다.
-
-    module.exports = {
-        plugins: [
-            "@babel/plugin-transform-block-scoping",
-            "@babel/plugin-transform-arrow-functions",
-            "@babel/plugin-transform-strict-mode",
-        ]
-    }
-
-
-혹은
-
-build :
-    &amp;gt; npx app.js --plugins=@babel/plugin-transform-block-scoping --plugins=@babel/plugin-transfor...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Babel] 바벨의 이해와 동작원리 파악하기</title>
-    <link href="http://localhost:4000/posts/Babel-01/" rel="alternate" type="text/html" title="[Babel] 바벨의 이해와 동작원리 파악하기" />
-    <published>2021-12-23T00:00:00+09:00</published>
-  
-    <updated>2021-12-23T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Babel-01/</id>
-    <content src="http://localhost:4000/posts/Babel-01/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Babel" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Babel의 등장 배경
-
-
-
-
-  브라우저마다 사용하는 언어가 다르다.
-  ECMAScript2015+ 이후의 Javascript 언어를 특정 브라우저 및 버전에 따라 사용할 수 없는 문제
-  예를 들어, 크롬 79버전 기준으로 개발했으나, IE에서는 작동이 안되는 크로스브라우징이 발생한다.
-  Babel은 이러한 크로스브라우징 이슈를 해결해준다. ECMAScript2015+ 로 작성한 코드를 모든 브라우저에 호환할 수 있도록 코드를 변환해준다.
-
-
-
-
-Babel의 동작원리
-
-
-교육자료 : 프론트엔드 개발환경의 이해: Babel
-참고자료 : Babel 공식사이트
-참고자료 : Babel Plugin Handbook
-
-기본 동작
-
-
-  파싱(Parsing) - 코드를 토큰별로 분해
-  변환(Transfor...
     </summary>
   
 
