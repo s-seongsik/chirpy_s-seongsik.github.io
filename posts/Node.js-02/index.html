@@ -2485,6 +2485,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -2702,50 +2715,6 @@
       
       
       <div class="card">
-        <a href="/posts/Webpack-04/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago small"
-    date="2021-12-15 00:00:00 +0900"
-    >Dec 15, 2021</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] loader (2)</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                자주 사용하는 로더
-
-
-
-css-loader
-
-
-  css-loader를 사용하면 스타일시트도 import 구문으로 불러와 모듈로 변환할 수 있습니다.
-  ./src/app.css 를 생성하여 밑의 코드를 저장합니다.
-  ./src/app.js에서 app.css를 import 구문을 추가합니다.
-  html에 css 태그를 넣지 않아도 적용되는지 확인...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/Webpack-05/">
           <div class="card-body">
             <!--
@@ -2820,6 +2789,56 @@ css-loader
   ECMAScript2015+ 이후의 Javascript 언어를 특정 브라우저 및 버전에 따라 사용할 수 없는 문제
   예를 들어, 크롬 79버전 기준으로 개발했으나, IE에서는 작동이 안되는 크로스브라우징이 발생한다.
   Babel은 이러한 크로스브라우징 이슈를 해결해준다. E...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Babel-02/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2021-12-23 00:00:00 +0900"
+    >Dec 23, 2021</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Babel] 바벨의 프레셋(Presets) 사용</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                프레셋(Presets)이란?
+
+
+
+플러그인으로 코드 변환을 하기 위해서는 필요한 플러그인을 각각 설정해야 했습니다.
+
+1
+2
+3
+4
+5
+6
+7
+    module.exports = {
+        plugins: [
+            &quot;@babel/plugin-transform-block-scoping&quot;,
+            &quot;@babel/pl...
               </p>
             </div>
           </div>

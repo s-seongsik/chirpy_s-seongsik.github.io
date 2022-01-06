@@ -719,6 +719,51 @@
     
 
   
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
 
   
 
@@ -887,8 +932,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1202 words">
-  <em>6 min</em> read</span>
+  title="1299 words">
+  <em>7 min</em> read</span>
 
 
       <!-- page views -->
@@ -1152,7 +1197,7 @@ ESLint의 모든 규칙은 <code class="language-plaintext highlighter-rouge">--
 
 <p>밑의 사진을 보자<br />
 왼편에 <code class="language-plaintext highlighter-rouge">no-extra-semi</code>는 수리 이모티콘이 있고 <code class="language-plaintext highlighter-rouge">no-unused-vars</code>는 수리 이모티콘이 없다.<br />
-즉, 수리 이모티콘이 있는 규칙만 <code class="language-plaintext highlighter-rouge">--fix</code>가 적용되기 때문에 개발자는 <code class="language-plaintext highlighter-rouge">error</code> 내용을 직접 수정을 해야한다.</p>
+즉, 수리 이모티콘이 있는 규칙만 <code class="language-plaintext highlighter-rouge">--fix</code>가 적용되기 때문에 개발자는 <code class="language-plaintext highlighter-rouge">error</code> 내용을 직접 수정 해야한다.</p>
 
 <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/148188232-6b67a171-182d-4177-b1c9-39932edc653a.png" alt="image" /></p>
 
@@ -1160,9 +1205,11 @@ ESLint의 모든 규칙은 <code class="language-plaintext highlighter-rouge">--
 
 <p><br /></p>
 
-<h2 id="c-2"><strong>Using eslint:recommended</strong><a href="#c-2"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h2 id="c-2"><strong>Using [eslint:recommended]</strong><a href="#c-2"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<p>ESLint은 규칙의 목적에 맞게 유형별로 그룹화하여 제공한다.</p>
+<p>사용자가 필요한 규칙들을 일일이 명시하여 사용하는게 얼마나 귀찮은 일인가…</p>
+
+<p>따라서, <code class="language-plaintext highlighter-rouge">ESLint</code>는 규칙을 유형별로 그룹화하여 제공한다.</p>
 
 <p>그것이 <code class="language-plaintext highlighter-rouge">eslint:recommended</code>이다. <code class="language-plaintext highlighter-rouge">babel</code>의 프리셋이라고 생각하면 된다.</p>
 
@@ -1181,6 +1228,13 @@ ESLint의 모든 규칙은 <code class="language-plaintext highlighter-rouge">--
         <span class="p">],</span>
     <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<p><a href="https://eslint.org/docs/rules/">rules 적용된 목록</a>을 확인해 보시면 왼편에 <code class="language-plaintext highlighter-rouge">체크</code> 이모티콘이 표시된 규칙들이 해당 설정에 적용되어 있다.
+이외 추가적인 규칙이 필요하면 직접 <code class="language-plaintext highlighter-rouge">rules</code>에 추가하면 된다.</p>
+
+<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/148310286-d2c4cbdc-2cff-4e37-8fb4-5283af3cd50e.png" alt="image" /></p>
 
 <p><br /></p>
 
@@ -2353,6 +2407,19 @@ ESLint의 모든 규칙은 <code class="language-plaintext highlighter-rouge">--
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -2765,50 +2832,6 @@ ESLint의 모든 규칙은 <code class="language-plaintext highlighter-rouge">--
       
       
       <div class="card">
-        <a href="/posts/Webpack-04/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago small"
-    date="2021-12-15 00:00:00 +0900"
-    >Dec 15, 2021</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] loader (2)</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                자주 사용하는 로더
-
-
-
-css-loader
-
-
-  css-loader를 사용하면 스타일시트도 import 구문으로 불러와 모듈로 변환할 수 있습니다.
-  ./src/app.css 를 생성하여 밑의 코드를 저장합니다.
-  ./src/app.js에서 app.css를 import 구문을 추가합니다.
-  html에 css 태그를 넣지 않아도 적용되는지 확인...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/Webpack-05/">
           <div class="card-body">
             <!--
@@ -2900,6 +2923,58 @@ Webpack은 ...
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/Webpack-02/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2021-12-14 00:00:00 +0900"
+    >Dec 14, 2021</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] entry, output</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                webpack의 번들링 작업을 실행하는 방법은 2가지가 있습니다.
+
+
+  콘솔 실행
+  ./webpack.config.js 파일로 실행
+
+
+2가지 실행 방법과 결과에 대해 알아보겠습니다.
+
+
+
+프로젝트 구조 확인
+
+
+
+    webpack-demo
+        |- /moda_modules
+        |- package.json
+        |...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -2919,10 +2994,10 @@ Webpack은 ...
   
 
   
-  <span class="btn btn-outline-primary disabled"
+  <a href="/posts/eslint-02/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </span>
+    <p>[ESLint] Google & Airbnb, style-guide 설정</p>
+  </a>
   
 
 </div>
