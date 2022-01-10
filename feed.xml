@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-06T09:49:33+09:00</updated>
+  <updated>2022-01-10T09:26:14+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,66 @@
 
   
   <entry>
-    <title>[ESLint] Google &amp; Airbnb, style-guide 설정</title>
-    <link href="http://localhost:4000/posts/eslint-02/" rel="alternate" type="text/html" title="[ESLint] Google &amp; Airbnb, style-guide 설정" />
+    <title>[ESLint] 포맷팅에 특화된 Prettier</title>
+    <link href="http://localhost:4000/posts/eslint-03/" rel="alternate" type="text/html" title="[ESLint] 포맷팅에 특화된 Prettier" />
+    <published>2022-01-05T00:00:00+09:00</published>
+  
+    <updated>2022-01-05T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/eslint-03/</id>
+    <content src="http://localhost:4000/posts/eslint-03/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="ESLint" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      style-guide
+
+
+
+ESLint는 커스터마이징이 쉽고 확장성이 뛰어나 많이 사용되고 있는 추세이다.
+또한, ESLint는 개발자들이 커스터마이징한 style-guide 설정들을 외부에 공개하여 공유할 수 있다.
+
+가장 널리 쓰고있는 2가지를 소개하자면
+
+
+  Airbnb Style Guide
+  Google Style Guide
+
+
+서로 제공하는 Style Guide를 참고하여 사용자의 목적에 맞게 사용하면 된다.
+
+
+
+init
+
+npx eslint --init으로  .eslintrc 파일을 생성한다.
+
+    $ npx eslint --init
+    √ How would you like to use ESLint? · problems
+    √ What type of modules does y...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>[ESLint] Style-Guide 설정</title>
+    <link href="http://localhost:4000/posts/eslint-02/" rel="alternate" type="text/html" title="[ESLint] Style-Guide 설정" />
     <published>2022-01-05T00:00:00+09:00</published>
   
     <updated>2022-01-05T00:00:00+09:00</updated>
@@ -46,8 +104,31 @@
 
 
 
-      ESLint란?
+      style-guide
 
+
+
+ESLint는 커스터마이징이 쉽고 확장성이 뛰어나 많이 사용되고 있는 추세이다.
+또한, ESLint는 개발자들이 커스터마이징한 style-guide 설정들을 외부에 공개하여 공유할 수 있다.
+
+가장 널리 쓰고있는 2가지를 소개하자면
+
+
+  Airbnb Style Guide
+  Google Style Guide
+
+
+서로 제공하는 Style Guide를 참고하여 사용자의 목적에 맞게 사용하면 된다.
+
+
+
+init
+
+npx eslint --init으로  .eslintrc 파일을 생성한다.
+
+    $ npx eslint --init
+    √ How would you like to use ESLint? · problems
+    √ What type of modules does y...
     </summary>
   
 
@@ -209,73 +290,6 @@ PS테크놀로지의 환경안전 모니터링 시스템 프로젝트!!
 
 
 보통 전역변수로 인해 발생하는 문제로,...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Javascript] Scope 개념 확실히 알고 넘어가자</title>
-    <link href="http://localhost:4000/posts/javascript-03/" rel="alternate" type="text/html" title="[Javascript] Scope 개념 확실히 알고 넘어가자" />
-    <published>2022-01-02T00:00:00+09:00</published>
-  
-    <updated>2022-01-02T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/javascript-03/</id>
-    <content src="http://localhost:4000/posts/javascript-03/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Javascript" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      자바스크립트 Scope
-
-
-
-Scope는 변수의 접근성을 결정합니다.
-
-ES6(2015) 이전에는 자바스크립트에 Global Scope 와 Function Scope만 있었습니다.
-
-ES6(2015)가 생기면서 const와 let 이 도입되었고, 이 두 키워드는 자바스크립트에서 Block Scope를 제공합니다.
-
-
-  자바스크립트의 3가지 Scope 유형 :
-  
-    Block scope
-    Function scope
-    Global scope
-  
-
-
-
-  자바스크립트의 2가지 변수 유형 :
-  
-    Global variable
-    Local variable
-  
-
-
-
-
-Scope 예시
-
-
-
-Scope는 변수의 접근성을 결정한다고 했는데, 정의로 이해하는 것보다 실습으로 이해해봅시...
     </summary>
   
 

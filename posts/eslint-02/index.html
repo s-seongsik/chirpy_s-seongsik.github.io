@@ -34,24 +34,24 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="[ESLint] Google &amp; Airbnb, style-guide 설정" />
+<meta property="og:title" content="[ESLint] Style-Guide 설정" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="ESLint란?" />
-<meta property="og:description" content="ESLint란?" />
+<meta name="description" content="style-guide" />
+<meta property="og:description" content="style-guide" />
 <link rel="canonical" href="http://localhost:4000/posts/eslint-02/" />
 <meta property="og:url" content="http://localhost:4000/posts/eslint-02/" />
 <meta property="og:site_name" content="SeongSik Seo" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-01-05T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="[ESLint] Google &amp; Airbnb, style-guide 설정" />
+<meta property="twitter:title" content="[ESLint] Style-Guide 설정" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"[ESLint] Google &amp; Airbnb, style-guide 설정","dateModified":"2022-01-05T00:00:00+09:00","datePublished":"2022-01-05T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/eslint-02/"},"url":"http://localhost:4000/posts/eslint-02/","description":"ESLint란?","@context":"https://schema.org"}</script>
+{"headline":"[ESLint] Style-Guide 설정","dateModified":"2022-01-05T00:00:00+09:00","datePublished":"2022-01-05T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/eslint-02/"},"url":"http://localhost:4000/posts/eslint-02/","description":"style-guide","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>[ESLint] Google & Airbnb, style-guide 설정 | SeongSik Seo
+  <title>[ESLint] Style-Guide 설정 | SeongSik Seo
   </title>
 
   <!--
@@ -412,7 +412,7 @@
         
 
           
-            <span>[ESLint] Google & Airbnb, style-guide 설정</span>
+            <span>[ESLint] Style-Guide 설정</span>
           
 
         
@@ -603,6 +603,72 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -642,7 +708,7 @@
       >
 
 
-<h1 data-toc-skip>[ESLint] Google & Airbnb, style-guide 설정</h1>
+<h1 data-toc-skip>[ESLint] Style-Guide 설정</h1>
 
 <div class="post-meta text-muted">
 
@@ -708,8 +774,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="3 words">
-  <em>1 min</em> read</span>
+  title="851 words">
+  <em>4 min</em> read</span>
 
 
       <!-- page views -->
@@ -721,7 +787,291 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="a"><strong>ESLint란?</strong></h1>
+  <h1 id="a"><strong>style-guide</strong></h1>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">ESLint</code>는 커스터마이징이 쉽고 확장성이 뛰어나 많이 사용되고 있는 추세이다.
+또한, <code class="language-plaintext highlighter-rouge">ESLint</code>는 개발자들이 커스터마이징한 <code class="language-plaintext highlighter-rouge">style-guide</code> 설정들을 외부에 공개하여 공유할 수 있다.</p>
+
+<p>가장 널리 쓰고있는 2가지를 소개하자면</p>
+
+<ul>
+  <li><a href="https://github.com/airbnb/javascript">Airbnb Style Guide</a></li>
+  <li><a href="https://github.com/google/eslint-config-google">Google Style Guide</a></li>
+</ul>
+
+<p>서로 제공하는 <code class="language-plaintext highlighter-rouge">Style Guide</code>를 참고하여 사용자의 목적에 맞게 사용하면 된다.</p>
+
+<p><br /></p>
+
+<h2 id="a-1"><strong>init</strong><a href="#a-1"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p><code class="language-plaintext highlighter-rouge">npx eslint --init</code>으로  <code class="language-plaintext highlighter-rouge">.eslintrc</code> 파일을 생성한다.</p>
+
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="gp">    $</span><span class="w"> </span>npx eslint <span class="nt">--init</span>
+<span class="go">    √ How would you like to use ESLint? · problems
+    √ What type of modules does your project use? · esm
+    √ Which framework does your project use? · none
+    √ Does your project use TypeScript? · No / Yes
+    √ Where does your code run? · browser
+    √ What format do you want your config file to be in? · JavaScript
+    Successfully created .eslintrc.js file in E:\study\frontend\eslint_sample
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>프로젝트 루트에 <code class="language-plaintext highlighter-rouge">.eslintrc.js</code> 파일이 생성되었을 것이다. 만약 <code class="language-plaintext highlighter-rouge">--init</code>에서 마지막 물음에 대한 답변이 <code class="language-plaintext highlighter-rouge">js</code>가 아니라면
+본인이 설정한 파일 포멧에 맞춰 <code class="language-plaintext highlighter-rouge">.eslintrc.*</code>로 생성되었을 것이다. 나는 js를 선택했다.</p>
+
+<div file=".eslintrc.js" class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text=".eslintrc.js"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">env</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">browser</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">es2021</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">extends</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">eslint:recommended</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">parserOptions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">ecmaVersion</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">sourceType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">module</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">rules</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<h1 id="b"><strong>Airbnb Style Guide</strong></h1>
+
+<hr />
+
+<p><a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base">자세한 설치 가이드 참고</a></p>
+
+<h2 id="b-1"><strong>install</strong><a href="#b-1"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="gp">    $</span><span class="w"> </span>npm <span class="nb">install</span> <span class="nt">--save-dev</span> eslint-config-airbnb-base
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<h2 id="b-2"><strong>extends에 airbnb-base 추가하기</strong><a href="#b-2"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>기존 eslint에서 제공하는 <code class="language-plaintext highlighter-rouge">eslint:recommended</code> 설정을 지우고  <code class="language-plaintext highlighter-rouge">airbnb-base</code>를 추가</p>
+
+<div file=".eslintrc.js" class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text=".eslintrc.js"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">env</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">browser</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">es2021</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">extends</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">airbnb-base</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">parserOptions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">ecmaVersion</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">sourceType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">module</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">rules</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div file="app.js" class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="app.js"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;;;;;;;;;</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;;;;;;;;;</span>
+
+    <span class="kd">function</span> <span class="nx">test</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">build</code> 결과를 보면 아래의 내용이 적용 된 것을 확인할 수 있다.</p>
+<ul>
+  <li>var 키워드를 const 키워드로 수정</li>
+  <li>세미클론 수정</li>
+  <li>함수의 띄어쓰기 수정</li>
+</ul>
+
+<p>이것은 airbnb에서 제공하는 코드작성 스타일가이드가 적용된 것이다.</p>
+
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="gp">    $</span><span class="w"> </span>npx eslint app.js <span class="nt">--fix</span>
+<span class="go"> 
+    E:\study\frontend\eslint_sample\app.js
+        2:7   error    'y' is assigned a value but never used  no-unused-vars
+        4:10  error    'test' is defined but never used        no-unused-vars
+        4:19  warning  Unexpected console statement            no-console
+
+    ✖ 3 problems (2 errors, 1 warning)
+</span></pre></td></tr></tbody></table></code></div></div>
+<div file="app.js" class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="app.js"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>    <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<h1 id="c"><strong>google Style Guide</strong></h1>
+
+<hr />
+
+<h2 id="c-1"><strong>install</strong><a href="#c-1"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="gp">    $</span><span class="w"> </span>npm <span class="nb">install</span> <span class="nt">--save-dev</span> eslint-config-google
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="c-2"><strong>extends에 google 추가하기</strong><a href="#c-2"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<div file=".eslintrc.js" class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text=".eslintrc.js"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">env</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">browser</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">es2021</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">extends</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">google</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">parserOptions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">ecmaVersion</span><span class="dl">"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">sourceType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">module</span><span class="dl">"</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">rules</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div file="app.js" class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="app.js"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;;;;;;;;;</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;;;;;;;;;</span>
+
+    <span class="kd">function</span> <span class="nx">test</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<p><code class="language-plaintext highlighter-rouge">build</code> 결과를 보면 airbnb에서 제공하는 코드작성 스타일가이드와 다르게 google은</p>
+
+<ul>
+  <li>세미클론이 없는 경우에는 추가로 작성해주지만 중복 세미클론에 대해서는 없애지않고 띄어쓰기한다.</li>
+  <li>자바스크립트에서는 중복 세미클론을 한다고 해서 오류가 아니기 때문에 google 스타일 가이드에서는 없애지 않는 것 같다.</li>
+  <li>또한, 함수에서 들여쓰기로 가독성을 높여준 것을 확인할 수 있다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="gp">    $</span><span class="w"> </span>npx eslint app.js <span class="nt">--fix</span>
+<span class="go"> 
+    E:\study\frontend\eslint_sample\app.js
+        2:7   error  'y' is assigned a value but never used  no-unused-vars
+        4:1   error  Missing JSDoc comment                   require-jsdoc
+        4:10  error  'test' is defined but never used        no-unused-vars
+
+    ✖ 3 problems (3 errors, 0 warnings)
+</span></pre></td></tr></tbody></table></code></div></div>
+<div file="app.js" class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="app.js"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>    <span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> <span class="p">;;;;;;;;</span>
+    <span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="p">;;;;;;;;</span>
+
+    <span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
@@ -785,19 +1135,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=[ESLint] Google & Airbnb, style-guide 설정 - SeongSik Seo&url=http://localhost:4000/posts/eslint-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=[ESLint] Style-Guide 설정 - SeongSik Seo&url=http://localhost:4000/posts/eslint-02/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=[ESLint] Google & Airbnb, style-guide 설정 - SeongSik Seo&u=http://localhost:4000/posts/eslint-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=[ESLint] Style-Guide 설정 - SeongSik Seo&u=http://localhost:4000/posts/eslint-02/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=[ESLint] Google & Airbnb, style-guide 설정 - SeongSik Seo&url=http://localhost:4000/posts/eslint-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=[ESLint] Style-Guide 설정 - SeongSik Seo&url=http://localhost:4000/posts/eslint-02/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1792,6 +2142,14 @@
 
 
 
+<!-- BS-toc.js will be loaded at medium priority -->
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
+  <nav id="toc" data-toggle="toc"></nav>
+</div>
+
 
     
   </div>
@@ -1823,6 +2181,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2253,47 +2624,6 @@
       
       
       <div class="card">
-        <a href="/posts/Webpack-05/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago small"
-    date="2021-12-17 00:00:00 +0900"
-    >Dec 17, 2021</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] plugin</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                plugin란?
-
-
-
-파일단위로 처리하는 loader와 다르게 플러그인은 번들링된 결과를 처리합니다. 번들링된 자바스크립트를 난독화하거나 텍스트를 추출하는 등의 용도로 사용합니다.
-플러그인을 빌드하는 것은 로더를 빌드하는 것보다 조금 더 고급입니다. 플러그인을 이해하려면 webpack 저수준 내부의 이해가 필요합니다.
-
-이해를 위해 플러그인을 직접 만...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/Webpack-01/">
           <div class="card-body">
             <!--
@@ -2396,6 +2726,53 @@ Webpack은 ...
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/Webpack-03/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2021-12-15 00:00:00 +0900"
+    >Dec 15, 2021</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] loader (1)</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                loader란
+
+
+
+로더는 파일을 다른언어(예:TypeScript)에서 javascript로 변환하거나 인라인 이미지를 데이터 URL로 로드할 수 있습니다. 로더를 사용하면 import javascript 모듈에서 직접 CSS, HTML 파일과 같은 작업을 수행할 수 있습니다.
+
+
+
+loader의 기능
+
+
+
+
+  로더는 Node.js에서 실행되며, 가...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -2415,10 +2792,10 @@ Webpack은 ...
   
 
   
-  <span class="btn btn-outline-primary disabled"
+  <a href="/posts/eslint-03/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </span>
+    <p>[ESLint] 포맷팅에 특화된 Prettier</p>
+  </a>
   
 
 </div>
