@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-10T10:53:39+09:00</updated>
+  <updated>2022-01-10T10:56:06+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>[ESLint] 포맷팅에 특화된 프리티어(Prettier)</title>
     <link href="http://localhost:4000/posts/eslint-03/" rel="alternate" type="text/html" title="[ESLint] 포맷팅에 특화된 프리티어(Prettier)" />
-    <published>2022-01-05T00:00:00+09:00</published>
+    <published>2022-01-06T00:00:00+09:00</published>
   
-    <updated>2022-01-05T00:00:00+09:00</updated>
+    <updated>2022-01-06T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/posts/eslint-03/</id>
     <content src="http://localhost:4000/posts/eslint-03/" />
