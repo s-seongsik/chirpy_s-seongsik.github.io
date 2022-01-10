@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-10T09:26:14+09:00</updated>
+  <updated>2022-01-10T10:53:39+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>[ESLint] 포맷팅에 특화된 Prettier</title>
-    <link href="http://localhost:4000/posts/eslint-03/" rel="alternate" type="text/html" title="[ESLint] 포맷팅에 특화된 Prettier" />
+    <title>[ESLint] 포맷팅에 특화된 프리티어(Prettier)</title>
+    <link href="http://localhost:4000/posts/eslint-03/" rel="alternate" type="text/html" title="[ESLint] 포맷팅에 특화된 프리티어(Prettier)" />
     <published>2022-01-05T00:00:00+09:00</published>
   
     <updated>2022-01-05T00:00:00+09:00</updated>
@@ -46,31 +46,33 @@
 
 
 
-      style-guide
+      Prettier
 
 
 
-ESLint는 커스터마이징이 쉽고 확장성이 뛰어나 많이 사용되고 있는 추세이다.
-또한, ESLint는 개발자들이 커스터마이징한 style-guide 설정들을 외부에 공개하여 공유할 수 있다.
-
-가장 널리 쓰고있는 2가지를 소개하자면
-
-
-  Airbnb Style Guide
-  Google Style Guide
-
-
-서로 제공하는 Style Guide를 참고하여 사용자의 목적에 맞게 사용하면 된다.
+ESLint는 포맷팅과 코드 품질에 도움을 주는 도구라면 프리티어(Prettier)는 포맷팅에만 특화된 도구이다.
+ESLint에 없는 기능들을 프리티어(Prettier)가 해결해준다.
 
 
 
-init
+install
 
-npx eslint --init으로  .eslintrc 파일을 생성한다.
+    npm install -D prettier
 
-    $ npx eslint --init
-    √ How would you like to use ESLint? · problems
-    √ What type of modules does y...
+
+
+
+    var x = 'asd';;;
+
+    console.log('########################################### 80자 넘음 #######################################################');
+
+
+
+
+    module.exports = {
+        "env": {
+            "browser": true,
+            "es2...
     </summary>
   
 
