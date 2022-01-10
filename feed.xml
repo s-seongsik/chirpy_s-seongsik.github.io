@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-10T10:56:06+09:00</updated>
+  <updated>2022-01-10T17:10:33+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,134 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Vue.js] Vue CLI로 프로젝트 생성하기</title>
+    <link href="http://localhost:4000/posts/vueJs-02/" rel="alternate" type="text/html" title="[Vue.js] Vue CLI로 프로젝트 생성하기" />
+    <published>2022-01-10T00:00:00+09:00</published>
+  
+    <updated>2022-01-10T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/vueJs-02/</id>
+    <content src="http://localhost:4000/posts/vueJs-02/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Vue.js" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Vue-CLI
+
+
+
+Vue-CLI는 신속하게 Vue.js 개발환경을 설정할 수 있도록 도와주는 도구이다.
+기본적으로 초기 프로젝트 세팅을 생성해주기 때문에 프로젝트 구조, Lint, webpack, babel과 같은 도구들의 설정 고민을 덜 수 있다.
+
+CLI란
+
+  명령 줄 인터페이스(CLI, Command line interface) 또는 명령어 인터페이스는 텍스트 터미널을 통해 사용자와 컴퓨터가 상호 작용하는 방식을 뜻한다.
+  즉, 작업 명령은 사용자가 컴퓨터 키보드 등을 통해 문자열의 형태로 입력하며, 컴퓨터로부터의 출력 역시 문자열의 형태로 주어진다.
+
+
+
+
+설치
+
+Node 버전 요구 사항
+
+  Vue CLI 4.x에는 Node.js 버전 8.9 이상이 필요. (v10+ 권장)
+
+
+이전 버전...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>[Vue.js] 사전 필수요소</title>
+    <link href="http://localhost:4000/posts/vueJs-01/" rel="alternate" type="text/html" title="[Vue.js] 사전 필수요소" />
+    <published>2022-01-10T00:00:00+09:00</published>
+  
+    <updated>2022-01-10T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/vueJs-01/</id>
+    <content src="http://localhost:4000/posts/vueJs-01/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Vue.js" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      필수 요소
+
+
+
+Crome 설치
+
+Vue는 ECMAScript 5 기능을 사용하기 때문에 IE8 이하 버전을 지원하지 않습니다. 하지만 모든 ECMAScript5 호환 브라우저를 지원합니다.
+
+
+
+
+
+Node.js 설치
+
+LTS 버전을 다운로드 합니다.
+
+[Node.js] 시작하기를 참고.
+
+
+
+Vue Devtools(개발자 도구) 설치
+
+일반적으로 프론트엔드 개발시 크롬 개발자 도구로 디버깅을 했다면, Vue는 자체적으로 제공하는 개발자 도구를 사용합니다.
+
+설치가 완료되었다면, 크롬 브라우저 오른쪽 설정에서
+
+도구 더보기 &amp;gt; 확장 프로그램 클릭
+
+
+
+vue.js devtools &amp;gt; 세부정보 클릭 &amp;gt; 사이트 엑세스 &amp;gt; 모든 사이트에서로 변경
+
+
+
+
+
+VScode 설치
+
+무료 ID...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -187,111 +315,6 @@ Install
    $ cd eslint_sample/    // 프로젝트 이동
 
    $ npm init  ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[기록] 나의 첫, 단독 SI프로젝트에서 생긴 문제들과 해결(미완성)</title>
-    <link href="http://localhost:4000/posts/issue-01/" rel="alternate" type="text/html" title="[기록] 나의 첫, 단독 SI프로젝트에서 생긴 문제들과 해결(미완성)" />
-    <published>2022-01-02T00:00:00+09:00</published>
-  
-    <updated>2022-01-02T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/issue-01/</id>
-    <content src="http://localhost:4000/posts/issue-01/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Issue" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      인트로
-
-
-
-2021-01 ~ 2021-09
-
-9개월간의 대장정의 서사시를 지금에서야 기록하게 된다.
-
-본론전에, 나의 첫 번째 SI프로젝트는 만도였다. 6개월 동안 선배들과 상주하였고 동고동락하면서 선배들의 지식과 경험들을 흡수하기위해 노력했다.
-
-1년차도 안된 주니어가 큰 프로젝트에 투입할 수 있다는것에 감사함과 행운을 가지고 어떻게 해서든 배워나갔다. 자바스크립트, 제이쿼리, HTML, CSS 등과 같은 기술들 그리고 소통과 협업… 그렇게, 나의 첫 실무경험이 시작되었다.
-
-어느덧 6개월이 지나 끝나지않을 것 같았던 대장정이 마무리가 되었고, 다시 본사로 복귀하여 새로운 일거리를 찾아 서성였다.
-
-그렇게 시작된 나의 첫 단독 프로젝트
-
-PS테크놀로지의 환경안전 모니터링 시스템 프로젝트!!
-
-
-
-문...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[ECMAScript6] let, const 키워드</title>
-    <link href="http://localhost:4000/posts/javascript-04/" rel="alternate" type="text/html" title="[ECMAScript6] let, const 키워드" />
-    <published>2022-01-02T00:00:00+09:00</published>
-  
-    <updated>2022-01-02T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/javascript-04/</id>
-    <content src="http://localhost:4000/posts/javascript-04/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Javascript" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      ES6(2015) 이전에는 자바스크립트에서 변수를 선언할 수 있는 방법은 var뿐이었습니다.
-
-이것은 많은 문제를 발생시켰습니다.
-
-
-  전역 변수로 인한 스코프 충돌
-    
-      ES6이전에 스코프는 전역 스코프(Global Scope) 와 함수 스코프(Function Scope)만 있었습니다. 자바스크립트는 함수 스코프 외에는 모두 전역 스코프로 적용되기 때문에 전역 변수를 남발하여 스코프 충돌의 문제를 발생시켰습니다.
-    
-  
-  변수 중복 선언
-    
-      자바스크립트의 코드양이 많으면 많을 수록 스코프 충돌의 문제를 발생시킵니다. 이미 선언된 변수를 또 재선언을 하거나 다른 값을 넣거나하는 문제를 발생할 수 있습니다.
-    
-  
-
-
-보통 전역변수로 인해 발생하는 문제로,...
     </summary>
   
 
