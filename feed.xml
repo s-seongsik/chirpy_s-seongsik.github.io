@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-10T17:42:19+09:00</updated>
+  <updated>2022-01-14T13:32:42+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,41 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Vue.js] Vuex의 이해와 실습</title>
+    <link href="http://localhost:4000/posts/vueJs-03/" rel="alternate" type="text/html" title="[Vue.js] Vuex의 이해와 실습" />
+    <published>2022-01-14T00:00:00+09:00</published>
+  
+    <updated>2022-01-14T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/vueJs-03/</id>
+    <content src="http://localhost:4000/posts/vueJs-03/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Vue.js" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -259,62 +294,6 @@ npx eslint --init으로  .eslintrc 파일을 생성한다.
     $ npx eslint --init
     √ How would you like to use ESLint? · problems
     √ What type of modules does y...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[ESLint] ESLint 시작하기</title>
-    <link href="http://localhost:4000/posts/eslint-01/" rel="alternate" type="text/html" title="[ESLint] ESLint 시작하기" />
-    <published>2022-01-05T00:00:00+09:00</published>
-  
-    <updated>2022-01-05T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/eslint-01/</id>
-    <content src="http://localhost:4000/posts/eslint-01/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="ESLint" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      ESLint란?
-
-
-
-
-  ESLint란 코딩 컨벤션에 위배되는 코드나 안티 패턴을 자동으로 검출하는 분석 도구이다.
-  코드를 분석하여 문법적인 오류나 안티 패턴을 찾고 일관된 코드 스타일로 작성할 수 있도록 도와준다.
-  ESLint는 유용하게 사용할 수 있도록 style-guide를 제공한다.
-  대표적으로 Airbnb Style Guide, Google Style Guide이 있다.
-  개발자가 직접 style-guide를 작성할 수도 있다.
-
-
-Install
-
-
-
-   $ npm install eslint --save-dev
-
-
-   $ mkdir eslint_sample  // 프로젝트 폴더 생성
-   $ cd eslint_sample/    // 프로젝트 이동
-
-   $ npm init  ...
     </summary>
   
 

@@ -1,6 +1,21 @@
 [
   
   {
+    "title": "[Vue.js] Vuex의 이해와 실습",
+    "url": "/posts/vueJs-03/",
+    "categories": "Vue.js",
+    "tags": "Webpack, Babel, Node.js, Javascript",
+    "date": "2022-01-14 00:00:00 +0900",
+    
+
+
+
+
+
+    "snippet": ""
+  },
+  
+  {
     "title": "[Vue.js] Vue CLI로 프로젝트 생성하기",
     "url": "/posts/vueJs-02/",
     "categories": "Vue.js",
