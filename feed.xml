@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-14T16:51:42+09:00</updated>
+  <updated>2022-01-17T13:01:34+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,69 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Vue.js] Vue.js 문법 총정리</title>
+    <link href="http://localhost:4000/posts/vueJs-04/" rel="alternate" type="text/html" title="[Vue.js] Vue.js 문법 총정리" />
+    <published>2022-01-14T00:00:00+09:00</published>
+  
+    <updated>2022-01-14T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/vueJs-04/</id>
+    <content src="http://localhost:4000/posts/vueJs-04/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Vue.js" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Vue 인스턴스
+
+
+
+Vue 인스턴스에서 보면 알듯이 모든 Vue 앱은 Vue 인스턴스를 만드는 것부터 시작한다.
+인스턴스 안에 options 객체를 전달해야하는데 전체 옵션 목록을 참고하자.
+
+var vm = new Vue({
+    el: "#app",
+    data: {
+        text: 'hello world'
+    },
+
+    //...옵션들
+})
+
+
+
+
+데이터 바인딩
+
+이중 중괄호
+
+이중 중괄호를 사용한 텍스트 보간이다. data 객체의 msg속성 값으로 대체된다. msg의 속성 값이 변경될 때 마다 갱신된다.
+보간법은 속성값을 텍스트로 출력한다.
+
+
+&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+      &amp;lt;p&amp;gt;&amp;gt; 메시지: {{ msg }} &amp;lt;/p...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -253,64 +316,6 @@ install
         "env": {
             "browser": true,
             "es2...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[ESLint] Style-Guide 설정</title>
-    <link href="http://localhost:4000/posts/eslint-02/" rel="alternate" type="text/html" title="[ESLint] Style-Guide 설정" />
-    <published>2022-01-05T00:00:00+09:00</published>
-  
-    <updated>2022-01-05T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/eslint-02/</id>
-    <content src="http://localhost:4000/posts/eslint-02/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="ESLint" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      style-guide
-
-
-
-ESLint는 커스터마이징이 쉽고 확장성이 뛰어나 많이 사용되고 있는 추세이다.
-또한, ESLint는 개발자들이 커스터마이징한 style-guide 설정들을 외부에 공개하여 공유할 수 있다.
-
-가장 널리 쓰고있는 2가지를 소개하자면
-
-
-  Airbnb Style Guide
-  Google Style Guide
-
-
-서로 제공하는 Style Guide를 참고하여 사용자의 목적에 맞게 사용하면 된다.
-
-
-
-init
-
-npx eslint --init으로  .eslintrc 파일을 생성한다.
-
-    $ npx eslint --init
-    √ How would you like to use ESLint? · problems
-    √ What type of modules does y...
     </summary>
   
 

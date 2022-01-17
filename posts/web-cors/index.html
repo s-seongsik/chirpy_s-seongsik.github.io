@@ -2788,6 +2788,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
   
 
@@ -2951,7 +2964,7 @@
       
       
       <div class="card">
-        <a href="/posts/vueJs-03/">
+        <a href="/posts/vueJs-04/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2966,7 +2979,7 @@
     date="2022-01-14 00:00:00 +0900"
     >Jan 14</em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Vue.js] Vuex의 이해와 컨셉</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Vue.js] Vue.js 문법 총정리</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2975,22 +2988,25 @@
 
 
 
-                Vuex란 무엇인가?
+                Vue 인스턴스
 
 
 
-Vuex는 Vue.js 애플리케이션에 대한 상태 관리 패턴 + 라이브러리 이다. 애플리케이션의 모든 컴포넌트에 대한 중앙 집중식 저장소 역할을 하며 예측 가능한 방식으로 상태를 변경할 수 있다. React의 Flux 패턴에 영감을 받았다고 함.
+Vue 인스턴스에서 보면 알듯이 모든 Vue 앱은 Vue 인스턴스를 만드는 것부터 시작한다.
+인스턴스 안에 options 객체를 전달해야하는데 전체 옵션 목록을 참고하자.
 
-
-
-Flux 패턴
-
-
-
-Flux 공식문서
-
-
-  Flux는 Facebook에서 ...
+1
+2
+3
+4
+5
+6
+7
+8
+var vm = new Vue({
+    el: &quot;#app&quot;,
+    data: {
+        text: &#39;hello worl...
               </p>
             </div>
           </div>

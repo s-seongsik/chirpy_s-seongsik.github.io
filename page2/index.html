@@ -459,6 +459,107 @@
 
   <div class="post-preview">
     <h1>
+      <a href="/posts/Babel-03/">[Babel] Webpack에 통합하여 사용하기</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        babel-loader
+
+
+
+
+  바벨을 직접사용하여 변환하는 것보다는 Webpack과 통합여 사용하는 것이 일반적입니다.
+  바벨 로더를 사용하면 Babel 및 Webpack을 사용하여 Javascript 파일을 변환할 수 있습니다.
+
+
+
+
+install :
+    npm install -D babel-loader
+
+
+
+
+./src/app.js :
+...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+
+      <div class="mr-auto">
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2021-12-28 00:00:00 +0900"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Tue, Dec 28, 2021, 12:00 AM +0900"
+    >Dec 28, 2021</em>
+
+
+        <!-- time to read -->
+        <i class="far fa-clock fa-fw"></i>
+        <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="571 words">
+  <em>3 min</em></span>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Babel
+          </span>
+        
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
       <a href="/posts/Babel-02/">[Babel] 바벨의 프레셋(Presets) 사용</a>
     </h1>
 
@@ -1295,96 +1396,6 @@ commit 재작성
           <span>
           
             Git
-          </span>
-        
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/javascript-02/">[Javascript] ES2015(ES6) 표준 모듈 시스템 (export, import)</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        표준 모듈 시스템의 등장 배경
-
-
-
-모듈 시스템이 없었던 자바스크립트 환경은 html 헤더에 script 태그를 명시하여 js를 순서대로 불러오는 방법을 사용했습니다. 
-이러한 방식은 여러가지 문제점을 발생시켰습니다. 그 중 가장 문제점은 전역 스코프가 충돌 된다는 것입니다.
-
-그 이유는, script로 태그된 js파일들을 로드할 때 함수와 변수가 전...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago"
-    date="2021-12-08 00:00:00 +0900"
-    
-      data-toggle="tooltip"
-      data-placement="bottom"
-      title="Wed, Dec  8, 2021, 12:00 AM +0900"
-    >Dec  8, 2021</em>
-
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1592 words">
-  <em>8 min</em></span>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Javascript
           </span>
         
       </div>

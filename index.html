@@ -458,6 +458,102 @@
 
   <div class="post-preview">
     <h1>
+      <a href="/posts/vueJs-04/">[Vue.js] Vue.js 문법 총정리</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        Vue 인스턴스
+
+
+
+Vue 인스턴스에서 보면 알듯이 모든 Vue 앱은 Vue 인스턴스를 만드는 것부터 시작한다.
+인스턴스 안에 options 객체를 전달해야하는데 전체 옵션 목록을 참고하자.
+
+var vm = new Vue({
+    el: &quot;#app&quot;,
+    data: {
+        text: &#39;hello world&#39;
+    },
+
+    /...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+
+      <div class="mr-auto">
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2022-01-14 00:00:00 +0900"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Fri, Jan 14, 2022, 12:00 AM +0900"
+    >Jan 14</em>
+
+
+        <!-- time to read -->
+        <i class="far fa-clock fa-fw"></i>
+        <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="812 words">
+  <em>4 min</em></span>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Vue.js
+          </span>
+        
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
       <a href="/posts/vueJs-03/">[Vue.js] Vuex의 이해와 컨셉</a>
     </h1>
 
@@ -1305,107 +1401,6 @@ ES6(2015)가 생기면서 const와 let 이 도입되었고, 이 두 키워드는
           <span>
           
             Javascript
-          </span>
-        
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/Babel-03/">[Babel] Webpack에 통합하여 사용하기</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        babel-loader
-
-
-
-
-  바벨을 직접사용하여 변환하는 것보다는 Webpack과 통합여 사용하는 것이 일반적입니다.
-  바벨 로더를 사용하면 Babel 및 Webpack을 사용하여 Javascript 파일을 변환할 수 있습니다.
-
-
-
-
-install :
-    npm install -D babel-loader
-
-
-
-
-./src/app.js :
-...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago"
-    date="2021-12-28 00:00:00 +0900"
-    
-      data-toggle="tooltip"
-      data-placement="bottom"
-      title="Tue, Dec 28, 2021, 12:00 AM +0900"
-    >Dec 28, 2021</em>
-
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="571 words">
-  <em>3 min</em></span>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Babel
           </span>
         
       </div>

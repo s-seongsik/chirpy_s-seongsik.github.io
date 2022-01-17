@@ -1,6 +1,21 @@
 [
   
   {
+    "title": "[Vue.js] Vue.js 문법 총정리",
+    "url": "/posts/vueJs-04/",
+    "categories": "Vue.js",
+    "tags": "Webpack, Babel, Node.js, Javascript",
+    "date": "2022-01-14 00:00:00 +0900",
+    
+
+
+
+
+
+    "snippet": "Vue 인스턴스Vue 인스턴스에서 보면 알듯이 모든 Vue 앱은 Vue 인스턴스를 만드는 것부터 시작한다.인스턴스 안에 options 객체를 전달해야하는데 전체 옵션 목록을 참고하자.var vm = new Vue({    el: &quot;#app&quot;,    data: {        text: &#39;hello world&#39;    },    //...옵션들})데이터 바인딩이중 중괄호이중 중괄호를 사용한 텍스트 보간이다. data 객체의 msg속성 값으로 대체된다. msg의 속성 값이 변경될 때 마다 갱신된다.보간법은 속성값을 텍스트로 출력한다.&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p&amp;gt;&amp;gt; 메시지: {{ msg }} &amp;lt;/p&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;script&amp;gt;export default {    name: &quot;test&quot;,    data: () =&amp;gt; {        return {            msg: &quot;이것은 보간법!, 선언적 렌더링입니다.&quot;        }    }}&amp;lt;/script&amp;gt;v-text 디렉티브디렉티브는 v- 접두사가 있는 특수 속성이다. 디렉티브 속성 값은 단일 javascript 표현식이 된다. (v-for는 예외)디렉티브의 역할은 표현식의 값이 변경될 때 사이드이펙트를 반응적으로 DOM에 적용한다는 것이다.v-text 속성은 데이터 객체의 속성값을 텍스트로 출력한다.&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p v-text=&quot;msg&quot;&amp;gt; &amp;lt;/p&amp;gt;      &amp;lt;p v-text=&quot;html_msg&quot;&amp;gt; &amp;lt;/p&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;script&amp;gt;export default {    name: &quot;test&quot;,    data: () =&amp;gt; {        return {            msg: &quot;이것은 디렉티브!, v-text 속성을 이용했습니다.&quot;,            html_msg: &quot;&amp;lt;div&amp;gt;이것은 디렉티브!, v-text 속성을 이용했습니다.&amp;lt;/div&amp;gt;&quot;        }    }}&amp;lt;/script&amp;gt;v-html 디렉티브v-text가 텍스트로 출력한다면, v-html는 속성 값을 HTML로 표현된다. 즉, 실제 HTML을 출력하고 싶다면 v-html 디렉티브를 사용해야 한다.&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;p v-text=&quot;msg&quot;&amp;gt; &amp;lt;/p&amp;gt;      &amp;lt;p v-html=&quot;html_msg&quot;&amp;gt; &amp;lt;/p&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;script&amp;gt;export default {    name: &quot;test&quot;,    data: () =&amp;gt; {        return {            msg: &quot;&amp;lt;div&amp;gt;이것은 디렉티브!, v-text 속성을 이용했습니다.&amp;lt;/div&amp;gt;&quot;,            html_msg: &quot;&amp;lt;div&amp;gt;이것은 디렉티브!, v-text 속성을 이용했습니다.&amp;lt;/div&amp;gt;&quot;        }    }}&amp;lt;/script&amp;gt;v-bind 디렉티브위 속성들과 달리 HTML 태그의 속성을 바인딩하기 위해 사용한다.class, id, href 속성을 예로 작성.&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;      &amp;lt;a v-bind:href=&quot;Url&quot;&amp;gt;href 속성입니다.&amp;lt;/a&amp;gt;      &amp;lt;p v-bind:class=&quot;Class&quot;&amp;gt;class 속성입니다.&amp;lt;/p&amp;gt;      &amp;lt;p v-bind:id=&quot;Id&quot;&amp;gt;id 속성입니다.&amp;lt;/p&amp;gt;  &amp;lt;/div&amp;gt;&amp;lt;/template&amp;gt;&amp;lt;script&amp;gt;export default {    name: &quot;test&quot;,    data: () =&amp;gt; {        return {            Url: &quot;https://www.google.com/&quot;,            Class: &quot;test-class&quot;,            Id: &quot;test-id&quot;,        }    }}&amp;lt;/script&amp;gt;개발자 도구로 확인해보면 class, id, href 속성들이 바인딩 된 것을 확인.v-model 디렉티브  v-model 속성은 입력 Form 요소를 개발할 때 사용하는 속성이다.  v-model 속성은 v-bind와 v-on의 기능의 조합으로 동작한다.  v-model 속성은 입력요소와 구성 요소에 양방향 바인딩을 만든다.  v-model 속성은 &amp;lt;input&amp;gt;, &amp;lt;select&amp;gt;, &amp;lt;textarea&amp;gt;, components에 제한되어 사용한다."
+  },
+  
+  {
     "title": "[Vue.js] Vuex의 이해와 컨셉",
     "url": "/posts/vueJs-03/",
     "categories": "Vue.js",
