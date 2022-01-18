@@ -34,24 +34,24 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="[Node.js] 시작하기" />
+<meta property="og:title" content="[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="npm이란?" />
-<meta property="og:description" content="npm이란?" />
-<link rel="canonical" href="http://localhost:4000/posts/Node.js-02/" />
-<meta property="og:url" content="http://localhost:4000/posts/Node.js-02/" />
+<meta name="description" content="컴포넌트가 무엇인가?" />
+<meta property="og:description" content="컴포넌트가 무엇인가?" />
+<link rel="canonical" href="http://localhost:4000/posts/vueJs-05/" />
+<meta property="og:url" content="http://localhost:4000/posts/vueJs-05/" />
 <meta property="og:site_name" content="SeongSik Seo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-12-08T00:00:00+09:00" />
+<meta property="article:published_time" content="2022-01-18T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="[Node.js] 시작하기" />
+<meta property="twitter:title" content="[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"[Node.js] 시작하기","dateModified":"2021-12-08T00:00:00+09:00","datePublished":"2021-12-08T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Node.js-02/"},"url":"http://localhost:4000/posts/Node.js-02/","description":"npm이란?","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가","dateModified":"2022-01-18T00:00:00+09:00","datePublished":"2022-01-18T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/vueJs-05/"},"url":"http://localhost:4000/posts/vueJs-05/","description":"컴포넌트가 무엇인가?","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>[Node.js] 시작하기 | SeongSik Seo
+  <title>[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가 | SeongSik Seo
   </title>
 
   <!--
@@ -412,7 +412,7 @@
         
 
           
-            <span>[Node.js] 시작하기</span>
+            <span>[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가</span>
           
 
         
@@ -625,43 +625,6 @@
       
 
     
-
-    
-
-  
-    
-
-    
-    
-
-    
-    
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
       
       
 
@@ -693,50 +656,6 @@
   
 
   
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-
-      
-
-    
-
-    
-
-  
 
   
   
@@ -764,7 +683,7 @@
 
 
   
-  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3C/svg%3E" data-proofer-ignore data-src="/assets/img//post/node_js.png" class="preview-img bg"
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3C/svg%3E" data-proofer-ignore data-src="/assets/img//post/vue.png" class="preview-img bg"
       alt="Preview Image"
 
       
@@ -776,7 +695,7 @@
       >
 
 
-<h1 data-toc-skip>[Node.js] 시작하기</h1>
+<h1 data-toc-skip>[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가</h1>
 
 <div class="post-meta text-muted">
 
@@ -810,12 +729,12 @@
 
 
 <em class="timeago"
-    date="2021-12-08 00:00:00 +0900"
+    date="2022-01-18 00:00:00 +0900"
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Dec  8, 2021, 12:00 AM +0900"
-    >Dec  8, 2021</em>
+      title="Tue, Jan 18, 2022, 12:00 AM +0900"
+    >Jan 18</em>
 
       </span>
 
@@ -842,8 +761,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1019 words">
-  <em>5 min</em> read</span>
+  title="316 words">
+  <em>1 min</em> read</span>
 
 
       <!-- page views -->
@@ -855,333 +774,20 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="npm이란"><strong>npm이란?</strong><a href="#npm이란"><i class="fas fa-hashtag"></i></a></h2></h2>
+  <h1 id="a"><strong>컴포넌트가 무엇인가?</strong></h1>
 
 <hr />
 
-<p><code class="language-plaintext highlighter-rouge">npm</code>은 Node Package Manager의 약자로 자바스크립트 프로그래밍 언어를 위한 패키지 관리자입니다. 
-즉, <code class="language-plaintext highlighter-rouge">npm</code>은 node.js에서 사용하는 모듈들을 패키지로 관리 및 배포하는 역할을 합니다.</p>
+<p><a href="https://kr.vuejs.org/v2/guide/components.html#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94">컴포넌트</a>는 <code class="language-plaintext highlighter-rouge">Vue</code>의 핵심 기능 중 하나이다.
+컴포넌트를 어떻게 구성하고 생성하냐에 따라 어플리케이션의 개발속도와 코드 가독성, 그리고 효율성<code class="language-plaintext highlighter-rouge">(ex. 재사용성)</code>이 차이가 난다.</p>
 
-<p><br /></p>
+<p><code class="language-plaintext highlighter-rouge">Vue</code>에서 컴포넌트는 기본 HTML 엘리먼트를 확장하여 재사용 가능한 코드를 <code class="language-plaintext highlighter-rouge">모듈화</code> 혹은 <code class="language-plaintext highlighter-rouge">캡슐화</code>한 것을 의미한다. 상위 수준에서 컴포넌트는 <code class="language-plaintext highlighter-rouge">Vue</code>의 컴파일러에 의해 동작이 추가된 사용자 지정 엘리먼트이다. 경우에 따라 특별한 <code class="language-plaintext highlighter-rouge">is</code> 속성으로 확장 된 원시 HTML 엘리먼트로 나타날 수도 있다.</p>
 
-<h2 id="nodejs-설치"><strong>Node.js 설치</strong><a href="#nodejs-설치"><i class="fas fa-hashtag"></i></a></h2></h2>
+<p>Vue 컴포넌트는 Vue 인스턴스이기도 하다. 그러므로 모든 옵션 객체를 사용할 수 있다. (루트에만 사용하는 옵션은 제외) 그리고 같은 라이프사이클 훅을 사용할 수 있다.</p>
 
-<hr />
+<p>정리해서, 컴포넌트는 어플리케이션을 만들기 위한 <code class="language-plaintext highlighter-rouge">블록</code>들이며 이것들을 잘 조합해서 효율적인 개발을할 수 있다.</p>
 
-<ul>
-  <li>사용자의 운영체제에 맞게 <code class="language-plaintext highlighter-rouge">다운로드</code> 합니다.</li>
-  <li>[Node.js 홈페이지]](https://nodejs.org/ko/)</li>
-  <li>짝수버전(왼쪽), 홀수버전(오른쪽)이 있는데 짝수버전은 안정성과 신뢰성을 지원하는 버전으로 실제 서버에 배포용으로 사용할 때 사용하고 홀수버전은 최신 기능을 지원하므로 개발용으로 사용한다.</li>
-  <li>개발용으로 사용할 것이므로 오른쪽 버전을 다운로드 합니다.</li>
-  <li>2021-12-08 기준, 17.2.0 최신버전</li>
-</ul>
-
-<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145165822-2835ad88-0246-4910-8f38-a04e172d7431.png" alt="image" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li>터미널을 실행하여 <code class="language-plaintext highlighter-rouge">node.js</code>가 잘 설치되었는지 확인합니다.</li>
-  <li>저는 윈도우에서 실행했습니다.</li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="code-header">
-        <span label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="gp">    C:\Users\seong&gt;</span>node
-<span class="go">    Welcome to Node.js v17.2.0.
-    Type ".help" for more information.
-</span><span class="gp">    &gt;</span><span class="w">
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<p><br /></p>
-
-<ul>
-  <li>웹 브라우저 없이 <code class="language-plaintext highlighter-rouge">JavaScript</code>를 실행할 수 있습니다!</li>
-  <li><code class="language-plaintext highlighter-rouge">javaScript</code>가 작동하는지 테스트 해보겠습니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">ES6</code> 문법인 <code class="language-plaintext highlighter-rouge">const</code>가 잘 작동됩니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">const</code>의 재사용이 안되는 것까지 잘되네요!</li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="code-header">
-        <span label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre><span class="gp">    C:\Users\seong&gt;</span>node
-<span class="go">    Welcome to Node.js v17.2.0.
-    Type ".help" for more information.
-</span><span class="gp">    &gt;</span><span class="w"> </span>const x <span class="o">=</span> 30<span class="p">;</span>
-<span class="go">    undefined
-</span><span class="gp">    &gt;</span><span class="w"> </span>x
-<span class="go">    30
-</span><span class="gp">    &gt;</span><span class="w"> </span>x <span class="o">=</span> 10<span class="p">;</span>
-<span class="go">    Uncaught TypeError: Assignment to constant variable.
-</span><span class="gp">    &gt;</span><span class="w">
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<p><br /></p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">node.js</code>의 버전을 확인합니다.
-    <div class="language-console highlighter-rouge"><div class="code-header">
-        <span label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="gp">  C:\Users\seong&gt;</span>node <span class="nt">--version</span>
-<span class="go">  v17.2.0
-</span></pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">npm</code>의 버전을 확인합니다.
-    <div class="language-console highlighter-rouge"><div class="code-header">
-        <span label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="gp">  C:\Users\seong&gt;</span>npm <span class="nt">--version</span>
-<span class="go">  v17.2.0
-</span></pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">npm</code> 을 입력합니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">npm --version</code> 처럼 명령어 사용방법에 대해 알려줍니다.
-    <div class="language-console highlighter-rouge"><div class="code-header">
-        <span label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-</pre></td><td class="rouge-code"><pre><span class="gp">  C:\Users\seong&gt;</span>npm
-<span class="gp">  npm &lt;command&gt;</span><span class="w">
-</span><span class="go">
-  Usage:
-
-  npm install        install all the dependencies in your project
-</span><span class="gp">  npm install &lt;foo&gt;</span><span class="w">  </span>add the &lt;foo&gt; dependency to your project
-<span class="go">  npm test           run this project's tests
-</span><span class="gp">  npm run &lt;foo&gt;</span><span class="w">      </span>run the script named &lt;foo&gt;
-<span class="gp">  npm &lt;command&gt;</span><span class="w"> </span><span class="nt">-h</span>   quick <span class="nb">help </span>on &lt;<span class="nb">command</span><span class="o">&gt;</span>
-<span class="go">  npm -l             display usage info for all commands
-</span><span class="gp">  npm help &lt;term&gt;</span><span class="w">    </span>search <span class="k">for </span><span class="nb">help </span>on &lt;term&gt; <span class="o">(</span><span class="k">in </span>a browser<span class="o">)</span>
-<span class="go">  npm help npm       more involved overview (in a browser)
-
-  All commands:
-
-      access, adduser, audit, bin, bugs, cache, ci, completion,
-      config, dedupe, deprecate, diff, dist-tag, docs, doctor,
-      edit, exec, explain, explore, find-dupes, fund, get, help,
-      hook, init, install, install-ci-test, install-test, link,
-      ll, login, logout, ls, org, outdated, owner, pack, ping,
-      pkg, prefix, profile, prune, publish, rebuild, repo,
-      restart, root, run-script, search, set, set-script,
-      shrinkwrap, star, stars, start, stop, team, test, token,
-      uninstall, unpublish, unstar, update, version, view, whoami
-
-  Specify configs in the ini-formatted file:
-      C:\Users\seong\.npmrc
-</span><span class="gp">  or on the command line via: npm &lt;command&gt;</span><span class="w"> </span><span class="nt">--key</span><span class="o">=</span>value
-<span class="go">
-  More configuration info: npm help config
-  Configuration fields: npm help 7 config
-
-  npm@8.1.4 C:\Program Files\nodejs\node_modules\npm
-</span></pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="프로젝트-생성-해보기"><strong>프로젝트 생성 해보기</strong><a href="#프로젝트-생성-해보기"><i class="fas fa-hashtag"></i></a></h2></h2>
-
-<hr />
-
-<ul>
-  <li>프로젝트를 생성할 폴더(폴더명 : sample_01)를 만들어 줍니다.</li>
-  <li>저는 <code class="language-plaintext highlighter-rouge">E:\study\frontend</code> 위에 만들었습니다.</li>
-  <li>생성된 폴더에 이동합니다.
-    <div class="language-console highlighter-rouge"><div class="code-header">
-        <span label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="rouge-code"><pre><span class="gp">  E:\study\frontend&gt;</span><span class="nb">mkdir </span>sample_01
-<span class="go">
-</span><span class="gp">  E:\study\frontend&gt;</span><span class="nb">dir</span>
-<span class="go">      E 드라이브의 볼륨: seongsik
-      볼륨 일련 번호: 1819-824F
-
-      E:\study\frontend 디렉터리
-
-</span><span class="gp">      2021-12-08  오후 05:04    &lt;DIR&gt;</span><span class="w">          </span><span class="nb">.</span>
-<span class="gp">      2021-12-08  오후 05:04    &lt;DIR&gt;</span><span class="w">          </span>..
-<span class="gp">      2021-12-08  오후 05:04    &lt;DIR&gt;</span><span class="w">          </span>sample_01
-<span class="go">                  0개 파일                   0 바이트
-                  3개 디렉터리  14,627,414,016 바이트 남음
-    
-</span><span class="gp">  E:\study\frontend&gt;</span><span class="nb">cd </span>sample_01
-<span class="go">
-</span><span class="gp">  E:\study\frontend\sample_01&gt;</span><span class="w">
-</span></pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>프로젝트 생성하기 : <code class="language-plaintext highlighter-rouge">npm init</code></li>
-  <li>package name, version, description … 입력란이 나오지만 전부 엔터</li>
-  <li>package name defalut는 폴더명입니다.
-    <div class="language-console highlighter-rouge"><div class="code-header">
-        <span label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-</pre></td><td class="rouge-code"><pre><span class="gp">  E:\study\frontend\sample_01&gt;</span>npm init
-<span class="go">
-  This utility will walk you through creating a package.json file.
-  It only covers the most common items, and tries to guess sensible defaults.
-
-  See `npm help init` for definitive documentation on these fields
-  and exactly what they do.
-
-</span><span class="gp">  Use `npm install &lt;pkg&gt;</span><span class="sb">`</span> afterwards to <span class="nb">install </span>a package and
-<span class="go">  save it as a dependency in the package.json file.
-
-  Press ^C at any time to quit.
-  package name: (sample_01)
-  version: (1.0.0)
-  description:
-  entry point: (index.js)
-  test command:
-  git repository:
-  keywords:
-  author:
-  license: (ISC)
-  About to write to E:\study\frontend\sample_01\package.json:
-
-  {
-  "name": "sample_01",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-      "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
-  },
-  "author": "",
-  "license": "ISC"
-  }
-
-
-  Is this OK? (yes)
-</span></pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>sample_01 폴더 밑에 package.json 파일이 생성되었습니다.</li>
-  <li>해당 파일을 실행해보면 프로젝트 정보들이 들어있습니다.</li>
-</ul>
-
-<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/145175726-b0d7945d-d8dd-45d4-ae30-682d85ed2b8a.png" alt="image" /></p>
-
+<p><img data-proofer-ignore data-src="/assets/img//post/components.jpg" alt="Desktop View" /></p>
 
 </div>
 
@@ -1192,7 +798,7 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/node-js/'>Node.js</a>
+      <a href='/categories/vue-js/'>Vue.js</a>
   </div>
   
 
@@ -1200,6 +806,12 @@
   
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/webpack/"
+          class="post-tag no-text-decoration" >Webpack</a>
+      
+      <a href="/tags/babel/"
+          class="post-tag no-text-decoration" >Babel</a>
       
       <a href="/tags/node-js/"
           class="post-tag no-text-decoration" >Node.js</a>
@@ -1239,19 +851,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=[Node.js] 시작하기 - SeongSik Seo&url=http://localhost:4000/posts/Node.js-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가 - SeongSik Seo&url=http://localhost:4000/posts/vueJs-05/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=[Node.js] 시작하기 - SeongSik Seo&u=http://localhost:4000/posts/Node.js-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가 - SeongSik Seo&u=http://localhost:4000/posts/vueJs-05/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=[Node.js] 시작하기 - SeongSik Seo&url=http://localhost:4000/posts/Node.js-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가 - SeongSik Seo&url=http://localhost:4000/posts/vueJs-05/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -2246,14 +1858,6 @@
 
 
 
-<!-- BS-toc.js will be loaded at medium priority -->
-<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
-
-<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
-  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
-  <nav id="toc" data-toggle="toc"></nav>
-</div>
-
 
     
   </div>
@@ -2290,293 +1894,293 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -2918,18 +2522,14 @@ ESLint에 없는 기능들을 프리티어(Prettier)가 해결해준다.
 
 install
 
-1
     npm install -D prettier
 
 
 
 
-1
-2
-3
     var x = &#39;asd&#39;;;;
 
-    cons...
+    console.log(...
               </p>
             </div>
           </div>
@@ -2948,17 +2548,17 @@ install
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/javascript-01/" class="btn btn-outline-primary"
+  <a href="/posts/vueJs-04/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>[Javascript] ECMAScript?, ES6? 개념 이해</p>
+    <p>[Vue.js] Vue.js 문법 총정리</p>
   </a>
   
 
   
-  <a href="/posts/javascript-02/" class="btn btn-outline-primary"
+  <span class="btn btn-outline-primary disabled"
     prompt="Newer">
-    <p>[Javascript] ES2015(ES6) 표준 모듈 시스템 (export, import)</p>
-  </a>
+    <p>-</p>
+  </span>
   
 
 </div>

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-17T13:01:34+09:00</updated>
+  <updated>2022-01-18T23:35:15+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가</title>
+    <link href="http://localhost:4000/posts/vueJs-05/" rel="alternate" type="text/html" title="[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용되는가" />
+    <published>2022-01-18T00:00:00+09:00</published>
+  
+    <updated>2022-01-18T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/vueJs-05/</id>
+    <content src="http://localhost:4000/posts/vueJs-05/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Vue.js" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      컴포넌트가 무엇인가?
+
+
+
+컴포넌트는 Vue의 핵심 기능 중 하나이다.
+컴포넌트를 어떻게 구성하고 생성하냐에 따라 어플리케이션의 개발속도와 코드 가독성, 그리고 효율성(ex. 재사용성)이 차이가 난다.
+
+Vue에서 컴포넌트는 기본 HTML 엘리먼트를 확장하여 재사용 가능한 코드를 모듈화 혹은 캡슐화한 것을 의미한다. 상위 수준에서 컴포넌트는 Vue의 컴파일러에 의해 동작이 추가된 사용자 지정 엘리먼트이다. 경우에 따라 특별한 is 속성으로 확장 된 원시 HTML 엘리먼트로 나타날 수도 있다.
+
+Vue 컴포넌트는 Vue 인스턴스이기도 하다. 그러므로 모든 옵션 객체를 사용할 수 있다. (루트에만 사용하는 옵션은 제외) 그리고 같은 라이프사이클 훅을 사용할 수 있다.
+
+정리해서, 컴포넌트는 어플리케이션을 ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -65,7 +110,10 @@ var vm = new Vue({
 
 
 
+
 데이터 바인딩
+
+
 
 이중 중괄호
 
@@ -75,7 +123,7 @@ var vm = new Vue({
 
 &amp;lt;template&amp;gt;
   &amp;lt;div&amp;gt;
-      &amp;lt;p&amp;gt;&amp;gt; 메시지: {{ msg }} &amp;lt;/p...
+      &amp;lt;p&amp;gt;&amp;gt; 메시지: {{ msg }} &amp;lt...
     </summary>
   
 
@@ -256,66 +304,6 @@ vue.js devtools &amp;gt; 세부정보 클릭 &amp;gt; 사이트 엑세스 &amp;g
 VScode 설치
 
 무료 ID...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[ESLint] 포맷팅에 특화된 프리티어(Prettier)</title>
-    <link href="http://localhost:4000/posts/eslint-03/" rel="alternate" type="text/html" title="[ESLint] 포맷팅에 특화된 프리티어(Prettier)" />
-    <published>2022-01-06T00:00:00+09:00</published>
-  
-    <updated>2022-01-06T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/eslint-03/</id>
-    <content src="http://localhost:4000/posts/eslint-03/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="ESLint" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Prettier
-
-
-
-ESLint는 포맷팅과 코드 품질에 도움을 주는 도구라면 프리티어(Prettier)는 포맷팅에만 특화된 도구이다.
-ESLint에 없는 기능들을 프리티어(Prettier)가 해결해준다.
-
-
-
-install
-
-    npm install -D prettier
-
-
-
-
-    var x = 'asd';;;
-
-    console.log('########################################### 80자 넘음 #######################################################');
-
-
-
-
-    module.exports = {
-        "env": {
-            "browser": true,
-            "es2...
     </summary>
   
 
