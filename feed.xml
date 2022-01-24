@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-20T13:36:19+09:00</updated>
+  <updated>2022-01-24T21:53:21+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,56 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Nuxt.js] 공식문서로 빠르게 배우기 1탄 - 시작하기</title>
+    <link href="http://localhost:4000/posts/nuxtJs-01/" rel="alternate" type="text/html" title="[Nuxt.js] 공식문서로 빠르게 배우기 1탄 - 시작하기" />
+    <published>2022-01-19T00:00:00+09:00</published>
+  
+    <updated>2022-01-19T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/nuxtJs-01/</id>
+    <content src="http://localhost:4000/posts/nuxtJs-01/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Web" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      시작하기
+
+
+
+Vue.js를 공부하면서 실무에서 프로젝트를 진행하면서 SSR 웹 페이지를 만들 수 있도록 도와주는 Nuxt.js를 배워보고 싶다는 생각이 들었다. 설명과 이론을 최대한 배제하고 실무용으로 설치부터 배포까지 빠르게 익히기 위한 포스팅이다. 깃허브 정적 호스팅 서비스에 배포 할 Resume 정적 웹사이트를 만들어 보면서 빠르게 익혀보도록 하자.
+
+
+
+Nuxt.js 사용하기 위한 전제 조건
+
+
+
+
+  node.js 최신 LTS 버전을 설치하는 것을 권장한다.
+  텍스트 편집기, Vetur 확장 기능이 있는 VSCode 또는 WebStorm 편집기를 사용하는 것을 권장한다.
+  터미널은 VSCode의 통합 터미널, WebStorm 터미널 사용을 권장한다.
+  npm(v6.1+)을 설치했는지 확...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -223,62 +273,6 @@ Flux 공식문서
   단반향 데이터 흐름을 활용해 뷰 컴포넌트를 구성하는 React를 보완하는 역할.
   Dispatcher, Stores, Views(React 컴포넌트)의 세 가지 핵심 부분으로 구성되어 있다.
   MVC 패턴의 복잡한 데이터 Flow 문제를 해결하는 개발 패턴 - Undirectional d...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Vue.js] Vue CLI로 프로젝트 생성하기</title>
-    <link href="http://localhost:4000/posts/vueJs-02/" rel="alternate" type="text/html" title="[Vue.js] Vue CLI로 프로젝트 생성하기" />
-    <published>2022-01-10T00:00:00+09:00</published>
-  
-    <updated>2022-01-10T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/vueJs-02/</id>
-    <content src="http://localhost:4000/posts/vueJs-02/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Vue.js" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Vue-CLI
-
-
-
-Vue-CLI는 신속하게 Vue.js 개발환경을 설정할 수 있도록 도와주는 도구이다.
-기본적으로 초기 프로젝트 세팅을 생성해주기 때문에 프로젝트 구조, Lint, webpack, babel과 같은 도구들의 설정 고민을 덜 수 있다.
-
-CLI란
-
-  명령 줄 인터페이스(CLI, Command line interface) 또는 명령어 인터페이스는 텍스트 터미널을 통해 사용자와 컴퓨터가 상호 작용하는 방식을 뜻한다.
-  즉, 작업 명령은 사용자가 컴퓨터 키보드 등을 통해 문자열의 형태로 입력하며, 컴퓨터로부터의 출력 역시 문자열의 형태로 주어진다.
-
-
-
-
-설치
-
-Node 버전 요구 사항
-
-  Vue CLI 4.x에는 Node.js 버전 8.9 이상이 필요. (v10+ 권장)
-
-
-이전 버전...
     </summary>
   
 
