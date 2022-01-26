@@ -459,6 +459,99 @@
 
   <div class="post-preview">
     <h1>
+      <a href="/posts/Webpack-04/">[Webpack] loader (2)</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        자주 사용하는 로더
+
+
+
+css-loader
+
+
+  css-loader를 사용하면 스타일시트도 import 구문으로 불러와 모듈로 변환할 수 있습니다.
+  ./src/app.css 를 생성하여 밑의 코드를 저장합니다.
+  ./src/app.js에서 app.css를 import 구문을 추가합니다.
+  html에 css 태그를 넣지 않아도 적용되는지 확인...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+
+      <div class="mr-auto">
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2021-12-15 00:00:00 +0900"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Wed, Dec 15, 2021, 12:00 AM +0900"
+    >Dec 15, 2021</em>
+
+
+        <!-- time to read -->
+        <i class="far fa-clock fa-fw"></i>
+        <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="2585 words">
+  <em>14 min</em></span>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Webpack
+          </span>
+        
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
       <a href="/posts/Webpack-03/">[Webpack] loader (1)</a>
     </h1>
 
@@ -1319,96 +1412,6 @@ TDD란 Test Driven Development 약자로 ‘테스트 주도 개발’ 이라고
 
 
 
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/git-04/">[Git] branch의 이해와 사용(미완성)</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        코드를 복사하고 나서 원래 코드와는 상관없이 독립적으로 개발을 할 수 있게 만드는 것이 “브랜치” 입니다.
-
-Git의 최고의 장점이라고 말하는 “브랜치”에 대해 알아볼까요?
-
-
-
-Gti branch란?
-모든 형상관리 시스템은 브랜치를 지원합니다. 팀 단위로 개발을 하다보면 각자 독립적인 공간에서 개발을 진행해야 서로의 소스코드가 섞이거나 충돌되는 것을...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago"
-    date="2021-12-04 00:00:00 +0900"
-    
-      data-toggle="tooltip"
-      data-placement="bottom"
-      title="Sat, Dec  4, 2021, 12:00 AM +0900"
-    >Dec  4, 2021</em>
-
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="238 words">
-  <em>1 min</em></span>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Git
-          </span>
-        
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
 </div> <!-- #post-list -->
 
 
@@ -2043,67 +2046,6 @@ Gti branch란?
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2177,8 +2119,6 @@ Gti branch란?
     
     
     
-    
-      
     
   
     
@@ -2262,6 +2202,48 @@ Gti branch란?
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2285,7 +2267,20 @@ Gti branch란?
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2574,13 +2569,13 @@ Gti branch란?
       <a class="post-tag" href="/tags/babel/">Babel</a>
     
       
-      <a class="post-tag" href="/tags/es6/">ES6</a>
-    
-      
       <a class="post-tag" href="/tags/git/">Git</a>
     
       
       <a class="post-tag" href="/tags/github/">Github</a>
+    
+      
+      <a class="post-tag" href="/tags/es6/">ES6</a>
     
       
       <a class="post-tag" href="/tags/web/">Web</a>
@@ -3133,67 +3128,6 @@ Gti branch란?
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3267,8 +3201,6 @@ Gti branch란?
     
     
     
-    
-      
     
   
     
@@ -3352,6 +3284,48 @@ Gti branch란?
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3375,7 +3349,20 @@ Gti branch란?
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3664,13 +3651,13 @@ Gti branch란?
       <a class="post-tag" href="/tags/babel/">Babel</a>
     
       
-      <a class="post-tag" href="/tags/es6/">ES6</a>
-    
-      
       <a class="post-tag" href="/tags/git/">Git</a>
     
       
       <a class="post-tag" href="/tags/github/">Github</a>
+    
+      
+      <a class="post-tag" href="/tags/es6/">ES6</a>
     
       
       <a class="post-tag" href="/tags/web/">Web</a>

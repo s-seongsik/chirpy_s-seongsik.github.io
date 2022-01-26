@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-25T17:25:37+09:00</updated>
+  <updated>2022-01-26T23:04:49+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,67 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Git] 개발자들은 Git으로 어떻게 협업할까? 워크플로우 배워보자</title>
+    <link href="http://localhost:4000/posts/git-05/" rel="alternate" type="text/html" title="[Git] 개발자들은 Git으로 어떻게 협업할까? 워크플로우 배워보자" />
+    <published>2022-01-26T00:00:00+09:00</published>
+  
+    <updated>2022-01-26T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/git-05/</id>
+    <content src="http://localhost:4000/posts/git-05/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Git" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      시작으로
+
+먼저, Comparing Workflows의 글에서 자세히 공부할 수 있었다.
+협업 뿐만아니라 Git에 대해 자세히 정리되어 있으니 참고하길 바란다.
+
+글에서 정리한 대표적인 Git 워크플로우는 4가지이다.
+
+
+  Centralized Workflow
+  Feature Branch Workflow
+  Gitflow Workflow
+  Forking Workflow
+
+
+이제 시작해보자~
+
+
+
+Centralized Workflow
+
+
+
+
+
+중앙 집중식 워크플로우로 SVN과 똑같이 중앙이 되는 메인 저장소를 중심으로 모든 변경 사항에 대해 main 분기에 커밋된다.
+즉, Subversion을 사용하는 것과 똑같은 방식으로 프로젝트를 개발할 수 있다는 말이다.
+
+하지만, SVN에 비해 몇가지 장점이...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -205,72 +266,6 @@ Vue에서 컴포넌트는 기본 HTML 엘리먼트를 확장하여 재사용 가
 Vue 컴포넌트는 Vue 인스턴스이기도 하다. 그러므로 모든 옵션 객체를 사용할 수 있다. (루트에만 사용하는 옵션은 제외) 그리고 같은 라이프사이클 훅을 사용할 수 있다.
 
 정리해서, 컴포넌트는 어플리케이션을 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Vue.js] Vue.js 문법 총정리</title>
-    <link href="http://localhost:4000/posts/vueJs-04/" rel="alternate" type="text/html" title="[Vue.js] Vue.js 문법 총정리" />
-    <published>2022-01-14T00:00:00+09:00</published>
-  
-    <updated>2022-01-14T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/vueJs-04/</id>
-    <content src="http://localhost:4000/posts/vueJs-04/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Vue.js" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Vue 인스턴스
-
-
-
-Vue 인스턴스에서 보면 알듯이 모든 Vue 앱은 Vue 인스턴스를 만드는 것부터 시작한다.
-인스턴스 안에 options 객체를 전달해야하는데 전체 옵션 목록을 참고하자.
-
-var vm = new Vue({
-    el: "#app",
-    data: {
-        text: 'hello world'
-    },
-
-    //...옵션들
-})
-
-
-
-
-
-데이터 바인딩
-
-
-
-이중 중괄호
-
-이중 중괄호를 사용한 텍스트 보간이다. data 객체의 msg속성 값으로 대체된다. msg의 속성 값이 변경될 때 마다 갱신된다.
-보간법은 속성값을 텍스트로 출력한다.
-
-
-&amp;lt;template&amp;gt;
-  &amp;lt;div&amp;gt;
-      &amp;lt;p&amp;gt;&amp;gt; 메시지: {{ msg }} &amp;lt...
     </summary>
   
 
