@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-01-28T11:50:39+09:00</updated>
+  <updated>2022-01-30T22:14:57+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용할까?</title>
+    <link href="http://localhost:4000/posts/vueJs-05-copy/" rel="alternate" type="text/html" title="[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용할까?" />
+    <published>2022-01-28T00:00:00+09:00</published>
+  
+    <updated>2022-01-28T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/vueJs-05-copy/</id>
+    <content src="http://localhost:4000/posts/vueJs-05-copy/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Vue.js" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      컴포넌트가 무엇인가?
+
+
+
+컴포넌트는 Vue의 핵심 기능 중 하나이다.
+컴포넌트를 어떻게 구성하고 생성하냐에 따라 어플리케이션의 개발속도와 코드 가독성, 그리고 효율성(ex. 재사용성)이 차이가 난다.
+
+Vue에서 컴포넌트는 기본 HTML 엘리먼트를 확장하여 재사용 가능한 코드를 모듈화 혹은 캡슐화한 것을 의미한다. 상위 수준에서 컴포넌트는 Vue의 컴파일러에 의해 동작이 추가된 사용자 지정 엘리먼트이다. 경우에 따라 특별한 is 속성으로 확장 된 원시 HTML 엘리먼트로 나타날 수도 있다.
+
+Vue 컴포넌트는 Vue 인스턴스이기도 하다. 그러므로 모든 옵션 객체를 사용할 수 있다. (루트에만 사용하는 옵션은 제외) 그리고 같은 라이프사이클 훅을 사용할 수 있다.
+
+정리해서, 컴포넌트는 어플리케이션을 ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -81,8 +126,8 @@ Centralized Workflow
 
   
   <entry>
-    <title>[Nuxt.js] 공식문서로 빠르게 배우기 2탄 - 디렉토리 구조(미완)</title>
-    <link href="http://localhost:4000/posts/nuxtJs-02/" rel="alternate" type="text/html" title="[Nuxt.js] 공식문서로 빠르게 배우기 2탄 - 디렉토리 구조(미완)" />
+    <title>[Nuxt.js] 공식문서로 빠르게 배우기 2탄 - 디렉토리 구조 및 구성파일 설정</title>
+    <link href="http://localhost:4000/posts/nuxtJs-02/" rel="alternate" type="text/html" title="[Nuxt.js] 공식문서로 빠르게 배우기 2탄 - 디렉토리 구조 및 구성파일 설정" />
     <published>2022-01-19T00:00:00+09:00</published>
   
     <updated>2022-01-19T00:00:00+09:00</updated>
@@ -116,11 +161,31 @@ Nuxt.js는 Vue.js기반 프레임워크이기 때문에 컴포넌트 구성 및 
 아래의 목차대로 빠르게 익혀보자.
 
 
-  Vue cli(4.x)의 프로젝트 구조와 Nuxt.js의 프로젝트 구조의 차이점
+  Nuxt.js의 프로젝트 구조
   라우터 방식의 차이
   Layout 디렉토리
 
 
+
+
+Nuxt.js 프로젝트 구조
+
+
+
+npm으로 생성한 프로젝트 구조를 살펴보면 아래와 같다.
+
+
+
+
+
+Assets 디렉토리
+SASS, CSS, IMAGES, Javascript와 같은 컴파일되지 않는 에셋들을 포함하는 디렉토리이다.
+
+components 디렉토리
+Vue.js 컴포넌트를 포함하는 디렉토리이다. Nuxt.js는 이러한 컴포넌트에 데이터 메소드를 크게 신경쓰지 않는다.
+
+Layouts 디렉토리
+디렉토리는 애플리케이션의 레이아웃을 포함하는 디렉토리...
     </summary>
   
 
@@ -221,51 +286,6 @@ Nuxt.js 사용하기 위한 전제 조건
 
 그 이유는 HTTP는 무상태 프로토콜(Stateless Protocol)이기 때문이다.
 무상태 프로토콜을 간단하게 말하면 통신 파트너에 대한 세션 정보나 상태 보관을 요구(저장)하지 않는다는 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용할까?</title>
-    <link href="http://localhost:4000/posts/vueJs-05/" rel="alternate" type="text/html" title="[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용할까?" />
-    <published>2022-01-18T00:00:00+09:00</published>
-  
-    <updated>2022-01-18T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/vueJs-05/</id>
-    <content src="http://localhost:4000/posts/vueJs-05/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Vue.js" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      컴포넌트가 무엇인가?
-
-
-
-컴포넌트는 Vue의 핵심 기능 중 하나이다.
-컴포넌트를 어떻게 구성하고 생성하냐에 따라 어플리케이션의 개발속도와 코드 가독성, 그리고 효율성(ex. 재사용성)이 차이가 난다.
-
-Vue에서 컴포넌트는 기본 HTML 엘리먼트를 확장하여 재사용 가능한 코드를 모듈화 혹은 캡슐화한 것을 의미한다. 상위 수준에서 컴포넌트는 Vue의 컴파일러에 의해 동작이 추가된 사용자 지정 엘리먼트이다. 경우에 따라 특별한 is 속성으로 확장 된 원시 HTML 엘리먼트로 나타날 수도 있다.
-
-Vue 컴포넌트는 Vue 인스턴스이기도 하다. 그러므로 모든 옵션 객체를 사용할 수 있다. (루트에만 사용하는 옵션은 제외) 그리고 같은 라이프사이클 훅을 사용할 수 있다.
-
-정리해서, 컴포넌트는 어플리케이션을 ...
     </summary>
   
 
