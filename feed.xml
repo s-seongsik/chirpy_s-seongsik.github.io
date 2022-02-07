@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-02T17:19:09+09:00</updated>
+  <updated>2022-02-07T15:43:14+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,52 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Javascript]] this는 어떻게 동작할까?</title>
+    <link href="http://localhost:4000/posts/javascript-05/" rel="alternate" type="text/html" title="[Javascript]] this는 어떻게 동작할까?" />
+    <published>2022-02-07T00:00:00+09:00</published>
+  
+    <updated>2022-02-07T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/javascript-05/</id>
+    <content src="http://localhost:4000/posts/javascript-05/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Javascript" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      시작으로
+
+
+
+Javascript에서 함수의 this 키워드는 다른 언어들과 다르게 동작한다. 이는 Java와 같은 익숙한 언어의 개념과 달라 개발자들에게 혼동을 준다.
+대부분의 경우 this의 값은 함수를 호출한 방법에 의해 결정된다. 실행중에는 할당으로 설정할 수 없고 함수를 호출할 때 마다 다를 수 있다.
+
+Java에서의 this는 인스턴스 자신을 가르키는 참조변수이다. this가 객체 자신에 대한 참조 값을 가지고 있다는 뜻이다. 주로 매개변수와 객체 자신이 가지고 있는 멤버변수명이 같은 경우 이를 구분하기 위해 사용된다.
+하지만, Javascript의 경우 Java와 같이 this에 바인딩되는 객체는 한가지가 아니라 해당 함수 호출 방식에 따라 this에 바인딩되는 객체가 달라진다.
+
+
+
+함수...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -239,59 +285,6 @@ Vue.js 컴포넌트를 포함하는 디렉토리이다. Nuxt.js는 이러한 컴
 
 Layouts 디렉토리
 디렉토리는 애플리케이션의 레이아웃을 포함하는 디렉토리...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Nuxt.js] 공식문서로 빠르게 배우기 1탄 - 시작하기</title>
-    <link href="http://localhost:4000/posts/nuxtJs-01/" rel="alternate" type="text/html" title="[Nuxt.js] 공식문서로 빠르게 배우기 1탄 - 시작하기" />
-    <published>2022-01-19T00:00:00+09:00</published>
-  
-    <updated>2022-01-19T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/nuxtJs-01/</id>
-    <content src="http://localhost:4000/posts/nuxtJs-01/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Nuxt.js" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      시작하기
-
-
-
-Vue.js로 프로젝트를 진행하면서 SSR 웹 페이지를 만들 수 있도록 도와주는 Nuxt.js를 배워보고 싶다는 생각이 들었다. 설명과 이론을 최대한 배제하고 실무용으로 설치부터 배포까지 빠르게 익히기 위한 포스팅이다. 깃허브 정적 호스팅 서비스에 배포 할 Resume 정적 웹사이트를 만들어 보면서 빠르게 익혀보도록 하자.
-
-
-
-Nuxt.js 사용하기 위한 전제 조건
-
-
-
-
-  node.js 최신 LTS 버전을 설치하는 것을 권장한다.
-  텍스트 편집기, Vetur 확장 기능이 있는 VSCode 또는 WebStorm 편집기를 사용하는 것을 권장한다.
-  터미널은 VSCode의 통합 터미널, WebStorm 터미널 사용을 권장한다.
-  npm(v6.1+)을 설치했는지 확인
-
-
-참고로 npm...
     </summary>
   
 

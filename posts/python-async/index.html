@@ -47,7 +47,7 @@
 <meta property="twitter:title" content="[python] 동기/비동기 프로그래밍의 이해" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"[python] 동기/비동기 프로그래밍의 이해","dateModified":"2021-11-03T00:00:00+09:00","datePublished":"2021-11-03T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-async/"},"url":"http://localhost:4000/posts/python-async/","description":"프론트엔드 개발자라면 JS의 async/await를 들어봤거나, 구현해본 경험이 있을 겁니다.","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"[python] 동기/비동기 프로그래밍의 이해","dateModified":"2021-11-03T00:00:00+09:00","datePublished":"2021-11-03T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-async/"},"url":"http://localhost:4000/posts/python-async/","description":"프론트엔드 개발자라면 JS의 async/await를 들어봤거나, 구현해본 경험이 있을 겁니다.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1561,21 +1561,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1635,71 +1620,7 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -1776,6 +1697,87 @@
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2156,13 +2158,13 @@
       <a class="post-tag" href="/tags/babel/">Babel</a>
     
       
+      <a class="post-tag" href="/tags/es6/">ES6</a>
+    
+      
       <a class="post-tag" href="/tags/git/">Git</a>
     
       
       <a class="post-tag" href="/tags/github/">Github</a>
-    
-      
-      <a class="post-tag" href="/tags/es6/">ES6</a>
     
       
       <a class="post-tag" href="/tags/web/">Web</a>
@@ -2225,6 +2227,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2905,7 +2920,7 @@ Linux cron과 apscheduler에 대해 궁굼하신 분들은 밑의 링크...
       
       
       <div class="card">
-        <a href="/posts/nuxtJs-03/">
+        <a href="/posts/javascript-05/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2917,10 +2932,10 @@ Linux cron과 apscheduler에 대해 궁굼하신 분들은 밑의 링크...
 
 
 <em class="timeago small"
-    date="2022-02-01 00:00:00 +0900"
-    >Feb  1</em>
+    date="2022-02-07 00:00:00 +0900"
+    >Feb  7</em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Nuxt.js] 공식문서로 빠르게 배우기 3탄 - Github에 정적 사이트 빌드 및 배포하기</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Javascript]] this는 어떻게 동작할까?</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2929,18 +2944,14 @@ Linux cron과 apscheduler에 대해 궁굼하신 분들은 밑의 링크...
 
 
 
-                시작하기
+                시작으로
 
 
 
-포트폴리오 사이트용으로 오픈소스 및 템플릿을 사용하려다 맘에 드는게 없어 직접 Nuxt.js + vuetify로 포트폴리오 정적 사이트를 만들었다.
-정적 사이트를 빌드 및 배포하는 방법을 빠르게 공유하고자 한다.
+Javascript에서 함수의 this 키워드는 다른 언어들과 다르게 동작한다. 이는 Java와 같은 익숙한 언어의 개념과 달라 개발자들에게 혼동을 준다.
+대부분의 경우 this의 값은 함수를 호출한 방법에 의해 결정된다. 실행중에는 할당으로 설정할 수 없고 함수를 호출할 때 마다 다를 수 있다.
 
-Nuxt 공식문서를 들어가면 아주 자세히 설명되어 있으니 하나씩 따라해도 금방 이해가 될 것이다.
-
-
-
-nuxt.config...
+Java에서의 this는 인스턴스 자신...
               </p>
             </div>
           </div>
@@ -3515,21 +3526,6 @@ nuxt.config...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3589,71 +3585,7 @@ nuxt.config...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -3730,6 +3662,87 @@ nuxt.config...
     
     
       
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4110,13 +4123,13 @@ nuxt.config...
       <a class="post-tag" href="/tags/babel/">Babel</a>
     
       
+      <a class="post-tag" href="/tags/es6/">ES6</a>
+    
+      
       <a class="post-tag" href="/tags/git/">Git</a>
     
       
       <a class="post-tag" href="/tags/github/">Github</a>
-    
-      
-      <a class="post-tag" href="/tags/es6/">ES6</a>
     
       
       <a class="post-tag" href="/tags/web/">Web</a>
