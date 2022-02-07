@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-07T15:43:14+09:00</updated>
+  <updated>2022-02-07T18:05:23+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,41 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Spring Boot] 실무에서 빠르게 RESTful 웹 서비스 구축하기 (1)</title>
+    <link href="http://localhost:4000/posts/spring-boot-01/" rel="alternate" type="text/html" title="[Spring Boot] 실무에서 빠르게 RESTful 웹 서비스 구축하기 (1)" />
+    <published>2022-02-07T00:00:00+09:00</published>
+  
+    <updated>2022-02-07T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/spring-boot-01/</id>
+    <content src="http://localhost:4000/posts/spring-boot-01/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Spring Boot" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -218,73 +253,6 @@ Centralized Workflow
 즉, Subversion을 사용하는 것과 똑같은 방식으로 프로젝트를 개발할 수 있다는 말이다.
 
 하지만, SVN에 비해 몇가지 장점이...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Nuxt.js] 공식문서로 빠르게 배우기 2탄 - 디렉토리 구조 및 구성파일 설정</title>
-    <link href="http://localhost:4000/posts/nuxtJs-02/" rel="alternate" type="text/html" title="[Nuxt.js] 공식문서로 빠르게 배우기 2탄 - 디렉토리 구조 및 구성파일 설정" />
-    <published>2022-01-19T00:00:00+09:00</published>
-  
-    <updated>2022-01-19T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/nuxtJs-02/</id>
-    <content src="http://localhost:4000/posts/nuxtJs-02/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Nuxt.js" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      시작하기
-
-
-
-Nuxt.js는 Vue.js기반 프레임워크이기 때문에 컴포넌트 구성 및 사용방법은 비슷할 것이라고 생각한다.
-
-아래의 목차대로 빠르게 익혀보자.
-
-
-  Nuxt.js의 프로젝트 구조
-  라우터 방식의 차이
-  Layout 디렉토리
-
-
-
-
-Nuxt.js 프로젝트 구조
-
-
-
-npm으로 생성한 프로젝트 구조를 살펴보면 아래와 같다.
-
-
-
-
-
-Assets 디렉토리
-SASS, CSS, IMAGES, Javascript와 같은 컴파일되지 않는 에셋들을 포함하는 디렉토리이다.
-
-components 디렉토리
-Vue.js 컴포넌트를 포함하는 디렉토리이다. Nuxt.js는 이러한 컴포넌트에 데이터 메소드를 크게 신경쓰지 않는다.
-
-Layouts 디렉토리
-디렉토리는 애플리케이션의 레이아웃을 포함하는 디렉토리...
     </summary>
   
 
