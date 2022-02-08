@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-07T18:05:23+09:00</updated>
+  <updated>2022-02-08T13:35:05+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>[Spring Boot] 실무에서 빠르게 RESTful 웹 서비스 구축하기 (1)</title>
-    <link href="http://localhost:4000/posts/spring-boot-01/" rel="alternate" type="text/html" title="[Spring Boot] 실무에서 빠르게 RESTful 웹 서비스 구축하기 (1)" />
+    <title>[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?</title>
+    <link href="http://localhost:4000/posts/spring-boot-01/" rel="alternate" type="text/html" title="[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?" />
     <published>2022-02-07T00:00:00+09:00</published>
   
     <updated>2022-02-07T00:00:00+09:00</updated>
@@ -34,7 +34,7 @@
 
   
     
-    <category term="Spring Boot" />
+    <category term="Git" />
     
   
 
@@ -46,8 +46,29 @@
 
 
 
-      
+      시작으로
 
+
+
+버전관리를 하기 위해 Git, Github, Gitea, Svn 등 툴을 사용하는 방법에 대해서만 관심이 있었는데 정작 버전관리를 하기 위한 규칙에 대해서는 관심이 없었다.
+
+소프트웨어 할당하는 버전은 기본적으로 유의적 버전 2.0.0-ko2을 따른다고 한다. 나도 이 글을 보면서 지식을 남기기 위해 포스팅을 시작한다.
+
+흔히 애플리케이션 버전정보를 보면 아래와 같이 x.x.x 3자리의 정수로 되어있다.
+
+
+
+
+
+이런 형태의 버전 할당은 Semantic versioning의 규칙을 따른 방식이라고 한다.
+
+
+
+Versioning
+
+
+
+소프트웨어 개발 생태계는 수많은 사람들이 서로의 기술과 성과를 이어받아 오며 믿을 수 없는 수준의 협력 체제를 구축해오고 있다. 의존성은 이러한 협력체제에서...
     </summary>
   
 
