@@ -459,6 +459,192 @@
 
   <div class="post-preview">
     <h1>
+      <a href="/posts/git-04/">[Git] Git 되돌리기(undo)</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        개발을 하다보면 이전으로 되돌려야 하는 상황이 오기 마련입니다.
+
+Git에서도 undo의 기능을 제공합니다.
+
+
+
+commit 재작성
+
+
+
+
+  방금 commit하고 나서, 너무 일찍 commit 했거나 파일을 뺴먹었거나 commit 메시지를 잘못 입력했을 경우 사용합니다.
+  --amend 옵션을 사용하여 커밋을 재작성 할 수 있습니다.
+  다시 c...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+
+      <div class="mr-auto">
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2021-12-12 00:00:00 +0900"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Sun, Dec 12, 2021, 12:00 AM +0900"
+    >Dec 12, 2021</em>
+
+
+        <!-- time to read -->
+        <i class="far fa-clock fa-fw"></i>
+        <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="1363 words">
+  <em>7 min</em></span>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Git
+          </span>
+        
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/javascript-02/">[Javascript] ES2015(ES6) 표준 모듈 시스템 (export, import)</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        표준 모듈 시스템의 등장 배경
+
+
+
+모듈 시스템이 없었던 자바스크립트 환경은 html 헤더에 script 태그를 명시하여 js를 순서대로 불러오는 방법을 사용했습니다. 
+이러한 방식은 여러가지 문제점을 발생시켰습니다. 그 중 가장 문제점은 전역 스코프가 충돌 된다는 것입니다.
+
+그 이유는, script로 태그된 js파일들을 로드할 때 함수와 변수가 전...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+
+      <div class="mr-auto">
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2021-12-08 00:00:00 +0900"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Wed, Dec  8, 2021, 12:00 AM +0900"
+    >Dec  8, 2021</em>
+
+
+        <!-- time to read -->
+        <i class="far fa-clock fa-fw"></i>
+        <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="1592 words">
+  <em>8 min</em></span>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Javascript
+          </span>
+        
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
       <a href="/posts/Node.js-02/">[Node.js] 시작하기</a>
     </h1>
 
@@ -836,7 +1022,7 @@ TDD란 Test Driven Development 약자로 ‘테스트 주도 개발’ 이라고
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/git-04/">[Git] branch의 이해와 사용</a>
+      <a href="/posts/git-03/">[Git] branch의 이해와 사용</a>
     </h1>
 
     <div class="post-content">
@@ -926,7 +1112,7 @@ TDD란 Test Driven Development 약자로 ‘테스트 주도 개발’ 이라고
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/git-03/">[Git] Github 원격저장소와 로컬저장소 연동하기</a>
+      <a href="/posts/git-02/">[Git] Github 원격저장소와 로컬저장소 연동하기</a>
     </h1>
 
     <div class="post-content">
@@ -1189,187 +1375,6 @@ Linux cron과 apscheduler에 대해 궁굼하신 분들은 밑의 링크...
           <span>
           
             Python
-          </span>
-        
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/python-scheduler/">[python] Apscheduler vs Cron Job</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        python 개발일을 하다보면 스케줄러 프로그램을 만들일이 생기는데, python에서 스케줄러 라이브러리와 linux에서 제공하는 스케줄링 기능에 대해 알아보고
-
-어떤 상황에 무엇을 사용해야 좋을지 포스팅 해보겠습니다.
-
-
-
-APScheduler
-
-
-
-Advanced Python Schedule의 약자로 python code가 한 번 또는 주기적으로 ...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago"
-    date="2021-11-30 00:00:00 +0900"
-    
-      data-toggle="tooltip"
-      data-placement="bottom"
-      title="Tue, Nov 30, 2021, 12:00 AM +0900"
-    >Nov 30, 2021</em>
-
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1900 words">
-  <em>10 min</em></span>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Python
-          </span>
-        
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/cloud/">네이버 클라우드 서버에 putty, filezila 접속하기</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        현재 플랫폼 서비스를 제공하기 위해 고객사에 WAS Server, DB Server를 납품하여 APP과 DB를 관리 및 운영하고있습니다. 이런 방식은 온프레미스 인프라가 증가함에 따라 관리 포인트도 증가하게 됩니다.
-
-계속해서, 서비스 환경의 패러다임이 Cloud로 변화되면서 IT산업은 클라우드 기술이 필수 불가결하게 됐다고 생각합니다.
-
-따라서, 최...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago"
-    date="2021-11-04 00:00:00 +0900"
-    
-      data-toggle="tooltip"
-      data-placement="bottom"
-      title="Thu, Nov  4, 2021, 12:00 AM +0900"
-    >Nov  4, 2021</em>
-
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1167 words">
-  <em>6 min</em></span>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Cloud,
-            Naver Cloud
           </span>
         
       </div>

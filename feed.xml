@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-08T13:35:05+09:00</updated>
+  <updated>2022-02-09T13:42:32+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,21 +20,21 @@
 
   
   <entry>
-    <title>[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?</title>
-    <link href="http://localhost:4000/posts/spring-boot-01/" rel="alternate" type="text/html" title="[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?" />
-    <published>2022-02-07T00:00:00+09:00</published>
+    <title>[Node.js] Express API 서버 구축 - 앱 구조화 및 라우팅</title>
+    <link href="http://localhost:4000/posts/Node.js-04/" rel="alternate" type="text/html" title="[Node.js] Express API 서버 구축 - 앱 구조화 및 라우팅" />
+    <published>2022-02-09T00:00:00+09:00</published>
   
-    <updated>2022-02-07T00:00:00+09:00</updated>
+    <updated>2022-02-09T00:00:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/spring-boot-01/</id>
-    <content src="http://localhost:4000/posts/spring-boot-01/" />
+    <id>http://localhost:4000/posts/Node.js-04/</id>
+    <content src="http://localhost:4000/posts/Node.js-04/" />
     <author>
       <name>seongsik seo</name>
     </author>
 
   
     
-    <category term="Git" />
+    <category term="Node.js" />
     
   
 
@@ -46,29 +46,83 @@
 
 
 
-      시작으로
+      사전준비
 
 
 
-버전관리를 하기 위해 Git, Github, Gitea, Svn 등 툴을 사용하는 방법에 대해서만 관심이 있었는데 정작 버전관리를 하기 위한 규칙에 대해서는 관심이 없었다.
+    </summary>
+  
 
-소프트웨어 할당하는 버전은 기본적으로 유의적 버전 2.0.0-ko2을 따른다고 한다. 나도 이 글을 보면서 지식을 남기기 위해 포스팅을 시작한다.
+  </entry>
 
-흔히 애플리케이션 버전정보를 보면 아래와 같이 x.x.x 3자리의 정수로 되어있다.
+  
+  <entry>
+    <title>[Node.js] Express API 서버 구축 - 설치 및 실행</title>
+    <link href="http://localhost:4000/posts/Node.js-03/" rel="alternate" type="text/html" title="[Node.js] Express API 서버 구축 - 설치 및 실행" />
+    <published>2022-02-09T00:00:00+09:00</published>
+  
+    <updated>2022-02-09T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Node.js-03/</id>
+    <content src="http://localhost:4000/posts/Node.js-03/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Node.js" />
+    
+  
+
+  
+    <summary>
+      
 
 
 
 
 
-이런 형태의 버전 할당은 Semantic versioning의 규칙을 따른 방식이라고 한다.
+      사전준비
 
 
 
-Versioning
+
+  Node.js 설치
+  VSCode
 
 
 
-소프트웨어 개발 생태계는 수많은 사람들이 서로의 기술과 성과를 이어받아 오며 믿을 수 없는 수준의 협력 체제를 구축해오고 있다. 의존성은 이러한 협력체제에서...
+
+설치하기
+
+
+
+작업 디렉토리 생성
+$ mkdir myapp
+$ cd myapp
+
+
+
+
+npm package.json 생성
+npm init 명령어를 실행하면 애플리케이션의 이름 및 버전과 같은 몇 가지 정보를 구성하게 되는데 대부분 기본값으로 넘긴다.
+$ npm init
+
+
+entry point는 app.js 혹은 자유롭게 작성해도된다.(package.json에서 자유롭게 수정가능)
+entry point: (index.js)
+
+
+
+
+Express 설치
+Express를 임시로 설치하고 package.json에 종속 항목 목록에 추가하지 않으려면, --save 옵션을 생략한다.
+$ npm install express --save
+
+
+
+  –sav...
     </summary>
   
 
@@ -122,6 +176,62 @@ Java에서의 this는 인스턴스 자신을 가르키는 참조변수이다. th
 
   
   <entry>
+    <title>[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?</title>
+    <link href="http://localhost:4000/posts/git-06/" rel="alternate" type="text/html" title="[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?" />
+    <published>2022-02-07T00:00:00+09:00</published>
+  
+    <updated>2022-02-07T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/git-06/</id>
+    <content src="http://localhost:4000/posts/git-06/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Git" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      시작으로
+
+
+
+버전관리를 하기 위해 Git, Github, Gitea, Svn 등 툴을 사용하는 방법에 대해서만 관심이 있었는데 정작 버전관리를 하기 위한 규칙에 대해서는 관심이 없었다.
+
+소프트웨어 할당하는 버전은 기본적으로 유의적 버전 2.0.0-ko2을 따른다고 한다. 나도 이 글을 보면서 지식을 남기기 위해 포스팅을 시작한다.
+
+흔히 애플리케이션 버전정보를 보면 아래와 같이 x.x.x 3자리의 정수로 되어있다.
+
+
+
+
+
+이런 형태의 버전 할당은 Semantic versioning의 규칙을 따른 방식이라고 한다.
+
+
+
+Versioning
+
+
+
+소프트웨어 개발 생태계는 수많은 사람들이 서로의 기술과 성과를 이어받아 오며 믿을 수 없는 수준의 협력 체제를 구축해오고 있다. 의존성은 이러한 협력체제에서...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>[Nuxt.js] 공식문서로 빠르게 배우기 3탄 - Github에 정적 사이트 빌드 및 배포하기</title>
     <link href="http://localhost:4000/posts/nuxtJs-03/" rel="alternate" type="text/html" title="[Nuxt.js] 공식문서로 빠르게 배우기 3탄 - Github에 정적 사이트 빌드 및 배포하기" />
     <published>2022-02-01T00:00:00+09:00</published>
@@ -168,112 +278,6 @@ nuxt.config.js 설정
 
   target : 배포 대상을 명시하는 프로퍼티이다. 정적 사이트는 static을 추가해야하며 기본값은 server이다.
   router : base를 추가하지 않고 폴더를 배포한 경우 배포된 사이트를 방문하면 자산 누락으로 사이트가 작동하지 않을 수 있다. 이는 웹사이트가 루트가 아니라는 가정으로 넣...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용할까?</title>
-    <link href="http://localhost:4000/posts/vueJs-05-copy/" rel="alternate" type="text/html" title="[Vue.js] Vue의 핵심 기능인 컴포넌트는 무엇이고 어떻게 사용할까?" />
-    <published>2022-01-28T00:00:00+09:00</published>
-  
-    <updated>2022-01-28T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/vueJs-05-copy/</id>
-    <content src="http://localhost:4000/posts/vueJs-05-copy/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Vue.js" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      컴포넌트가 무엇인가?
-
-
-
-컴포넌트는 Vue의 핵심 기능 중 하나이다.
-컴포넌트를 어떻게 구성하고 생성하냐에 따라 어플리케이션의 개발속도와 코드 가독성, 그리고 효율성(ex. 재사용성)이 차이가 난다.
-
-Vue에서 컴포넌트는 기본 HTML 엘리먼트를 확장하여 재사용 가능한 코드를 모듈화 혹은 캡슐화한 것을 의미한다. 상위 수준에서 컴포넌트는 Vue의 컴파일러에 의해 동작이 추가된 사용자 지정 엘리먼트이다. 경우에 따라 특별한 is 속성으로 확장 된 원시 HTML 엘리먼트로 나타날 수도 있다.
-
-Vue 컴포넌트는 Vue 인스턴스이기도 하다. 그러므로 모든 옵션 객체를 사용할 수 있다. (루트에만 사용하는 옵션은 제외) 그리고 같은 라이프사이클 훅을 사용할 수 있다.
-
-정리해서, 컴포넌트는 어플리케이션을 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Git] 개발자들은 Git으로 어떻게 협업할까? 워크플로우 배워보자</title>
-    <link href="http://localhost:4000/posts/git-05/" rel="alternate" type="text/html" title="[Git] 개발자들은 Git으로 어떻게 협업할까? 워크플로우 배워보자" />
-    <published>2022-01-26T00:00:00+09:00</published>
-  
-    <updated>2022-01-26T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/git-05/</id>
-    <content src="http://localhost:4000/posts/git-05/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Git" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      시작으로
-
-먼저, Comparing Workflows의 글에서 자세히 공부할 수 있었다.
-협업 뿐만아니라 Git에 대해 자세히 정리되어 있으니 참고하길 바란다.
-
-글에서 정리한 대표적인 Git 워크플로우는 4가지이다.
-
-
-  Centralized Workflow
-  Feature Branch Workflow
-  Gitflow Workflow
-  Forking Workflow
-
-
-이제 시작해보자~
-
-
-
-Centralized Workflow
-
-
-
-
-
-중앙 집중식 워크플로우로 SVN과 똑같이 중앙이 되는 메인 저장소를 중심으로 모든 변경 사항에 대해 main 분기에 커밋된다.
-즉, Subversion을 사용하는 것과 똑같은 방식으로 프로젝트를 개발할 수 있다는 말이다.
-
-하지만, SVN에 비해 몇가지 장점이...
     </summary>
   
 

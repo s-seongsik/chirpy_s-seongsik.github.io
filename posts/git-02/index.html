@@ -34,24 +34,24 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="[Git] Git 되돌리기(undo)" />
+<meta property="og:title" content="[Git] Github 원격저장소와 로컬저장소 연동하기" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="개발을 하다보면 이전으로 되돌려야 하는 상황이 오기 마련입니다." />
-<meta property="og:description" content="개발을 하다보면 이전으로 되돌려야 하는 상황이 오기 마련입니다." />
+<meta name="description" content="깃허브 원격저장소와 로컬저장소 연동을 머리속에서만 알고있었고, git 관련 명령어도 필요할 때마다 구글링으로 찾아서 처리했었는데…" />
+<meta property="og:description" content="깃허브 원격저장소와 로컬저장소 연동을 머리속에서만 알고있었고, git 관련 명령어도 필요할 때마다 구글링으로 찾아서 처리했었는데…" />
 <link rel="canonical" href="http://localhost:4000/posts/git-02/" />
 <meta property="og:url" content="http://localhost:4000/posts/git-02/" />
 <meta property="og:site_name" content="SeongSik Seo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-12-12T00:00:00+09:00" />
+<meta property="article:published_time" content="2021-12-03T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="[Git] Git 되돌리기(undo)" />
+<meta property="twitter:title" content="[Git] Github 원격저장소와 로컬저장소 연동하기" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"[Git] Git 되돌리기(undo)","dateModified":"2021-12-12T00:00:00+09:00","datePublished":"2021-12-12T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/git-02/"},"url":"http://localhost:4000/posts/git-02/","description":"개발을 하다보면 이전으로 되돌려야 하는 상황이 오기 마련입니다.","@context":"https://schema.org"}</script>
+{"headline":"[Git] Github 원격저장소와 로컬저장소 연동하기","dateModified":"2021-12-03T00:00:00+09:00","datePublished":"2021-12-03T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/git-02/"},"url":"http://localhost:4000/posts/git-02/","description":"깃허브 원격저장소와 로컬저장소 연동을 머리속에서만 알고있었고, git 관련 명령어도 필요할 때마다 구글링으로 찾아서 처리했었는데…","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>[Git] Git 되돌리기(undo) | SeongSik Seo
+  <title>[Git] Github 원격저장소와 로컬저장소 연동하기 | SeongSik Seo
   </title>
 
   <!--
@@ -412,7 +412,7 @@
         
 
           
-            <span>[Git] Git 되돌리기(undo)</span>
+            <span>[Git] Github 원격저장소와 로컬저장소 연동하기</span>
           
 
         
@@ -584,6 +584,231 @@
     
 
   
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
 
   
 
@@ -610,6 +835,17 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
       
 
       
@@ -686,7 +922,7 @@
       >
 
 
-<h1 data-toc-skip>[Git] Git 되돌리기(undo)</h1>
+<h1 data-toc-skip>[Git] Github 원격저장소와 로컬저장소 연동하기</h1>
 
 <div class="post-meta text-muted">
 
@@ -720,12 +956,12 @@
 
 
 <em class="timeago"
-    date="2021-12-12 00:00:00 +0900"
+    date="2021-12-03 00:00:00 +0900"
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Sun, Dec 12, 2021, 12:00 AM +0900"
-    >Dec 12, 2021</em>
+      title="Fri, Dec  3, 2021, 12:00 AM +0900"
+    >Dec  3, 2021</em>
 
       </span>
 
@@ -752,8 +988,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1363 words">
-  <em>7 min</em> read</span>
+  title="1060 words">
+  <em>5 min</em> read</span>
 
 
       <!-- page views -->
@@ -765,26 +1001,108 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>개발을 하다보면 이전으로 되돌려야 하는 상황이 오기 마련입니다.</p>
+  <p>깃허브 원격저장소와 로컬저장소 연동을 머리속에서만 알고있었고, git 관련 명령어도 필요할 때마다 구글링으로 찾아서 처리했었는데…</p>
 
-<p>Git에서도 <code class="language-plaintext highlighter-rouge">undo</code>의 기능을 제공합니다.</p>
+<p>날잡고 정리해서 내것으로 만들어야지 생각만하다가 오늘 정리하기로 맘먹었다.</p>
+
+<p>오늘은! <kbd>로컬 저장소(workspace)를 깃허브 원격저장소에 연동하는 방법에 대해 포스팅 해보겠습니다.</kbd></p>
+
+<p>참고로, git이 설치가 안되신분들은 git을 설치하고 오시기 바랍니다.</p>
 
 <p><br /></p>
 
-<h2 id="commit-재작성"><strong>commit 재작성</strong><a href="#commit-재작성"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h2 id="로컬-저장소-생성"><strong>로컬 저장소 생성</strong><a href="#로컬-저장소-생성"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <hr />
 
 <ul>
-  <li>방금 commit하고 나서, 너무 일찍 commit 했거나 파일을 뺴먹었거나 commit 메시지를 잘못 입력했을 경우 사용합니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">--amend</code> 옵션을 사용하여 커밋을 재작성 할 수 있습니다.</li>
-  <li>다시 commit을 하고 싶으면, <code class="language-plaintext highlighter-rouge">[파일을 수정후]</code> -&gt; <code class="language-plaintext highlighter-rouge">[Staging Area에 추가]</code> -&gt; <code class="language-plaintext highlighter-rouge">[git commit --amend]</code> -&gt; <code class="language-plaintext highlighter-rouge">[재작성 후 저장하면 끝]</code></li>
-  <li><code class="language-plaintext highlighter-rouge">--amend</code> 옵션으로 커밋을 고치는 작업은, 추가로 작업한 일이 작다고 하더라도 이전의 커밋을 완전히 새로 고쳐서 새 커밋으로 변경합니다.</li>
-  <li>따라서, 이전의 커밋을 일어나지 않은 일이 되고 당연히 히스토리에도 남지 않습니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">--amend</code> 옵션의 장점은 아주 작게 뭔가를 빠드리거나, 변경한 것을 새 커밋으로 분리하지 않고 하나의 커밋으로 처리하는 것입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Git Bash</code> 실행</li>
+  <li>본인이 작업할 로컬 <code class="language-plaintext highlighter-rouge">workspace(폴더)</code>를 생성합니다.</li>
+  <li>생성할 위치 이동 + git_test라는 이름의 폴더 생성합니다.
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 ~
+</span><span class="gp">  $</span><span class="w"> </span><span class="nb">cd </span>E:/project <span class="o">&amp;&amp;</span> <span class="nb">mkdir </span>git_test
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
 </ul>
 
-<div class="language-console highlighter-rouge"><div class="code-header">
+<p><br /></p>
+
+<ul>
+  <li>생성한 <code class="language-plaintext highlighter-rouge">workspace(폴더)</code> git_test에서 git 저장소를 생성합니다.
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project
+</span><span class="gp">  $</span><span class="w"> </span><span class="nb">cd </span>git_test/
+<span class="go">
+  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test
+</span><span class="gp">  $</span><span class="w"> </span>git init
+<span class="go">  Initialized empty Git repository in E:/project/git_test/.git/
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>파일 생성
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>vi test.py
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git status</code>로 상태를 확인해보면 생성된 test.py 파일을 git에 추가할 수 있다고 나옵니다.
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git status
+<span class="go">  On branch master
+
+  No commits yet
+
+  Untracked files:
+</span><span class="gp">  (use "git add &lt;file&gt;</span>...<span class="s2">" to include in what will be committed)
+</span><span class="go">          test.py
+
+  nothing added to commit but untracked files present (use "git add" to track)
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>git 저장소에 추가</li>
+  <li><code class="language-plaintext highlighter-rouge">No commits yet :</code> 아직 커밋을 하지 않다고 나옵니다.
+    <div class="language-console highlighter-rouge"><div class="code-header">
         <span label-text="Console"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -798,120 +1116,191 @@
 10
 11
 12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-</pre></td><td class="rouge-code"><pre><span class="go">        // test01.py 파일 생성
-</span><span class="gp">        $</span><span class="w"> </span>vi test01.py
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git add test.py
 <span class="go">
-        // test02.py 파일 생성
-</span><span class="gp">        $</span><span class="w"> </span>vi test01.py
-<span class="go">
-        // test01.py만 Staging Area에 추가후 commit 진행
-</span><span class="gp">        $</span><span class="w"> </span>git add test01.py
-<span class="go">
-</span><span class="gp">        $</span><span class="w"> </span>git status
-<span class="go">        On branch test
-        Your branch is up to date with 'origin/test'.
+  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git status
+<span class="go">  On branch master
 
-        Changes to be committed:
-</span><span class="gp">        (use "git restore --staged &lt;file&gt;</span>...<span class="s2">" to unstage)
-</span><span class="go">                new file:   test01.py
+  No commits yet
 
-
-</span><span class="gp">        $</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s2">"new test01.py"</span>
-<span class="go">        [test 17156f0] new test01.py
-        1 file changed, 0 insertions(+), 0 deletions(-)
-        create mode 100644 test01.py
-
-        // 엇?! test02.py 파일도 같이 commit 해야 하므로 --amend 옵션 사용
-        // 먼저 test02.py 파일을 Staging Area에 추가
-</span><span class="gp">        $</span><span class="w"> </span>git add test02.py
-<span class="gp">        $</span><span class="w"> </span>git commit <span class="nt">--amend</span>
-<span class="go">        
-        // git commit --amend를 하게 되면 바로 이전 commit 을 재작성할 수 있습니다.
-</span><span class="gp">        // commit 메시지를 "new test01.py" -&gt;</span><span class="w"> </span><span class="s2">"new test01.py test02.py"</span> 로 변경 후 저장
-<span class="go">
-        new test01.py test02.py
-
-</span><span class="gp">        #</span><span class="w"> </span>Please enter the commit message <span class="k">for </span>your changes. Lines starting
-<span class="gp">        #</span><span class="w"> </span>with <span class="s1">'#'</span> will be ignored, and an empty message aborts the commit.
-<span class="gp">        #</span><span class="w">
-</span><span class="gp">        #</span><span class="w"> </span>Date:      Mon Dec 13 11:09:51 2021 +0900
-<span class="gp">        #</span><span class="w">
-</span><span class="gp">        #</span><span class="w"> </span>On branch <span class="nb">test</span>
-<span class="gp">        #</span><span class="w"> </span>Your branch is ahead of <span class="s1">'origin/test'</span> by 1 commit.
-<span class="gp">        #</span><span class="w">   </span><span class="o">(</span>use <span class="s2">"git push"</span> to publish your <span class="nb">local </span>commits<span class="o">)</span>
-<span class="gp">        #</span><span class="w">
-</span><span class="gp">        #</span><span class="w"> </span>Changes to be committed:
-<span class="gp">        #</span><span class="w">       </span>new file:   test01.py
-<span class="gp">        #</span><span class="w">       </span>new file:   test02.py
-<span class="gp">        #</span><span class="w">
-</span><span class="gp">        #</span><span class="w"> </span>Untracked files:
-<span class="gp">        #</span><span class="w">       </span>sample_01/
-<span class="go">        
-        // 히스토리를 확인해보면 변경된 것을 확인할 수 있습니다!
-</span><span class="gp">        $</span><span class="w"> </span>git log
-<span class="gp">        commit 4893401cd6b8723d49bfad2d6ae906d85f674c36 (HEAD -&gt;</span><span class="w"> </span><span class="nb">test</span><span class="o">)</span>
-<span class="gp">        Author: s-seongsik &lt;52439201+s-seongsik@users.noreply.github.com&gt;</span><span class="w">
-</span><span class="go">        Date:   Mon Dec 13 11:09:51 2021 +0900
-
-        new test01.py test02.py
-
-</span></pre></td></tr></tbody></table></code></div></div>
+  Changes to be committed:
+</span><span class="gp">  (use "git rm --cached &lt;file&gt;</span>...<span class="s2">" to unstage)
+</span><span class="go">          new file:   test.py
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
 
 <p><br /></p>
 
-<h2 id="unstage로-변경하기"><strong>Unstage로 변경하기</strong><a href="#unstage로-변경하기"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git commit</code></li>
+  <li><code class="language-plaintext highlighter-rouge">-m "test commit add test.py"</code> &lt;- commit message
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s2">"test commit add test.py"</span>
+<span class="go">  [master (root-commit) fc4e43a] test commit add test.py
+  1 file changed, 0 insertions(+), 0 deletions(-)
+  create mode 100644 test.py
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h2 id="원격-저장소-생성-및-연동"><strong>원격 저장소 생성 및 연동</strong><a href="#원격-저장소-생성-및-연동"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <hr />
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Working 디렉토리</code> &lt;-&gt; <code class="language-plaintext highlighter-rouge">Staging Area</code> 사이를 넘나드는 방법입니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Working 디렉토리</code> -&gt;  <code class="language-plaintext highlighter-rouge">Staging Area</code>에 추가하는 방법은 <code class="language-plaintext highlighter-rouge">"git add [filename]"</code> 으로 알고 있습니다.</li>
-  <li>반대로 <code class="language-plaintext highlighter-rouge">Unstage</code> 상태로 되돌리기 위해서는 <code class="language-plaintext highlighter-rouge">"git restore --staged [filename]"</code>을 사용합니다.
+  <li>
+    <p>github <code class="language-plaintext highlighter-rouge">repository</code> 생성합니다.</p>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/144543851-6fa2303a-b099-4444-b383-121becb17a24.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>code -&gt; HTTPS 누르시면 URL이 나오는데 <code class="language-plaintext highlighter-rouge">COPY</code>합니다.</p>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/144544065-531f5087-ddd0-4324-bd8e-6ead1235287b.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git remote</code>, 로컬 저장소와 원격 저장소를 연동합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">git remote add [원격저장소별칭] [원격저장소URL]</code>
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git remote add origin https://github.com/s-seongsik/github_test.git
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">remote</code> 연결을 확인합니다.
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git remote
+<span class="go">  origin
+
+</span><span class="gp">  $</span><span class="w"> </span>git remote <span class="nt">-v</span>
+<span class="go">  origin    https://github.com/s-seongsik/github_test.git (fetch)
+  origin    https://github.com/s-seongsik/github_test.git (push)
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git push [원격저장소별칭] [로컬브랜치이름]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--all</code> 을 붙이면 로컬의 모든 브랜치를 push 합니다.<br />
+```console
+  # 로컬브랜치 확인
+  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+  $ git branch
+    <ul>
+      <li>master</li>
+    </ul>
+
+    <p># push
+  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+  $ git push origin master
+  Enumerating objects: 3, done.
+  Counting objects: 100% (3/3), done.
+  Writing objects: 100% (3/3), 230 bytes | 230.00 KiB/s, done.
+  Total 3 (delta 0), reused 0 (delta 0)
+  remote:
+  remote: Create a pull request for ‘master’ on GitHub by visiting:
+  remote:      https://github.com/s-seongsik/github_test/pull/new/master
+  remote:
+  To https://github.com/s-seongsik/github_test.git</p>
+    <ul>
+      <li>[new branch]      master -&gt; master
+```</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>원격저장소를 보면 연동된 master 로컬브랜치에 test.py가 생성된것을 볼 수 있습니다.</p>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/144550460-f17049fa-e360-402a-90cc-b617269d4a27.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="파일-수정해보기"><strong>파일 수정해보기</strong><a href="#파일-수정해보기"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<hr />
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">test.py</code>를 수정합니다.</p>
+
+    <p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/144551103-b38dd43d-0993-4835-9812-0f82d9927666.png" alt="image" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git status</code>로 상태확인</li>
+  <li><code class="language-plaintext highlighter-rouge">modified : test.py</code> &lt;-라는 문구에서 변경 확인이 가능합니다.
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span label-text="Console"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git status
+<span class="go">  On branch master
+  Changes to be committed:
+</span><span class="gp">  (use "git restore --staged &lt;file&gt;</span>...<span class="s2">" to unstage)
+</span><span class="go">          modified:   test.py
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>위에서 배운대로 <code class="language-plaintext highlighter-rouge">git add</code> -&gt; <code class="language-plaintext highlighter-rouge">git commit</code> -&gt; <code class="language-plaintext highlighter-rouge">git push</code> 를 진행합니다.</li>
+  <li>tip) git add . 을 하시면 변경된 모든 것을 add 합니다.
     <div class="language-console highlighter-rouge"><div class="code-header">
         <span label-text="Console"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -930,163 +1319,42 @@
 14
 15
 16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-</pre></td><td class="rouge-code"><pre><span class="go">      // git test01.py을 수정한뒤 상태를 확인
-</span><span class="gp">      $</span><span class="w"> </span>git status
-<span class="go">      On branch test
-      Your branch is ahead of 'origin/test' by 1 commit.
-      (use "git push" to publish your local commits)
+</pre></td><td class="rouge-code"><pre><span class="go">  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git add test.py
+<span class="go">
+  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git commit <span class="nt">-m</span> <span class="s2">"modify test.py"</span>
+<span class="go">  [master 5a43c8b] modify test.py
+  1 file changed, 2 insertions(+)
 
-      Changes not staged for commit:
-</span><span class="gp">      (use "git add &lt;file&gt;</span>...<span class="s2">" to update what will be committed)
-</span><span class="gp">      (use "git restore &lt;file&gt;</span><span class="s2">..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
-<span class="go">              modified:   test01.py
-
-      // Staging Area에 추가
-      // 상태를 확인해보면 Staging Area에 추가된 것을 확인할 수 있습니다.
-</span><span class="gp">      $</span><span class="w"> </span>git add test01.py
-<span class="gp">      $</span><span class="w"> </span>git status
-<span class="go">      On branch test
-      Your branch is ahead of 'origin/test' by 1 commit.
-      (use "git push" to publish your local commits)
-
-      Changes to be committed:
-</span><span class="gp">      (use "git restore --staged &lt;file&gt;</span>...<span class="s2">" to unstage)
-</span><span class="go">              modified:   test01.py
-
-      // 다시 Unstage 상태로 되돌리기
-      // 상태를 확인해보면 Unstage 상태로 돌아간 것을 확인할 수 있습니다.
-</span><span class="gp">      $</span><span class="w"> </span>git restore <span class="nt">--staged</span> test01.py
-<span class="go">        
-</span><span class="gp">      $</span><span class="w"> </span>git status
-<span class="go">      On branch test
-      Your branch is ahead of 'origin/test' by 1 commit.
-      (use "git push" to publish your local commits)
-
-      Changes not staged for commit:
-</span><span class="gp">      (use "git add &lt;file&gt;</span>...<span class="s2">" to update what will be committed)
-</span><span class="gp">      (use "git restore &lt;file&gt;</span><span class="s2">..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
-<span class="go">              modified:   test01.py
-</span></pre></td></tr></tbody></table></code></div>    </div>
+  seong@DESKTOP-O5CIEJV MINGW64 /e/project/git_test (master)
+</span><span class="gp">  $</span><span class="w"> </span>git push origin master
+<span class="go">  Enumerating objects: 5, done.
+  Counting objects: 100% (5/5), done.
+  Writing objects: 100% (3/3), 272 bytes | 272.00 KiB/s, done.
+  Total 3 (delta 0), reused 0 (delta 0)
+  To https://github.com/s-seongsik/github_test
+</span><span class="gp">  c81e115..5a43c8b  master -&gt;</span><span class="w"> </span>master
+</pre></td></tr></tbody></table></code></div>    </div>
   </li>
 </ul>
 
 <p><br /></p>
 
-<h2 id="변경사항-취소하기"><strong>변경사항 취소하기</strong><a href="#변경사항-취소하기"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>test.py 내용이 변경된 것을 확인할 수 있습니다.<br />
+<img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/144551729-7af61588-7526-455d-9f79-c67064c12d53.png" alt="image" /></li>
+</ul>
+
+<p><br />
+<br /></p>
 
 <hr />
 
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">modified</code>된 파일을 취소하는 방법입니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">"git restore [filename]"</code></li>
-  <li>해당 명령어는 변경된 사항을 취소하여 이전으로 되돌립니다.</li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="code-header">
-        <span label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-</pre></td><td class="rouge-code"><pre><span class="go">        // 위에 Unstage로 변경된 test01.py의 상태를 확인해보시면
-</span><span class="gp">        // (use "git restore &lt;file&gt;</span>...<span class="s2">" to discard changes in working directory) 라는 문구를 확인할 수 있습니다.
-</span><span class="go">        // 해당 명령어로 Working 디렉토리에서 변경사항을 취소할 수 있다고 되어있습니다.
-        // 한번 실행해 보겠습니다.
-
-</span><span class="gp">        $</span><span class="w"> </span>git status
-<span class="go">        On branch test
-        Your branch is ahead of 'origin/test' by 1 commit.
-        (use "git push" to publish your local commits)
-
-        Changes not staged for commit:
-</span><span class="gp">        (use "git add &lt;file&gt;</span>...<span class="s2">" to update what will be committed)
-</span><span class="gp">        (use "git restore &lt;file&gt;</span><span class="s2">..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
-<span class="go">                modified:   test01.py
-
-        // 참고로 test01.py 파일에는 x=10이라는 코드가 들어있습니다.
-        // 상태에서는 사라진 것을 확인할 수 있습니다.
-</span><span class="gp">        $</span><span class="w"> </span>git restore test01.py
-<span class="go">
-</span><span class="gp">        $</span><span class="w"> </span>git status
-<span class="go">        On branch test
-        Your branch is ahead of 'origin/test' by 1 commit.
-        (use "git push" to publish your local commits)
-
-
-        // test01.py에서 변경된 내용이 취소되었는지 확인해보겠습니다.
-        // 아무것도 없던 이전으로 돌아간 것을 확인할 수 있습니다!
-</span><span class="gp">        $</span><span class="w"> </span>vi test01.py
-<span class="go">
-        [test01.py]
-        ~
-        ~
-        ~
-        ~
-        ~
-        ~
-        ~
-        ~
-        test01.py [unix] (11:41 13/12/2021)                        0,0-1 모두
-        "test01.py" 0L, 0C
-
-</span></pre></td></tr></tbody></table></code></div></div>
+<h2 id="끝으로"><strong>끝으로</strong><a href="#끝으로"><i class="fas fa-hashtag"></i></a></h2></h2>
+<p>로컬저장소와 원격저장소 연동하는 과정을 정리하면서 좀더 github와 git를 깊게 공부하고 싶은 욕심이 생겼습니다.
+기회가 되면 <strong>git으로 협업하는 방법</strong>과 <strong>git의 원리 및 용어정리</strong> 대해 포스팅 해보겠습니다. 
+감사합니다.</p>
 
 </div>
 
@@ -1144,19 +1412,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=[Git] Git 되돌리기(undo) - SeongSik Seo&url=http://localhost:4000/posts/git-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=[Git] Github 원격저장소와 로컬저장소 연동하기 - SeongSik Seo&url=http://localhost:4000/posts/git-02/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=[Git] Git 되돌리기(undo) - SeongSik Seo&u=http://localhost:4000/posts/git-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=[Git] Github 원격저장소와 로컬저장소 연동하기 - SeongSik Seo&u=http://localhost:4000/posts/git-02/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=[Git] Git 되돌리기(undo) - SeongSik Seo&url=http://localhost:4000/posts/git-02/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=[Git] Github 원격저장소와 로컬저장소 연동하기 - SeongSik Seo&url=http://localhost:4000/posts/git-02/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -2715,98 +2983,124 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -3067,10 +3361,10 @@
 
 
 <em class="timeago small"
-    date="2021-12-03 00:00:00 +0900"
-    >Dec  3, 2021</em>
+    date="2021-12-04 00:00:00 +0900"
+    >Dec  4, 2021</em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Git] Github 원격저장소와 로컬저장소 연동하기</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Git] branch의 이해와 사용</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3079,13 +3373,14 @@
 
 
 
-                깃허브 원격저장소와 로컬저장소 연동을 머리속에서만 알고있었고, git 관련 명령어도 필요할 때마다 구글링으로 찾아서 처리했었는데…
+                브랜치(branch)란?
 
-날잡고 정리해서 내것으로 만들어야지 생각만하다가 오늘 정리하기로 맘먹었다.
 
-오늘은! 로컬 저장소(workspace)를 깃허브 원격저장소에 연동하는 방법에 대해 포스팅 해보겠습니다.
 
-참고로, git이 설치가 안되신분들은...
+프로젝트를 진행할 때 개발자들은 동일한 소스코드를 같이 공유하고 작업하게 된다. 같이 작업을 하다보면 어떤 개발자는 새로운 기능을 추가하고 또 다른 개발자는 버그를 잡아내거나 합니다.
+이와 같이 동일한 소스코드를 공유하더라도 하는 업무는 다르기 때문에 각기 다른 버전의 코드가 만들어 질 수 밖에 없다.
+
+이럴 때 사용하는...
               </p>
             </div>
           </div>
@@ -3104,16 +3399,16 @@
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/javascript-02/" class="btn btn-outline-primary"
+  <a href="/posts/git-01/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>[Javascript] ES2015(ES6) 표준 모듈 시스템 (export, import)</p>
+    <p>[Git] Git 이해하기</p>
   </a>
   
 
   
-  <a href="/posts/Webpack-01/" class="btn btn-outline-primary"
+  <a href="/posts/git-03/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>[Webpack] 시작하기</p>
+    <p>[Git] branch의 이해와 사용</p>
   </a>
   
 

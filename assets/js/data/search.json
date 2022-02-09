@@ -1,18 +1,33 @@
 [
   
   {
-    "title": "[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?",
-    "url": "/posts/spring-boot-01/",
-    "categories": "Git",
-    "tags": "Git, Github",
-    "date": "2022-02-07 00:00:00 +0900",
+    "title": "[Node.js] Express API 서버 구축 - 앱 구조화 및 라우팅",
+    "url": "/posts/Node.js-04/",
+    "categories": "Node.js",
+    "tags": "Node.js, Javascript",
+    "date": "2022-02-09 00:00:00 +0900",
     
 
 
 
 
 
-    "snippet": "시작으로버전관리를 하기 위해 Git, Github, Gitea, Svn 등 툴을 사용하는 방법에 대해서만 관심이 있었는데 정작 버전관리를 하기 위한 규칙에 대해서는 관심이 없었다.소프트웨어 할당하는 버전은 기본적으로 유의적 버전 2.0.0-ko2을 따른다고 한다. 나도 이 글을 보면서 지식을 남기기 위해 포스팅을 시작한다.흔히 애플리케이션 버전정보를 보면 아래와 같이 x.x.x 3자리의 정수로 되어있다.이런 형태의 버전 할당은 Semantic versioning의 규칙을 따른 방식이라고 한다.Versioning소프트웨어 개발 생태계는 수많은 사람들이 서로의 기술과 성과를 이어받아 오며 믿을 수 없는 수준의 협력 체제를 구축해오고 있다. 의존성은 이러한 협력체제에서 나오게 된 요소로, 다른 사람들이 만들어온 기능을 다시 만들 필요 없이 손쉽게 가져와서 재활용하는 방식으로 빠르게 소프트웨어를 만들 수 있게 되었다.하지만 이렇게 여러 사람에게 이용되는 패키지가 새롭게 업데이트될 때, 생각보다 다양한 문제에 직면하게 된다. 기능의 사용법을 바꾸어버리거나 동작 방식의 변경 같은 변화들은 그에 의존하는 다른 소프트웨어를 의도대로 동작하지 못하게 하므로, 새로운 변화와 기존의 것을 구분할 필요가 생겼다. 버전이라는 개념은 이러한 패키지의 변화를 구분하기 위해 사용하기 시작하였다.Semantic versioningSemantic Versioning은 Github의 공동창업자인 Tom Preston-Werner가 Versioning의 문제를 해결하기 위해 기존의 현안을 모아 만든 제안이다.번호 할당은 Major.Minor.Patch 으로 할당한다고 한다. 밑에서 자세히 알아보자.유의적 버전 명세공개 API 선언  유의적 버전을 쓰는 소프트웨어는 반드시 공개 API를 선언한다. 이 API는 코드 자체로 선언하거나 문서로 엄격히 명시해야 한다. 어떤 방식으로든, 정확하고 이해하기 쉬워야 한다.버전 번호 형식  보통 버전 번호는 반드시 X.Y.Z의 형태로 한다. X, Y, Z는 각각 자연수(음이 아닌 정수)이고, 절대로 0이 앞에 붙어서는 안 된다.  X는 주(主, Major)버전 번호이고, Y는 부(部, Minor)버전 번호이며, Z는 수(修, Patch)버전 번호이다.  각각은 반드시 증가하는 수여야 한다. 예: 1.9.0 -&amp;gt; 1.10.0 -&amp;gt; 1.11.0.금지 사항  특정 버전으로 패키지를 배포하고 나면, 그 버전의 내용은 절대 변경하지 말아야 한다.  변경분이 있다면 반드시 새로운 버전으로 배포하도록 한다.초기개발 버전  주버전 0(0.y.z)은 초기 개발을 위해서 쓴다. 아무 때나 마음대로 바꿀 수 있다.  이 공개 API는 안정판으로 보지 않는 게 좋다.최초 배포 버전  1.0.0 버전은 공개 API를 정의한다.  이후의 버전 번호는 이때 배포한 공개 API에서 어떻게 바뀌는지에 따라 올린다.수(Patch)버전 증가 조건                              수(Patch)버전 Z (x.y.Z          x &amp;gt; 0)는 반드시 그 전 버전 API와 호환되는 버그 수정의 경우에만 올린다.                      버그 수정은 잘못된 내부 기능을 고치는 것이라 정의한다.부(Minor)버전 증가 조건                              공개 API에 기존과 호환되는 새로운 기능을 추가할 때는 반드시 부(Minor)버전 Y(x.Y.z          x &amp;gt; 0)를 올린다.                      공개 API의 일부를 앞으로 제거할 것(deprecate)으로 표시한 경우에도 반드시 올리도록 한다.  내부 비공개 코드에 새로운 기능이 대폭 추가되거나 개선사항이 있을 때도 올릴 수 있다.  부(Minor)버전을 올릴 때 수(Patch)버전을 올릴 때만큼의 변화를 포함할 수도 있다.  부(Minor)버전이 올라가면 수(Patch)버전은 반드시 0에서 다시 시작한다.주(Major)버전 증가 조건                              공개 API에 기존과 호환되지 않는 변화가 있을 때는 반드시 주(Major)버전 X(X.y.z          X &amp;gt; 0)를 올린다.                      부(Minor)버전이나 수(Patch)버전급 변화를 포함할 수 있다.  주(Major)버전 번호를 올릴 때는 반드시 부(Minor)버전과 수(Patch)버전을 0으로 초기화 한다.버전 우선순위  우선순위는 버전의 순서를 정렬할 때 서로를 어떻게 비교할지를 나타낸다.  우선순위는 반드시 주, 부, 수 버전, 그리고 정식배포 전 버전의 식별자를 나누어 계산하도록 한다 (빌드 메타데이터는 우선순위에 영향을 주지 않는다).  우선순위는 다음의 순서로 차례로 비교하면서, 차이가 나는 부분이 나타나면 결정된다          주, 부, 수는 숫자로 비교한다. 예: 1.0.0 &amp;lt; 2.0.0 &amp;lt; 2.1.0 &amp;lt; 2.1.1.      주, 부, 수버전이 같을 경우, 정식배포 전 버전이 표기된 경우의 우선순위가 더 낮다. 예: 1.0.0-alphaa1 &amp;lt; 1.0.0.      주, 부, 수버전이 같은 두 배포 전 버전 간의 우선순위는 식별자 숫자가 클수록 높다. 예: a1 &amp;lt; a2.      요약(Major.Minor.Patch)  기존 버전과 호환되지 않게 API가 바뀌면 “주(Major) 버전”을 올리고,  기존 버전과 호환되면서 새로운 기능을 추가할 때는 “부(Minor) 버전”을 올리고,  기존 버전과 호환되면서 버그를 수정한 것이라면 “수(Patch) 버전”을 올린다. 주.부.수 형식에 정식배포 전 버전이나 빌드 메타데이터를 위한 라벨을 덧붙이는 방법도 있다.  각 번호의 수는 항상 증가해야 한다.  버전 번호는 Major, Minor, Patch 의 형태로 배포하고, Major, Minor, Patch 는 각각 자연수이고 절대 앞에 0이 붙어서는 안된다.  특정 버전으로 패키지를 배포하고 나면, 그 버전의 내용은 절대 변경하지 말아야한다. 변경분이 있다면 반드시 새로운 버전으로 배포하도록 한다.  Major 버전이 변경될 때, Minor, Patch 는 0으로 초기화 된다.  Minor 버전이 변경될 때, Patch 는 0으로 초기화 된다.이를 좀더 쉽게 정리해보자면주(Major) : 기존이랑 다름, 싹 바뀜 =&amp;gt; 싹다 바꼈으니 주(Major) +1 해주고 나머지는 0부터 시작~ (ex 1.5.2 -&amp;gt; 2.0.0)부(Minor) : 기존이랑 같지만 거기서 새로운기능을 추가하거나 삭제할 떄 =&amp;gt; 후 새로운 기능 버그도 없고 완성했으니 부(Minor)+1 해주고 수(Patch)는 0으로 시작 (ex 1.5.2 -&amp;gt; 1.6.0)수(Patch) : 그 전버전 버그 수정만했을 때(다른거 안됨 무조건 기능 고치는 것) =&amp;gt; 기능이렇게 생각하고 버전 관리 규칙을 적용해서 할당하면 될 것 같다."
+    "snippet": "사전준비"
+  },
+  
+  {
+    "title": "[Node.js] Express API 서버 구축 - 설치 및 실행",
+    "url": "/posts/Node.js-03/",
+    "categories": "Node.js",
+    "tags": "Node.js, Javascript",
+    "date": "2022-02-09 00:00:00 +0900",
+    
+
+
+
+
+
+    "snippet": "사전준비  Node.js 설치  VSCode설치하기작업 디렉토리 생성$ mkdir myapp$ cd myappnpm package.json 생성npm init 명령어를 실행하면 애플리케이션의 이름 및 버전과 같은 몇 가지 정보를 구성하게 되는데 대부분 기본값으로 넘긴다.$ npm initentry point는 app.js 혹은 자유롭게 작성해도된다.(package.json에서 자유롭게 수정가능)entry point: (index.js)Express 설치Express를 임시로 설치하고 package.json에 종속 항목 목록에 추가하지 않으려면, --save 옵션을 생략한다.$ npm install express --save  –save 옵션을 통해 설치된 Node 모듈은 package.json 파일 내의 dependencies 목록에 추가된다. 이후 app 디렉토리에서 npm install을 실행하면 종속 항목 목록 내의 모듈이 자동으로 설치된다.express 실행app.js 파일을 생성 후 아래의 코드를 작성한다.const express = require(&#39;express&#39;)const app = express()const port = 3000app.get(&#39;/&#39;, (req, res) =&amp;gt; {  res.send(&#39;Hello World!&#39;)})app.listen(port, () =&amp;gt; {  console.log(`Example app listening on port ${port}`)})아래의 명령어로 app을 실행$ node app.jshttp://localhost:3000/로 접속하면 Hello world!이 출력될 것이다. 여기까지 했으면 준비완료!"
   },
   
   {
@@ -28,6 +43,21 @@
 
 
     "snippet": "시작으로Javascript에서 함수의 this 키워드는 다른 언어들과 다르게 동작한다. 이는 Java와 같은 익숙한 언어의 개념과 달라 개발자들에게 혼동을 준다.대부분의 경우 this의 값은 함수를 호출한 방법에 의해 결정된다. 실행중에는 할당으로 설정할 수 없고 함수를 호출할 때 마다 다를 수 있다.Java에서의 this는 인스턴스 자신을 가르키는 참조변수이다. this가 객체 자신에 대한 참조 값을 가지고 있다는 뜻이다. 주로 매개변수와 객체 자신이 가지고 있는 멤버변수명이 같은 경우 이를 구분하기 위해 사용된다.하지만, Javascript의 경우 Java와 같이 this에 바인딩되는 객체는 한가지가 아니라 해당 함수 호출 방식에 따라 this에 바인딩되는 객체가 달라진다.함수의 4가지 호출 방식  함수 호출  메서드 호출  생성자 함수 호출  Call, Apply, Bind 호출함수 호출기본적으로 this는 전역객체(Global object)에 바인딩된다. 전역함수는 물론이고 내부함수의 경우에도 this는 외부함수가 아닌 전역객체에 바인딩된다.여기서 전역객체(Global object)란 모든 객체의 유일한 최상위 객체를 말한다. 일반적으로 Browser-side에서는 window, Server-side(Node.js)에서는 global 객체를 의미한다.전역객체는 전역 스코프(Global Scope)를 갖는 전역변수(Global variable)를 프로퍼티로 소유한다. 글로벌 영역에 선언한 함수는 전역객체의 프로퍼티로 접근할 수 있는 전역 변수의 메소드이다.var x = &#39;global&#39;;console.log(x); // globalconsole.log(window.x); // globalconsole.log(this.x); // globalfunction global_fn() {  console.log(&#39;global function&#39;);}window.global_fn(); // global functionthis.global_fn(); // global function// browser consolethis===window // true// node terminalthis===global // true브라우저 콘솔과 Node.js 터미널에 this를 입력해보면 아래와 같은 객체가 출력된다.메서드 호출함수가 객체의 프로퍼티 값이면 메소드로서 호출된다. 이때 메소드 내부의 this는 해당 메소드를 소유한 객체, 즉 해당 메소드를 호출한 객체에 바인딩된다.이를, 암시적 바인딩이라 한다.var object = {    value : 100,    obj_fn : function(){        console.log(this.value);    }}var object2 = {    value : 200};object.obj_fn(); // 100object2.obj_fn(); // 200생성자 함수 호출생성자 함수란 객체를 생성하는 역할을 한다. 함수를 new 키워드와 함께 생성자로 호출하면 생성자 함수로 동작한다. 생성자 함수가 아닌 일반 함수에 new 키워드를 붙여 호출하면 생성자 함수처럼 동작할 수 있다. 일반적으로 생성자 함수명은 첫문자를 대문자로 기술하여 혼란을 방지하려 노력한다.주의해야할 사항으로는  new 키워드와 함께 생성자 함수를 호출하지 않으면 생성자 함수로 동작하지 않는다.function Create_fn(name){    this.name = name;}var men = new Create_fn(&#39;Men&#39;);console.log(men); // Create_fn {name: &#39;Men&#39;}// new 키워드와 함께 생성자 함수를 호출하지 않으면 생성자 함수로 동작하지 않는다.var female = Create_fn(&#39;Female&#39;);console.log(female ); // undefined그럼 new 키워드는 클래스의 인스턴스화인가? 결론부터 말해면 No!new 키워드 바인딩 동작순서를 쪼개서 실험해보면 아래와 같다.  새 객체를 생성한다.  생성된 객체의 Prototype 체인이 호출 함수의 프로토타입과 연결된다.  생성된 객체를 context 객체로 사용(명시적)하여 함수가 실행된다.  이 함수가 객체를 반환하지 않는 한 생성된 객체가 반환된다.function Person(name) {  this.name = name;  this.age = 20;}var per = new Person(&#39;seongsik&#39;);console.log(per.name); // seongsikconsole.log(per.age); // 20// 위와 똑같은 과정을 쪼개보자.// 1. 새 객체를 생성한다.var obj = {};// 2. 생성된 객체의 Prototype 체인이 호출 함수의 프로토타입과 연결된다.Object.setPrototypeOf(obj, Person.prototype);this.obj // Person {} // 3. 생성된 객체를 context 객체로 사용(명시적)하여 함수가 실행된다.Person.call(obj,&#39;seongsik222&#39;);// 4. 이 함수가 객체를 반환하지 않는 한 생성된 객체가 반환된다.var per2 = obj;console.log(per2 .name); // 2console.log(per2 .age); // 20console.log(obj) // Person {name: &#39;seongsik222&#39;, age: 20}이렇듯 위의 과정이 발생한다는 것! 그리고, new 키워드는 그저 함수를 실행 시켜주는 것이다. 아래의 결과를 보면 순차적으로 함수내부를 실행시켜주는 것을 확인할 수 있다.그리고 우리가 알고 있던 클래스와 다르게 return에 객체를 반환된다.즉, Javascript의 new 키워드는 클래스의 인스턴스화가 아닌 단순히 함수를 실행시켜주는 것이다.function Person(name) {  this.name = name;  this.age = 20;  console.log(&#39;function 실행!!&#39;);  return {address : &#39;주소&#39;};}var per = new Person(&#39;seongsik&#39;); // function 실행!!console.log(per); // {address : &#39;주소&#39;}Call, Apply, Bind 호출함수 객체는 Call, Apply, Bind 메소드를 가지고 있는데, 첫 번째 인자로 넘겨주는 것이 this context 객체가 된다. 이를 명시적 바인딩이라 한다.this의 값을 한 문맥에서 다른 문맥으로 넘기려면  call()이나 apply()를 사용해야 한다.// call 또는 apply의 첫 번째 인자로 객체가 전달될 수 있으며 this가 그 객체에 묶임var obj = {a: &#39;Custom&#39;};// 변수를 선언하고 변수에 프로퍼티로 전역 window를 할당var a = &#39;Global&#39;;function whatsThis() {  return this.a;  // 함수 호출 방식에 따라 값이 달라짐}whatsThis();          // this는 &#39;Global&#39;. 함수 내에서 설정되지 않았으므로 global/window 객체로 초기값을 설정한다.whatsThis.call(obj);  // this는 &#39;Custom&#39;. 함수 내에서 obj로 설정한다.whatsThis.apply(obj); // this는 &#39;Custom&#39;. 함수 내에서 obj로 설정한다.function add(c, d) {  return this.a + this.b + c + d;}var o = {a: 1, b: 3};// 첫 번째 인자는 &#39;this&#39;로 사용할 객체이고,// 이어지는 인자들은 함수 호출에서 인수로 전달된다.add.call(o, 5, 7); // 16// 첫 번째 인자는 &#39;this&#39;로 사용할 객체이고,// 두 번째 인자는 함수 호출에서 인수로 사용될 멤버들이 위치한 배열이다.add.apply(o, [10, 20]); // 34ES5에 추가된 Function.prototype.bind를 사용하는 방법도 가능하다. Function.prototype.bind는 함수에 인자로 전달한 this가 바인딩된 새로운 함수를 리턴한다.즉, Function.prototype.bind는 Function.prototype.apply, Function.prototype.call 메소드와 같이 함수를 실행하지 않기 때문에 명시적으로 함수를 호출할 필요가 있다.function f() {  return this.a;}var g = f.bind({a: &#39;azerty&#39;});console.log(g()); // azertyvar h = g.bind({a: &#39;yoo&#39;}); // bind는 한 번만 동작함!console.log(h()); // azertyvar o = {a: 37, f: f, g: g, h: h};console.log(o.a, o.f(), o.g(), o.h()); // 37, 37, azerty, azerty"
+  },
+  
+  {
+    "title": "[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?",
+    "url": "/posts/git-06/",
+    "categories": "Git",
+    "tags": "Git, Github",
+    "date": "2022-02-07 00:00:00 +0900",
+    
+
+
+
+
+
+    "snippet": "시작으로버전관리를 하기 위해 Git, Github, Gitea, Svn 등 툴을 사용하는 방법에 대해서만 관심이 있었는데 정작 버전관리를 하기 위한 규칙에 대해서는 관심이 없었다.소프트웨어 할당하는 버전은 기본적으로 유의적 버전 2.0.0-ko2을 따른다고 한다. 나도 이 글을 보면서 지식을 남기기 위해 포스팅을 시작한다.흔히 애플리케이션 버전정보를 보면 아래와 같이 x.x.x 3자리의 정수로 되어있다.이런 형태의 버전 할당은 Semantic versioning의 규칙을 따른 방식이라고 한다.Versioning소프트웨어 개발 생태계는 수많은 사람들이 서로의 기술과 성과를 이어받아 오며 믿을 수 없는 수준의 협력 체제를 구축해오고 있다. 의존성은 이러한 협력체제에서 나오게 된 요소로, 다른 사람들이 만들어온 기능을 다시 만들 필요 없이 손쉽게 가져와서 재활용하는 방식으로 빠르게 소프트웨어를 만들 수 있게 되었다.하지만 이렇게 여러 사람에게 이용되는 패키지가 새롭게 업데이트될 때, 생각보다 다양한 문제에 직면하게 된다. 기능의 사용법을 바꾸어버리거나 동작 방식의 변경 같은 변화들은 그에 의존하는 다른 소프트웨어를 의도대로 동작하지 못하게 하므로, 새로운 변화와 기존의 것을 구분할 필요가 생겼다. 버전이라는 개념은 이러한 패키지의 변화를 구분하기 위해 사용하기 시작하였다.Semantic versioningSemantic Versioning은 Github의 공동창업자인 Tom Preston-Werner가 Versioning의 문제를 해결하기 위해 기존의 현안을 모아 만든 제안이다.번호 할당은 Major.Minor.Patch 으로 할당한다고 한다. 밑에서 자세히 알아보자.유의적 버전 명세공개 API 선언  유의적 버전을 쓰는 소프트웨어는 반드시 공개 API를 선언한다. 이 API는 코드 자체로 선언하거나 문서로 엄격히 명시해야 한다. 어떤 방식으로든, 정확하고 이해하기 쉬워야 한다.버전 번호 형식  보통 버전 번호는 반드시 X.Y.Z의 형태로 한다. X, Y, Z는 각각 자연수(음이 아닌 정수)이고, 절대로 0이 앞에 붙어서는 안 된다.  X는 주(主, Major)버전 번호이고, Y는 부(部, Minor)버전 번호이며, Z는 수(修, Patch)버전 번호이다.  각각은 반드시 증가하는 수여야 한다. 예: 1.9.0 -&amp;gt; 1.10.0 -&amp;gt; 1.11.0.금지 사항  특정 버전으로 패키지를 배포하고 나면, 그 버전의 내용은 절대 변경하지 말아야 한다.  변경분이 있다면 반드시 새로운 버전으로 배포하도록 한다.초기개발 버전  주버전 0(0.y.z)은 초기 개발을 위해서 쓴다. 아무 때나 마음대로 바꿀 수 있다.  이 공개 API는 안정판으로 보지 않는 게 좋다.최초 배포 버전  1.0.0 버전은 공개 API를 정의한다.  이후의 버전 번호는 이때 배포한 공개 API에서 어떻게 바뀌는지에 따라 올린다.수(Patch)버전 증가 조건                              수(Patch)버전 Z (x.y.Z          x &amp;gt; 0)는 반드시 그 전 버전 API와 호환되는 버그 수정의 경우에만 올린다.                      버그 수정은 잘못된 내부 기능을 고치는 것이라 정의한다.부(Minor)버전 증가 조건                              공개 API에 기존과 호환되는 새로운 기능을 추가할 때는 반드시 부(Minor)버전 Y(x.Y.z          x &amp;gt; 0)를 올린다.                      공개 API의 일부를 앞으로 제거할 것(deprecate)으로 표시한 경우에도 반드시 올리도록 한다.  내부 비공개 코드에 새로운 기능이 대폭 추가되거나 개선사항이 있을 때도 올릴 수 있다.  부(Minor)버전을 올릴 때 수(Patch)버전을 올릴 때만큼의 변화를 포함할 수도 있다.  부(Minor)버전이 올라가면 수(Patch)버전은 반드시 0에서 다시 시작한다.주(Major)버전 증가 조건                              공개 API에 기존과 호환되지 않는 변화가 있을 때는 반드시 주(Major)버전 X(X.y.z          X &amp;gt; 0)를 올린다.                      부(Minor)버전이나 수(Patch)버전급 변화를 포함할 수 있다.  주(Major)버전 번호를 올릴 때는 반드시 부(Minor)버전과 수(Patch)버전을 0으로 초기화 한다.버전 우선순위  우선순위는 버전의 순서를 정렬할 때 서로를 어떻게 비교할지를 나타낸다.  우선순위는 반드시 주, 부, 수 버전, 그리고 정식배포 전 버전의 식별자를 나누어 계산하도록 한다 (빌드 메타데이터는 우선순위에 영향을 주지 않는다).  우선순위는 다음의 순서로 차례로 비교하면서, 차이가 나는 부분이 나타나면 결정된다          주, 부, 수는 숫자로 비교한다. 예: 1.0.0 &amp;lt; 2.0.0 &amp;lt; 2.1.0 &amp;lt; 2.1.1.      주, 부, 수버전이 같을 경우, 정식배포 전 버전이 표기된 경우의 우선순위가 더 낮다. 예: 1.0.0-alphaa1 &amp;lt; 1.0.0.      주, 부, 수버전이 같은 두 배포 전 버전 간의 우선순위는 식별자 숫자가 클수록 높다. 예: a1 &amp;lt; a2.      요약(Major.Minor.Patch)  기존 버전과 호환되지 않게 API가 바뀌면 “주(Major) 버전”을 올리고,  기존 버전과 호환되면서 새로운 기능을 추가할 때는 “부(Minor) 버전”을 올리고,  기존 버전과 호환되면서 버그를 수정한 것이라면 “수(Patch) 버전”을 올린다. 주.부.수 형식에 정식배포 전 버전이나 빌드 메타데이터를 위한 라벨을 덧붙이는 방법도 있다.  각 번호의 수는 항상 증가해야 한다.  버전 번호는 Major, Minor, Patch 의 형태로 배포하고, Major, Minor, Patch 는 각각 자연수이고 절대 앞에 0이 붙어서는 안된다.  특정 버전으로 패키지를 배포하고 나면, 그 버전의 내용은 절대 변경하지 말아야한다. 변경분이 있다면 반드시 새로운 버전으로 배포하도록 한다.  Major 버전이 변경될 때, Minor, Patch 는 0으로 초기화 된다.  Minor 버전이 변경될 때, Patch 는 0으로 초기화 된다.이를 좀더 쉽게 정리해보자면주(Major) : 기존이랑 다름, 싹 바뀜 =&amp;gt; 싹다 바꼈으니 주(Major) +1 해주고 나머지는 0부터 시작~ (ex 1.5.2 -&amp;gt; 2.0.0)부(Minor) : 기존이랑 같지만 거기서 새로운기능을 추가하거나 삭제할 떄 =&amp;gt; 후 새로운 기능 버그도 없고 완성했으니 부(Minor)+1 해주고 수(Patch)는 0으로 시작 (ex 1.5.2 -&amp;gt; 1.6.0)수(Patch) : 그 전버전 버그 수정만했을 때(다른거 안됨 무조건 기능 고치는 것) =&amp;gt; 기능이렇게 생각하고 버전 관리 규칙을 적용해서 할당하면 될 것 같다."
   },
   
   {
@@ -422,7 +452,7 @@
   
   {
     "title": "[Git] Git 되돌리기(undo)",
-    "url": "/posts/git-02/",
+    "url": "/posts/git-04/",
     "categories": "Git",
     "tags": "Git, Github",
     "date": "2021-12-12 00:00:00 +0900",
@@ -512,7 +542,7 @@
   
   {
     "title": "[Git] branch의 이해와 사용",
-    "url": "/posts/git-04/",
+    "url": "/posts/git-03/",
     "categories": "Git",
     "tags": "Git, Github",
     "date": "2021-12-04 00:00:00 +0900",
@@ -527,7 +557,7 @@
   
   {
     "title": "[Git] Github 원격저장소와 로컬저장소 연동하기",
-    "url": "/posts/git-03/",
+    "url": "/posts/git-02/",
     "categories": "Git",
     "tags": "Git, Github",
     "date": "2021-12-03 00:00:00 +0900",
