@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-09T13:42:32+09:00</updated>
+  <updated>2022-02-09T15:28:10+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>[Node.js] Express API 서버 구축 - 앱 구조화 및 라우팅</title>
-    <link href="http://localhost:4000/posts/Node.js-04/" rel="alternate" type="text/html" title="[Node.js] Express API 서버 구축 - 앱 구조화 및 라우팅" />
+    <title>[Node.js] Express API 서버 구축 - 앱 구조화 및 기본 라우팅</title>
+    <link href="http://localhost:4000/posts/Node.js-04/" rel="alternate" type="text/html" title="[Node.js] Express API 서버 구축 - 앱 구조화 및 기본 라우팅" />
     <published>2022-02-09T00:00:00+09:00</published>
   
     <updated>2022-02-09T00:00:00+09:00</updated>
@@ -46,10 +46,26 @@
 
 
 
-      사전준비
+      Express 애플리케이션 생성기
 
 
 
+Express 구조화된 애플리케이션을 생성하고 싶다면 express-generator를 사용하여 시작하면 된다.
+
+일단 npm 패키지로 설치한다.
+$ npm install express-generator -g
+
+
+
+
+groupware-back-app이라는 Express 앱을 생성해보자.
+$ express --view=pug groupware-back-app
+
+   create : groupware-back-app\
+   create : groupware-back-app\public\
+   create : groupware-back-app\public\javascripts\
+   create : groupware-back-app\public\images\
+   cr...
     </summary>
   
 
