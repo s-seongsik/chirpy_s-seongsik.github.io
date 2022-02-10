@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-09T15:28:10+09:00</updated>
+  <updated>2022-02-10T10:28:16+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,45 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Node.js] Express API 서버 구축 - 라우팅 자세히 알아보자</title>
+    <link href="http://localhost:4000/posts/Node.js-05/" rel="alternate" type="text/html" title="[Node.js] Express API 서버 구축 - 라우팅 자세히 알아보자" />
+    <published>2022-02-09T00:00:00+09:00</published>
+  
+    <updated>2022-02-09T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Node.js-05/</id>
+    <content src="http://localhost:4000/posts/Node.js-05/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Node.js" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Express 애플리케이션 생성기
+
+
+
+https://expressjs.com/en/guide/routing.html
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -146,6 +185,61 @@ $ npm install express --save
 
   
   <entry>
+    <title>[Git] .gitignore로 필요한 것만 관리하자</title>
+    <link href="http://localhost:4000/posts/git-07/" rel="alternate" type="text/html" title="[Git] .gitignore로 필요한 것만 관리하자" />
+    <published>2022-02-08T00:00:00+09:00</published>
+  
+    <updated>2022-02-08T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/git-07/</id>
+    <content src="http://localhost:4000/posts/git-07/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Git" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      .gitignore
+
+
+
+Git, Github로 버전관리를 하다보면 git add . 으로 한번에 처리하는 경우가 많다. 그런데 npm 기반 프로젝트를 하다보니 node_modules같은 파일들은 추가할 필요가 없다. npm install 로 종속성 설치를 하면 끝이기 때문이다. 이럴 때 사용하는게 .gitignore 파일이다.
+
+.gitignore 언제 사용하면 되는가?
+
+  보안상 노출되면 안되는 파일이 있는 경우
+  프로젝트와 관련없는 파일이 있는 경우
+  용량이 너무 크거나 제외시키고 싶은 경우
+
+
+결국엔, git add에 포함시키지 않는 경우  .gitignore을 사용한다고 보면된다.
+
+
+
+.gitignore 작성하기
+
+
+
+그냥 git init한 프로젝트에 .gitignore이름으로 파일을 ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>[Javascript]] this는 어떻게 동작할까?</title>
     <link href="http://localhost:4000/posts/javascript-05/" rel="alternate" type="text/html" title="[Javascript]] this는 어떻게 동작할까?" />
     <published>2022-02-07T00:00:00+09:00</published>
@@ -185,115 +279,6 @@ Java에서의 this는 인스턴스 자신을 가르키는 참조변수이다. th
 
 
 함수...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?</title>
-    <link href="http://localhost:4000/posts/git-06/" rel="alternate" type="text/html" title="[Git] Software 버전 관리 규칙, 어떻게 번호를 할당하는거야?" />
-    <published>2022-02-07T00:00:00+09:00</published>
-  
-    <updated>2022-02-07T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/git-06/</id>
-    <content src="http://localhost:4000/posts/git-06/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Git" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      시작으로
-
-
-
-버전관리를 하기 위해 Git, Github, Gitea, Svn 등 툴을 사용하는 방법에 대해서만 관심이 있었는데 정작 버전관리를 하기 위한 규칙에 대해서는 관심이 없었다.
-
-소프트웨어 할당하는 버전은 기본적으로 유의적 버전 2.0.0-ko2을 따른다고 한다. 나도 이 글을 보면서 지식을 남기기 위해 포스팅을 시작한다.
-
-흔히 애플리케이션 버전정보를 보면 아래와 같이 x.x.x 3자리의 정수로 되어있다.
-
-
-
-
-
-이런 형태의 버전 할당은 Semantic versioning의 규칙을 따른 방식이라고 한다.
-
-
-
-Versioning
-
-
-
-소프트웨어 개발 생태계는 수많은 사람들이 서로의 기술과 성과를 이어받아 오며 믿을 수 없는 수준의 협력 체제를 구축해오고 있다. 의존성은 이러한 협력체제에서...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Nuxt.js] 공식문서로 빠르게 배우기 3탄 - Github에 정적 사이트 빌드 및 배포하기</title>
-    <link href="http://localhost:4000/posts/nuxtJs-03/" rel="alternate" type="text/html" title="[Nuxt.js] 공식문서로 빠르게 배우기 3탄 - Github에 정적 사이트 빌드 및 배포하기" />
-    <published>2022-02-01T00:00:00+09:00</published>
-  
-    <updated>2022-02-01T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/nuxtJs-03/</id>
-    <content src="http://localhost:4000/posts/nuxtJs-03/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Nuxt.js" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      시작하기
-
-
-
-포트폴리오 사이트용으로 오픈소스 및 템플릿을 사용하려다 맘에 드는게 없어 직접 Nuxt.js + vuetify로 포트폴리오 정적 사이트를 만들었다.
-정적 사이트를 빌드 및 배포하는 방법을 빠르게 공유하고자 한다.
-
-Nuxt 공식문서를 들어가면 아주 자세히 설명되어 있으니 하나씩 따라해도 금방 이해가 될 것이다.
-
-
-
-nuxt.config.js 설정
-
-
-
-일단, 3가지만 설정하면 된다.
-
-
-  target : 배포 대상을 명시하는 프로퍼티이다. 정적 사이트는 static을 추가해야하며 기본값은 server이다.
-  router : base를 추가하지 않고 폴더를 배포한 경우 배포된 사이트를 방문하면 자산 누락으로 사이트가 작동하지 않을 수 있다. 이는 웹사이트가 루트가 아니라는 가정으로 넣...
     </summary>
   
 
