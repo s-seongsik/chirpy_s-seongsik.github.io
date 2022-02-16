@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-10T10:28:16+09:00</updated>
+  <updated>2022-02-16T15:09:36+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,43 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Vue.js] 라이프사이클 훅 이해하기(미완)</title>
+    <link href="http://localhost:4000/posts/vueJs-06/" rel="alternate" type="text/html" title="[Vue.js] 라이프사이클 훅 이해하기(미완)" />
+    <published>2022-02-16T00:00:00+09:00</published>
+  
+    <updated>2022-02-16T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/vueJs-06/</id>
+    <content src="http://localhost:4000/posts/vueJs-06/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Vue.js" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      시작으로
+
+
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -233,52 +270,6 @@ Git, Github로 버전관리를 하다보면 git add . 으로 한번에 처리하
 
 
 그냥 git init한 프로젝트에 .gitignore이름으로 파일을 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Javascript]] this는 어떻게 동작할까?</title>
-    <link href="http://localhost:4000/posts/javascript-05/" rel="alternate" type="text/html" title="[Javascript]] this는 어떻게 동작할까?" />
-    <published>2022-02-07T00:00:00+09:00</published>
-  
-    <updated>2022-02-07T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/javascript-05/</id>
-    <content src="http://localhost:4000/posts/javascript-05/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Javascript" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      시작으로
-
-
-
-Javascript에서 함수의 this 키워드는 다른 언어들과 다르게 동작한다. 이는 Java와 같은 익숙한 언어의 개념과 달라 개발자들에게 혼동을 준다.
-대부분의 경우 this의 값은 함수를 호출한 방법에 의해 결정된다. 실행중에는 할당으로 설정할 수 없고 함수를 호출할 때 마다 다를 수 있다.
-
-Java에서의 this는 인스턴스 자신을 가르키는 참조변수이다. this가 객체 자신에 대한 참조 값을 가지고 있다는 뜻이다. 주로 매개변수와 객체 자신이 가지고 있는 멤버변수명이 같은 경우 이를 구분하기 위해 사용된다.
-하지만, Javascript의 경우 Java와 같이 this에 바인딩되는 객체는 한가지가 아니라 해당 함수 호출 방식에 따라 this에 바인딩되는 객체가 달라진다.
-
-
-
-함수...
     </summary>
   
 
