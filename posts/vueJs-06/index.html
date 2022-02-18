@@ -637,6 +637,96 @@
     
 
   
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
 
   
 
@@ -663,6 +753,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
       
 
       
@@ -783,8 +906,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="655 words">
-  <em>3 min</em> read</span>
+  title="1365 words">
+  <em>7 min</em> read</span>
 
 
       <!-- page views -->
@@ -863,18 +986,201 @@
 9
 10
 11
+12
+13
+14
+15
+16
+17
 </pre></td><td class="rouge-code"><pre><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="p">,</span>
   <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">beforeCreate</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">data 입니다.</span><span class="dl">"</span><span class="p">,</span>
     <span class="p">};</span>
   <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
   <span class="nx">beforeCreate</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// undefined</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// 아예 접근조차 안함.</span>
   <span class="p">},</span>
 <span class="p">};</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<h2 id="created"><strong>created</strong><a href="#created"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>인스턴스가 생성된 후 동기적으로 호출하는 훅이다. 이 단계에서는 <code class="language-plaintext highlighter-rouge">data</code>, <code class="language-plaintext highlighter-rouge">methods</code>, <code class="language-plaintext highlighter-rouge">computed</code>, <code class="language-plaintext highlighter-rouge">methods</code>, <code class="language-plaintext highlighter-rouge">watch/이벤트 콜백</code> 등의 설정이 준비되었음을 의미하는 옵션 처리를 완료하여 접근이 가능하다. 
+하지만 아직 DOM(마운트 단계)에는 추가되지 않은 상태이므로 <code class="language-plaintext highlighter-rouge">$el</code> 속성을 사용할 수 없다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">data</code>에 접근이 가능하므로, 외부(서버)에서 전달받은 데이터들을 초기 세팅해야한다면 <code class="language-plaintext highlighter-rouge">created</code> 단계가 가장 적절하다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">data 입니다.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  <span class="nx">created</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// data 입니다.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// data 입니다.</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<h2 id="beforemount"><strong>beforeMount</strong><a href="#beforemount"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>마운트가 시작되기 직전에 호출되는 훅이다. render 함수가 처음으로 호출된다.
+가상 DOM은 생성되어 있으나, 실제 DOM은 부착되지 않은 상태이다.<code class="language-plaintext highlighter-rouge">(이 훅은 서버측 렌더링 중 호출되지 않는다)</code></p>
+
+<div class="language-vue highlighter-rouge"><div class="code-header">
+        <span label-text="Vue.js"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre>
+<span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span><span class="si">{{</span> <span class="nx">mount_test</span><span class="p">()</span> <span class="si">}}</span><span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">beforeMount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">beforeMount</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 1. DOM이 생성되기 전이므로 먼저 실행된다. </span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">mount_test</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">on Mounting</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 2. DOM(div)가 생성되고 실행된다.</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/154603591-891b3c3a-416f-4be7-90ab-013bfb72bb12.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h2 id="mounted"><strong>mounted</strong><a href="#mounted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>인스턴스가 마운트된 후 호출되는 훅이다. 일반적으로 가장 많이 사용되는 훅으로 가상 DOM의 내용이 실제 DOM에 부착되고 난 이후에 실행된다.
+<code class="language-plaintext highlighter-rouge">$el</code>에 접근할 수 있으며 <code class="language-plaintext highlighter-rouge">data</code>, <code class="language-plaintext highlighter-rouge">computed</code>, <code class="language-plaintext highlighter-rouge">methods</code>, <code class="language-plaintext highlighter-rouge">watch</code> 등 모든 요소에 접근이 가능하다.</p>
+
+<div class="language-vue highlighter-rouge"><div class="code-header">
+        <span label-text="Vue.js"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre>
+<span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span><span class="si">{{</span> <span class="nx">mount_test</span><span class="p">()</span> <span class="si">}}</span><span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">mounted</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// DOM이 생성되고나서 실행되므로 나중에 호출된다.</span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">mount_test</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">on Mounting</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 2. DOM(div)가 생성되고 실행된다.</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/154603968-412c3de7-2ea4-404a-915c-b2822c168fdb.png" alt="image" /></p>
+
+<p><br /></p>
+
+<p>여기서 알아야 할 내용은 부모와 자식 컴포넌트 간의 <code class="language-plaintext highlighter-rouge">created 훅</code> 순서는 <code class="language-plaintext highlighter-rouge">부모-&gt;자식</code> 이지만
+<code class="language-plaintext highlighter-rouge">mounted 훅</code> 순서는 <code class="language-plaintext highlighter-rouge">자식-&gt;부모</code> 순서로 실행된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">mounted</code>는 모든 자식 컴포넌트가 마운트되었음을 보장하지 않는다. 전체 화면내용이 렌더링될 때까지 기다리려면 <code class="language-plaintext highlighter-rouge">mounted</code> 내에서 <code class="language-plaintext highlighter-rouge">vm.$nextTick</code>를 사용하면 된다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">$nextTick</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 전체 화면내용이 렌더링된 후에 아래의 코드가 실행된다.</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 
 </div>
 
@@ -2770,19 +3076,6 @@
   
 
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
 
 
 
@@ -2800,6 +3093,48 @@
     <h3 class="pt-2 mt-1 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/nuxtJs-01/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2022-01-19 00:00:00 +0900"
+    >Jan 19</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Nuxt.js] 공식문서로 빠르게 배우기 1탄 - 시작하기</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                시작하기
+
+
+
+Vue.js로 프로젝트를 진행하면서 SSR 웹 페이지를 만들 수 있도록 도와주는 Nuxt.js를 배워보고 싶다는 생각이 들었다. 설명과 이론을 최대한 배제하고 실무용으로 설치부터 배포까지 빠르게 익히기 위한 포스팅이다. 깃허브 정적 호스팅 서비스에 배포 할 Resume 정적 웹사이트를 만들어 보면서 빠르게 익혀보도록 하자.
+
+
+
+Nuxt...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -2900,59 +3235,6 @@ Nuxt 공식문서를 들어가면 아주 자세히 설명되어 있으니 하나
 
 
 nuxt.config...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/Webpack-01/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago small"
-    date="2021-12-13 00:00:00 +0900"
-    >Dec 13, 2021</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Webpack] 시작하기</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                webpack을 다루기전에
-
-
-  모듈 시스템에 대한 이해가 수반되어야 합니다.
-  Node.js과 npm을 알아야 합니다.
-
-
-모듈 시스템을 모르신다면, 아래의 포스트를 먼저 보고 오시는 것을 추천드립니다.
-
-[Javascript] ES2015(ES6) 표준 모듈 시스템 (export, import)
-
-
-
-
-
-webpack이란
-
-
-
-Webpack은 ...
               </p>
             </div>
           </div>
