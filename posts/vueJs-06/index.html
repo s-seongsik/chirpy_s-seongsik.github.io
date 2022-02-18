@@ -727,6 +727,96 @@
     
 
   
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
+    
+
+    
+    
+
+    
+    
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+      
+      
+
+      
+
+      
+
+    
+
+    
+
+  
 
   
 
@@ -753,6 +843,50 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+
+      
+
+    
       
 
       
@@ -906,8 +1040,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1365 words">
-  <em>7 min</em> read</span>
+  title="2263 words">
+  <em>12 min</em> read</span>
 
 
       <!-- page views -->
@@ -1181,6 +1315,236 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<p><br /></p>
+
+<h2 id="beforeupdate"><strong>beforeUpdate</strong><a href="#beforeupdate"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>DOM이 패치되기 전에 데이터가 변경될 때 호출된다. 이 훅은 업데이트 전에 기존 DOM에 접근할 수 있다.
+변경될 데이터에 접근할 수 있으며, 변경될 데이터와 관련된 로직을 미리 넣어 사용할 수 있다.</p>
+
+<div class="language-vue highlighter-rouge"><div class="code-header">
+        <span label-text="Vue.js"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre>
+<span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- </span><span class="nt">&lt;router-view</span> <span class="nt">/&gt;</span> --&gt;
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"dom"</span><span class="nt">&gt;</span><span class="si">{{</span> <span class="nx">text</span> <span class="si">}}</span><span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;v-btn</span> <span class="na">color=</span><span class="s">"primary"</span> <span class="na">dark</span> <span class="na">elevation=</span><span class="s">"2"</span> <span class="na">v-on:click=</span><span class="s">"dataUpdate"</span><span class="nt">&gt;</span>update<span class="nt">&lt;/v-btn&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">No update</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+  <span class="nx">beforeUpdate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">;</span>
+
+    <span class="c1">// 변경된 데이터에 접근</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">1. 변경된 데이터</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span>
+
+    <span class="c1">// DOM이 패치되기 전</span>
+    <span class="kd">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#dom</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">2. 돔 데이터 : </span><span class="dl">"</span><span class="p">,</span> <span class="nx">test</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">dataUpdate</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">update success</span><span class="dl">"</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<ol>
+  <li>데이터가 변경이 먼저 이루어 지므로 console.log에는 <code class="language-plaintext highlighter-rouge">"update success"</code>가 출력된다.</li>
+  <li>DOM이 패치되기 전이므로 DOM에 패치되어 있는 데이터는 이전 데이터인 <code class="language-plaintext highlighter-rouge">"No update"</code>로 출력된다.</li>
+</ol>
+
+<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/154616987-9122ff85-8b53-464e-87e7-a5fee5cb30ab.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h2 id="updated"><strong>updated</strong><a href="#updated"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p><code class="language-plaintext highlighter-rouge">beforeUpdate 훅</code> 은 DOM패치 전에 호출되었다면, <code class="language-plaintext highlighter-rouge">updated 훅</code>은 DOM이 다시 렌더링되고 패치된 후에 호출된다.</p>
+
+<p>updated가 호출될 때 컴포넌트의 DOM이 업데이트되므로, DOM의 종속적인 연산을 할 수 있다. 하지만 공식문서에서는 대부분의 경우 훅 내부에서 상태를 변경하지 말라고 한다.<br />
+상태 변경에 반응하기 위해서는 일반적으로 <code class="language-plaintext highlighter-rouge">computed property</code> 속성이나 <code class="language-plaintext highlighter-rouge">watcher</code>를 사용하는 것이 더 좋다.</p>
+
+<p>만약 변경된 값들을 DOM을 이용해 접근하고 싶다면 <code class="language-plaintext highlighter-rouge">update 훅</code>이 가장 적절하다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">update 훅</code>도 <code class="language-plaintext highlighter-rouge">mounted 훅</code>과 마찬가지로 모든 하위 컴포넌트가 다시 렌더링되었음을 보장하지 않는다.  전체 화면이 재렌더링 될 때까지 기다리려면 <code class="language-plaintext highlighter-rouge">vm.$nextTick</code>을 사용한다.</p>
+
+<div class="language-vue highlighter-rouge"><div class="code-header">
+        <span label-text="Vue.js"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre>
+<span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- </span><span class="nt">&lt;router-view</span> <span class="nt">/&gt;</span> --&gt;
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"dom"</span><span class="nt">&gt;</span><span class="si">{{</span> <span class="nx">text</span> <span class="si">}}</span><span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;v-btn</span> <span class="na">color=</span><span class="s">"primary"</span> <span class="na">dark</span> <span class="na">elevation=</span><span class="s">"2"</span> <span class="na">v-on:click=</span><span class="s">"dataUpdate"</span><span class="nt">&gt;</span>update<span class="nt">&lt;/v-btn&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">No update</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+  <span class="nx">updated</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">;</span>
+
+    <span class="c1">// 변경된 데이터에 접근</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">1. 변경된 데이터</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span>
+
+    <span class="c1">// DOM이 패치되기 전</span>
+    <span class="kd">const</span> <span class="nx">test</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#dom</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">2. 돔 데이터 : </span><span class="dl">"</span><span class="p">,</span> <span class="nx">test</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">dataUpdate</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">update success</span><span class="dl">"</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<ol>
+  <li>데이터가 변경이 먼저 이루어 지므로 console.log에는 <code class="language-plaintext highlighter-rouge">"update success"</code>가 출력된다.</li>
+  <li>DOM이 패치되고 나서 호출되므로 DOM의 데이터는 <code class="language-plaintext highlighter-rouge">"update success"</code>로 출력된다.</li>
+</ol>
+
+<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/154616987-9122ff85-8b53-464e-87e7-a5fee5cb30ab.png" alt="image" /></p>
+
+<p><br /></p>
+
+<h2 id="beforedestroy"><strong>beforeDestroy</strong><a href="#beforedestroy"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>컴포넌트 인스턴스가 마운트 해제(unmounted)되기 직전에 호출된다. 아직 마운트가 해제되기 전이므로 인스턴스는 완전하게 작동한다. 따라서 모든 속성에 접근이 가능하다.
+이 단계에서는 이벤트 리스너를 해제하는 등 인스턴스가 없어지기 전에 처리해야할 로직을 넣는다.</p>
+
+<div class="language-vue highlighter-rouge"><div class="code-header">
+        <span label-text="Vue.js"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">beforeDestroy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeDestroy</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<h2 id="destroyed"><strong>destroyed</strong><a href="#destroyed"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>컴포넌트 인스턴스가 마운트 해제(unmounted)된 후 호출된다. 이 훅이 호출되면 해제가 끝났기 때문에 이전 인스턴스의 속성에 접근할 수 없다. 모든 자식 컴포넌트 컴포넌트도 마운트 해제(unmounted)된다.</p>
+
+<div class="language-vue highlighter-rouge"><div class="code-header">
+        <span label-text="Vue.js"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">destroyed</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">destroyed</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
