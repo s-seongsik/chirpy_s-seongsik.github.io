@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-19T00:03:55+09:00</updated>
+  <updated>2022-02-20T20:44:43+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,70 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Javascript]] 자바스크립트의 동작원리</title>
+    <link href="http://localhost:4000/posts/javascript-06/" rel="alternate" type="text/html" title="[Javascript]] 자바스크립트의 동작원리" />
+    <published>2022-02-20T00:00:00+09:00</published>
+  
+    <updated>2022-02-20T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/javascript-06/</id>
+    <content src="http://localhost:4000/posts/javascript-06/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Javascript" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      시작으로
+
+
+
+프론트엔드 개발을 하고있어서 자바스크립트를 매일 다룬다. 개발을 하다보면 호출 순서, 출력 결과 등 예상되는 결과값이 나오지 않아 당황했던 적이 있었다.
+앞으로, 고급개발자가 되려면 동작원리에 대해 정확하게 알아야 되겠다고 생각했다.
+
+감사하게도 많은 개발자 선배들이 자바스크립트 동작원리에 대해 정리를 해놨기 때문에 그들의 지식을 습득할 수 있었다.
+
+목차로는
+
+  자바스크립트 엔진
+  V8
+  자바스크립트 런타임
+  Call Stack과 Memory Heap
+
+
+
+
+자바스크립트 엔진
+
+
+
+자바스크립트 엔진의 대표적인 예는 Google V8 엔진이다. V8은 Chrome과 node.js에서 사용한다.
+
+밑의 사진은 자바스크립트의 엔진 구성요소를 나타내고있다.
+
+
+
+
+  Memory Hea...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -248,61 +312,6 @@ $ npm install express --save
 
 
   –sav...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Git] .gitignore로 필요한 것만 관리하자</title>
-    <link href="http://localhost:4000/posts/git-07/" rel="alternate" type="text/html" title="[Git] .gitignore로 필요한 것만 관리하자" />
-    <published>2022-02-08T00:00:00+09:00</published>
-  
-    <updated>2022-02-08T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/git-07/</id>
-    <content src="http://localhost:4000/posts/git-07/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Git" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      .gitignore
-
-
-
-Git, Github로 버전관리를 하다보면 git add . 으로 한번에 처리하는 경우가 많다. 그런데 npm 기반 프로젝트를 하다보니 node_modules같은 파일들은 추가할 필요가 없다. npm install 로 종속성 설치를 하면 끝이기 때문이다. 이럴 때 사용하는게 .gitignore 파일이다.
-
-.gitignore 언제 사용하면 되는가?
-
-  보안상 노출되면 안되는 파일이 있는 경우
-  프로젝트와 관련없는 파일이 있는 경우
-  용량이 너무 크거나 제외시키고 싶은 경우
-
-
-결국엔, git add에 포함시키지 않는 경우  .gitignore을 사용한다고 보면된다.
-
-
-
-.gitignore 작성하기
-
-
-
-그냥 git init한 프로젝트에 .gitignore이름으로 파일을 ...
     </summary>
   
 
