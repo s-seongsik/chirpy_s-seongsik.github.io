@@ -1,7 +1,22 @@
 [
   
   {
-    "title": "[Javascript]] 자바스크립트의 동작원리",
+    "title": "[Node.js] Docker에 Node.js 서버 배포하기",
+    "url": "/posts/Node.js-06/",
+    "categories": "Node.js",
+    "tags": "Node.js, Javascript",
+    "date": "2022-02-22 00:00:00 +0900",
+    
+
+
+
+
+
+    "snippet": "시작으로예전에 FastAPI 서버를 Docker에 배포한 경험이 있다. 하지만 Node.js 서버를 다시 배포하려고 하니 기억이 가물가물 했다.역시 정리하는 것보다 다시 찾는게 더 귀찮은 일이다…그래서, 핵심만 정리하여 지식으로 남긴다.사전 필수 준비물  서버 사양 : 카카오 클라우드 ubuntu 18.04  docker 설치완료  포트 포워딩 (외부-&amp;gt;내부로 접속해야 하므로)위의 필수 준비는 끝냈다는 가정하에 시작하겠다."
+  },
+  
+  {
+    "title": "[Javascript] 자바스크립트의 동작원리",
     "url": "/posts/javascript-06/",
     "categories": "Javascript",
     "tags": "Javascript, ES6",
