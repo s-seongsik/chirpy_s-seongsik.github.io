@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-22T21:40:09+09:00</updated>
+  <updated>2022-02-22T23:29:07+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -50,23 +50,31 @@
 
 
 
-예전에 FastAPI 서버를 Docker에 배포한 경험이 있다. 하지만 Node.js 서버를 다시 배포하려고 하니 기억이 가물가물 했다.
+예전에 FastAPI 서버를 Docker에 배포한 경험이 있다. 하지만 Node.js 서버를 Docker에 다시 배포하려고 하니 기억이 가물가물 했다.
 역시 정리하는 것보다 다시 찾는게 더 귀찮은 일이다…
 
 그래서, 핵심만 정리하여 지식으로 남긴다.
 
 사전 필수 준비물
 
-  서버 사양 : 카카오 클라우드 ubuntu 18.04
+  카카오 클라우드 ubuntu 18.04
   docker 설치완료
   포트 포워딩 (외부-&amp;gt;내부로 접속해야 하므로)
+  배포 할 app
 
 
 위의 필수 준비는 끝냈다는 가정하에 시작하겠다.
 
 
 
+Dockerfile이란?
 
+
+
+
+  Dockerfile은 docker 이미지를 생성하기 위한 설정 파일이다.
+  Dockerfile안에 작성된 명령어를 기반으로 빌드한다.
+  Dockerfile에 작성된 명령어들을 차례대로 ...
     </summary>
   
 
