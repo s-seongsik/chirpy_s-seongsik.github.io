@@ -808,7 +808,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1564 words">
+  title="1554 words">
   <em>8 min</em> read</span>
 
 
@@ -907,33 +907,33 @@ CMD ["npm", "run", "start"]
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>FROM : 베이스 이미지
+  <li>FROM: 베이스 이미지
     <ul>
       <li>어느 이미지에서 시작할건지를 의미한다.</li>
       <li>기본 이미지를 <code class="language-plaintext highlighter-rouge">node 16</code> 버전을 사용한다는 의미이다.</li>
     </ul>
   </li>
-  <li>WORKDIR : 컨테이너(이미지)의 작업 디렉토리를 지정한다.
+  <li>WORKDIR: 컨테이너(이미지)의 작업 디렉토리를 지정한다.
     <ul>
       <li>작업 디렉토리를 지정하면 그 이후 명령어는 해당 디렉토리를 기준으로 동작한다.</li>
       <li><code class="language-plaintext highlighter-rouge">cd</code> 명령어와 동일하다.</li>
     </ul>
   </li>
-  <li>COPY / ADD : build 명령 중간에 호스트의 파일 또는 폴더를 이미지에 가져오는(복사하는) 것이다.
+  <li>COPY/ADD: build 명령 중간에 호스트의 파일 또는 폴더를 이미지에 가져오는(복사하는) 것이다.
     <ul>
       <li><code class="language-plaintext highlighter-rouge">ADD</code> 명령문은 좀 더 파워풀한 <code class="language-plaintext highlighter-rouge">COPY</code> 명령문이라고 생각할 수 있다.</li>
       <li><code class="language-plaintext highlighter-rouge">ADD</code> 명령문은 일반 파일 뿐만 아니라 압축 파일이나 네트워크 상의 파일도 사용할 수 있다.</li>
       <li>이렇게 특수한 파일을 다루는 게 아니라면 <code class="language-plaintext highlighter-rouge">COPY</code> 명령문을 사용하는 것이 권장된다.</li>
     </ul>
   </li>
-  <li>RUN : 새로운 레이어에서 명령어를 실행하고, 새로운 이미지를 생성한다.</li>
-  <li>EXPOSE : Dockerfile의 빌드로 생성된 이미지에서 열어줄 포트를 의미한다.
+  <li>RUN: 새로운 레이어에서 명령어를 실행하고, 새로운 이미지를 생성한다.</li>
+  <li>EXPOSE: Dockerfile의 빌드로 생성된 이미지에서 열어줄 포트를 의미한다.
     <ul>
       <li>호스트 머신과 컨테이너의 포트 매핑시에 사용된다.</li>
       <li>컨테이너 생성 시 -p 옵션의 컨테이너 포트 값으로 EXPOSE 값을 적어야한다.</li>
     </ul>
   </li>
-  <li>CMD / ENTRYPOINT : 컨테이너를 생성,실행 할 때 실행할 명령어
+  <li>CMD: 컨테이너를 생성,실행 할 때 실행할 명령어
     <ul>
       <li><code class="language-plaintext highlighter-rouge">docker run</code> 명령으로 컨테이너를 생성하거나, <code class="language-plaintext highlighter-rouge">docker start</code> 명령으로 정지된 컨테이너를 시작할 때 실행된다.</li>
       <li>보통 컨테이너 내부에서 <code class="language-plaintext highlighter-rouge">항상 돌아가야하는 서버를 띄울 때</code> 사용한다.</li>
