@@ -458,6 +458,102 @@
 
   <div class="post-preview">
     <h1>
+      <a href="/posts/javascript-07/">[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        시작으로
+
+
+
+Vue.js 프로젝트 개발을 진행하면서 비동기 처리에 따른 상태관리 및 DOM 처리 때문에 하루종일 애를 먹었다.
+해결하고나니 간단한 문제였는데 당시에는 왜? 생각하지 못했는지 생각해봤다.
+
+
+  비동기 처리에 대한 이해 부족
+  라이프사이클 훅에 대한 이해 부족
+  디자인 패턴 이해 부족
+
+
+실무에서 나름 많이 사용했기에 익숙하다고(?...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+
+      <div class="mr-auto">
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2022-02-24 00:00:00 +0900"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Thu, Feb 24, 2022, 12:00 AM +0900"
+    >Feb 24</em>
+
+
+        <!-- time to read -->
+        <i class="far fa-clock fa-fw"></i>
+        <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="1160 words">
+  <em>6 min</em></span>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Javascript
+          </span>
+        
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
       <a href="/posts/Node.js-06/">[Node.js] Docker에 Node.js 서버 배포하기</a>
     </h1>
 
@@ -1296,100 +1392,6 @@ Java에서의 this는 인스턴스 자신...
 
 
 
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/nuxtJs-03/">[Nuxt.js] 공식문서로 빠르게 배우기 3탄 - Github에 정적 사이트 빌드 및 배포하기</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        시작하기
-
-
-
-포트폴리오 사이트용으로 오픈소스 및 템플릿을 사용하려다 맘에 드는게 없어 직접 Nuxt.js + vuetify로 포트폴리오 정적 사이트를 만들었다.
-정적 사이트를 빌드 및 배포하는 방법을 빠르게 공유하고자 한다.
-
-Nuxt 공식문서를 들어가면 아주 자세히 설명되어 있으니 하나씩 따라해도 금방 이해가 될 것이다.
-
-
-
-nuxt.config...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-
-
-
-
-<em class="timeago"
-    date="2022-02-01 00:00:00 +0900"
-    
-      data-toggle="tooltip"
-      data-placement="bottom"
-      title="Tue, Feb  1, 2022, 12:00 AM +0900"
-    >Feb  1</em>
-
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1306 words">
-  <em>7 min</em></span>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Nuxt.js
-          </span>
-        
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
 </div> <!-- #post-list -->
 
 
@@ -1493,9 +1495,24 @@ nuxt.config...
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page5/">5</a>
+        <a class="page-link btn-box-shadow" href="/page6/">6</a>
       </li>
     
 
@@ -1504,7 +1521,7 @@ nuxt.config...
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>1</span>
-    <span class="text-muted">/ 5</span>
+    <span class="text-muted">/ 6</span>
   </li>
 
   <!-- right arrow -->
@@ -2007,6 +2024,67 @@ nuxt.config...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2076,6 +2154,8 @@ nuxt.config...
     
     
     
+      
+    
   
     
     
@@ -2087,65 +2167,6 @@ nuxt.config...
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -2570,13 +2591,13 @@ nuxt.config...
       <a class="post-tag" href="/tags/babel/">Babel</a>
     
       
+      <a class="post-tag" href="/tags/es6/">ES6</a>
+    
+      
       <a class="post-tag" href="/tags/git/">Git</a>
     
       
       <a class="post-tag" href="/tags/github/">Github</a>
-    
-      
-      <a class="post-tag" href="/tags/es6/">ES6</a>
     
       
       <a class="post-tag" href="/tags/web/">Web</a>
@@ -3109,6 +3130,67 @@ nuxt.config...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3178,6 +3260,8 @@ nuxt.config...
     
     
     
+      
+    
   
     
     
@@ -3189,65 +3273,6 @@ nuxt.config...
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -3672,13 +3697,13 @@ nuxt.config...
       <a class="post-tag" href="/tags/babel/">Babel</a>
     
       
+      <a class="post-tag" href="/tags/es6/">ES6</a>
+    
+      
       <a class="post-tag" href="/tags/git/">Git</a>
     
       
       <a class="post-tag" href="/tags/github/">Github</a>
-    
-      
-      <a class="post-tag" href="/tags/es6/">ES6</a>
     
       
       <a class="post-tag" href="/tags/web/">Web</a>

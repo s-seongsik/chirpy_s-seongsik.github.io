@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>SeongSik Seo</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-02-23T09:20:53+09:00</updated>
+  <updated>2022-02-25T14:17:48+09:00</updated>
   <author>
     <name>seongsik seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,67 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수</title>
+    <link href="http://localhost:4000/posts/javascript-07/" rel="alternate" type="text/html" title="[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수" />
+    <published>2022-02-24T00:00:00+09:00</published>
+  
+    <updated>2022-02-24T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/javascript-07/</id>
+    <content src="http://localhost:4000/posts/javascript-07/" />
+    <author>
+      <name>seongsik seo</name>
+    </author>
+
+  
+    
+    <category term="Javascript" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      시작으로
+
+
+
+Vue.js 프로젝트 개발을 진행하면서 비동기 처리에 따른 상태관리 및 DOM 처리 때문에 하루종일 애를 먹었다.
+해결하고나니 간단한 문제였는데 당시에는 왜? 생각하지 못했는지 생각해봤다.
+
+
+  비동기 처리에 대한 이해 부족
+  라이프사이클 훅에 대한 이해 부족
+  디자인 패턴 이해 부족
+
+
+실무에서 나름 많이 사용했기에 익숙하다고(?) 자신했었지만 응용을 하니 확실히 깨달았다.
+
+조금 안다고 자만하지말자.
+
+그래서, 오늘은 비동기 처리에 대해 정리하려고 한다.
+
+
+
+비동기 처리란 무엇인가?
+
+
+
+[Javascript] 자바스크립트의 동작원리 포스팅을 참고하면 비동기 처리에 대한 이해를 도울 수 있다.
+
+간단하게 말하면, 특정 명령을 끝날 때까지 기다리지 않고 다음 코드를 먼저 실행할 ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -248,59 +309,6 @@ HTTP 요청 방식
   POST (CREATE)
   PUT (UPDATE)
   DELETE (DELET...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>[Node.js] Express API 서버 구축 - 앱 구조화 및 기본 라우팅</title>
-    <link href="http://localhost:4000/posts/Node.js-04/" rel="alternate" type="text/html" title="[Node.js] Express API 서버 구축 - 앱 구조화 및 기본 라우팅" />
-    <published>2022-02-09T00:00:00+09:00</published>
-  
-    <updated>2022-02-09T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/Node.js-04/</id>
-    <content src="http://localhost:4000/posts/Node.js-04/" />
-    <author>
-      <name>seongsik seo</name>
-    </author>
-
-  
-    
-    <category term="Node.js" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Express 애플리케이션 생성기
-
-
-
-Express 구조화된 애플리케이션을 생성하고 싶다면 express-generator를 사용하여 시작하면 된다.
-
-일단 npm 패키지로 설치한다.
-$ npm install express-generator -g
-
-
-
-
-groupware-back-app이라는 Express 앱을 생성해보자.
-$ express --view=pug groupware-back-app
-
-   create : groupware-back-app\
-   create : groupware-back-app\public\
-   create : groupware-back-app\public\javascripts\
-   create : groupware-back-app\public\images\
-   cr...
     </summary>
   
 

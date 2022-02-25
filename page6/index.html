@@ -20,24 +20,37 @@
 
   
 
+    <!-- i18n for `_javascript/utils/timeago.js` -->
+    <meta name="day-prompt" content="days ago">
+    <meta name="hour-prompt" content="hours ago">
+    <meta name="minute-prompt" content="minutes ago">
+    <meta name="justnow-prompt" content="just now">
+
+    
+
+    
+
+  
+
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="cloud" />
+<meta property="og:title" content="SeongSik Seo" />
 <meta property="og:locale" content="ko" />
 <meta name="description" content="A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation." />
 <meta property="og:description" content="A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation." />
-<link rel="canonical" href="http://localhost:4000/tags/cloud/" />
-<meta property="og:url" content="http://localhost:4000/tags/cloud/" />
+<link rel="canonical" href="http://localhost:4000/page6/" />
+<meta property="og:url" content="http://localhost:4000/page6/" />
 <meta property="og:site_name" content="SeongSik Seo" />
+<link rel="prev" href="http://localhost:4000/page5" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="cloud" />
+<meta property="twitter:title" content="SeongSik Seo" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"cloud","@type":"WebPage","url":"http://localhost:4000/tags/cloud/","description":"A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.","@context":"https://schema.org"}</script>
+{"headline":"SeongSik Seo","@type":"WebPage","url":"http://localhost:4000/page6/","description":"A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>cloud | SeongSik Seo
+  <title>SeongSik Seo
   </title>
 
   <!--
@@ -253,7 +266,7 @@
   <ul class="w-100">
 
     <!-- home -->
-    <li class="nav-item">
+    <li class="nav-item active">
       <a href="/" class="nav-link">
         <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
         <span>HOME</span>
@@ -371,39 +384,8 @@
     
 
     
-
-      
-
-        
-          <span>
-            <a href="/">
-              Home
-            </a>
-          </span>
-
-        
-
-      
-
-        
-          <span>
-            <a href="/tags">
-              Tags
-            </a>
-          </span>
-        
-
-      
-
-        
-
-          
-            <span>cloud</span>
-          
-
-        
-
-      
+      <!-- index page -->
+      <span>Home</span>
 
     
 
@@ -412,7 +394,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      Tag
+      SeongSik Seo
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -446,24 +428,277 @@
 
 
 
-<div id="page-tag">
-  <h1 class="pl-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    cloud
-    <span class="lead text-muted pl-2">1</span>
-  </h1>
-  <ul class="post-content pl-0">
+
+
+
+
+
+<!-- Get pinned posts -->
+
+
+
+
+
+
+
+<!-- Get default posts -->
+
+
+
+
+
+
+
+
+
+
+<div id="post-list">
+
+
+
+  <div class="post-preview">
+    <h1>
+      <a href="/posts/restApi-api-define/">[Web] API란 무엇이며, 좋은 API를 설계하기 위한 방법이 무엇일까?</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        회사에서 naver cloud server와 Docker로 서비스 환경을 구축하고, 구축된 환경에 REST API를 개발 및 배포하는 작업을 맡게되었다.
+
+개발하기 앞서, 다음과 같은 질문을 던져보았다.
+
+  REST란 무엇인가?
+  REST API란 무엇인가?
+  REST API 설계하는 방법
+
+
+
+
+1. REST란 무엇인가
+
+
+
+
+  ‘Repres...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+
+      <div class="mr-auto">
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2021-10-14 00:00:00 +0900"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Thu, Oct 14, 2021, 12:00 AM +0900"
+    >Oct 14, 2021</em>
+
+
+        <!-- time to read -->
+        <i class="far fa-clock fa-fw"></i>
+        <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="591 words">
+  <em>3 min</em></span>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            Web
+          </span>
+        
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+</div> <!-- #post-list -->
+
+
+  <!--
+  The paginator for post list on HomgPage.
+-->
+
+<ul class="pagination align-items-center mt-4 mb-0 pl-lg-2">
+  <!-- left arrow -->
+  
+
+  <li class="page-item ">
+    <a class="page-link btn-box-shadow" href="/page5" aria-label="previous-page">
+      <i class="fas fa-angle-left"></i>
+    </a>
+  </li>
+
+  <!-- page numbers -->
+  
+  
+
+  
+
+    
+    
+    
+    
     
 
     
-    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
-      <a href="/posts/cloud/">네이버 클라우드 서버에 putty, filezila 접속하기</a>
-      <span class="dash flex-grow-1"></span>
-      <span class="text-muted small">Nov  4, 2021</span>
-    </li>
+
     
-  </ul>
-</div>
+      <!-- show number -->
+      <li class="page-item ">
+        <a class="page-link btn-box-shadow" href="/">1</a>
+      </li>
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- hide number -->
+      
+        <li class="page-item disabled">
+          <span class="page-link btn-box-shadow">...</span>
+        </li>
+        
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- show number -->
+      <li class="page-item ">
+        <a class="page-link btn-box-shadow" href="/page4/">4</a>
+      </li>
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- show number -->
+      <li class="page-item ">
+        <a class="page-link btn-box-shadow" href="/page5/">5</a>
+      </li>
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- show number -->
+      <li class="page-item  active">
+        <a class="page-link btn-box-shadow" href="/page6/">6</a>
+      </li>
+    
+
+  
+
+  <!-- mobile pagination -->
+  <li class="page-index align-middle">
+    <span>6</span>
+    <span class="text-muted">/ 6</span>
+  </li>
+
+  <!-- right arrow -->
+  
+
+  <li class="page-item disabled">
+    <a class="page-link btn-box-shadow" href="#" aria-label="next-page">
+      <i class="fas fa-angle-right"></i>
+    </a>
+  </li>
+
+</ul> <!-- .pagination -->
+
+
 
       
     
@@ -2715,7 +2950,7 @@ SimpleJekyllSearch({
 
 
 
-<script defer src="/assets/js/dist/commons.min.js"></script>
+<script defer src="/assets/js/dist/home.min.js"></script>
 
 
 

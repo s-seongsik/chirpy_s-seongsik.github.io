@@ -34,24 +34,24 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념" />
+<meta property="og:title" content="[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="요즘 기업이 SSR을 선택하는 이유가 있을까?" />
-<meta property="og:description" content="요즘 기업이 SSR을 선택하는 이유가 있을까?" />
-<link rel="canonical" href="http://localhost:4000/posts/Web-SSR-CSR/" />
-<meta property="og:url" content="http://localhost:4000/posts/Web-SSR-CSR/" />
+<meta name="description" content="시작으로" />
+<meta property="og:description" content="시작으로" />
+<link rel="canonical" href="http://localhost:4000/posts/javascript-07/" />
+<meta property="og:url" content="http://localhost:4000/posts/javascript-07/" />
 <meta property="og:site_name" content="SeongSik Seo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-12-21T00:00:00+09:00" />
+<meta property="article:published_time" content="2022-02-24T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념" />
+<meta property="twitter:title" content="[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"headline":"[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념","dateModified":"2021-12-21T00:00:00+09:00","datePublished":"2021-12-21T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Web-SSR-CSR/"},"url":"http://localhost:4000/posts/Web-SSR-CSR/","description":"요즘 기업이 SSR을 선택하는 이유가 있을까?","@context":"https://schema.org"}</script>
+{"headline":"[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수","dateModified":"2022-02-24T00:00:00+09:00","datePublished":"2022-02-24T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/javascript-07/"},"url":"http://localhost:4000/posts/javascript-07/","description":"시작으로","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념 | SeongSik Seo
+  <title>[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수 | SeongSik Seo
   </title>
 
   <!--
@@ -412,7 +412,7 @@
         
 
           
-            <span>[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념</span>
+            <span>[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수</span>
           
 
         
@@ -674,231 +674,6 @@
     
 
   
-    
-
-    
-    
-
-    
-    
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-
-    
-
-  
-    
-
-    
-    
-
-    
-    
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-
-    
-
-  
-    
-
-    
-    
-
-    
-    
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-
-    
-
-  
-    
-
-    
-    
-
-    
-    
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-
-    
-
-  
-    
-
-    
-    
-
-    
-    
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-      
-      
-
-      
-
-      
-
-    
-
-    
-
-  
 
   
 
@@ -918,11 +693,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -952,19 +722,13 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-
-      
 
     
 
-    
+  
+
+  
+  
 
   
 
@@ -989,7 +753,7 @@
 
 
   
-  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3C/svg%3E" data-proofer-ignore data-src="/assets/img//post/ssr.png" class="preview-img bg"
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3C/svg%3E" data-proofer-ignore data-src="/assets/img//post/es6.png" class="preview-img bg"
       alt="Preview Image"
 
       
@@ -1001,7 +765,7 @@
       >
 
 
-<h1 data-toc-skip>[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념</h1>
+<h1 data-toc-skip>[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수</h1>
 
 <div class="post-meta text-muted">
 
@@ -1035,12 +799,12 @@
 
 
 <em class="timeago"
-    date="2021-12-21 00:00:00 +0900"
+    date="2022-02-24 00:00:00 +0900"
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Tue, Dec 21, 2021, 12:00 AM +0900"
-    >Dec 21, 2021</em>
+      title="Thu, Feb 24, 2022, 12:00 AM +0900"
+    >Feb 24</em>
 
       </span>
 
@@ -1067,8 +831,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1788 words">
-  <em>9 min</em> read</span>
+  title="1160 words">
+  <em>6 min</em> read</span>
 
 
       <!-- page views -->
@@ -1080,133 +844,176 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>요즘 기업이 SSR을 선택하는 이유가 있을까?</p>
-
-<p>우리가 많이 알고 있는 네이버 블로그 모바일 서비스도 2019년 5월 29일 “내 동영상 페이지”를 시작으로 Node.js 기반의 SSR 아키텍처가 네이버 모바일 블로그에 적용되었다고 합니다.</p>
-
-<p>또한, 월마트도 SEO 최적화와 좋은 퍼포먼스를 위해 SSR 아키텍처를 선택했다고 합니다.</p>
-
-<p>왜!? Why!?</p>
-
-<p>밑의 자료를 통해 저의 궁굼증을 해결했습니다.</p>
-
-<p>참고자료 :<a href="https://d2.naver.com/helloworld/7804182">어서 와, SSR은 처음이지? - 도입 편</a></p>
-
-<p><br /></p>
-
-<h1 id="a"><strong>SSR(server-side rendering)이란 무엇인가?</strong></h1>
+  <h1 id="시작으로"><strong>시작으로</strong></h1>
 
 <hr />
 
-<p>서버 사이드 렌더링은 서버에서 클라이언트(브라우저)에게 보여줄 페이지를 모두 구성하여 클라이언트(브라우저)에게 페이지를 보여주는 방식입니다. JSP/Servlet의 아키텍처에서 이 방식을 사용했습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">Vue.js</code> 프로젝트 개발을 진행하면서 비동기 처리에 따른 상태관리 및 DOM 처리 때문에 하루종일 애를 먹었다.<br />
+해결하고나니 간단한 문제였는데 당시에는 <code class="language-plaintext highlighter-rouge">왜?</code> 생각하지 못했는지 생각해봤다.</p>
 
-<p>서버 사이드 렌더링을 사용하면 모든 데이터가 매핑된 서비스 페이지를 클라이언트(브라우저)에게 바로 보여줄 수 있습니다. 서버 사이드 렌더링은 서버에서 페이지를 구성하기 때문에 클라이언트 사이드 렌더링보다 페이지를 구성하는 속도는 늦지만 전체적으로 사용자에게 보여주는 콘텐츠 구성이 완료되는 시점은 빨라진다는 장점이 있습니다.</p>
+<ul>
+  <li>비동기 처리에 대한 이해 부족</li>
+  <li>라이프사이클 훅에 대한 이해 부족</li>
+  <li>디자인 패턴 이해 부족</li>
+</ul>
+
+<p>실무에서 나름 많이 사용했기에 익숙하다고(?) 자신했었지만 응용을 하니 확실히 깨달았다.</p>
+
+<p>조금 안다고 <code class="language-plaintext highlighter-rouge">자만하지말자.</code></p>
+
+<p>그래서, 오늘은 <code class="language-plaintext highlighter-rouge">비동기 처리</code>에 대해 정리하려고 한다.</p>
 
 <p><br /></p>
 
-<h1 id="b"><strong>SSR(server-side rendering)의 장점</strong></h1>
+<h1 id="비동기-처리란-무엇인가"><strong>비동기 처리란 무엇인가?</strong></h1>
 
 <hr />
 
-<p>서버 사이드 렌더링을 사용하는 목적은 크게 2가지 입니다.</p>
+<p><a href="/posts/javascript-06/">[Javascript] 자바스크립트의 동작원리</a> 포스팅을 참고하면 비동기 처리에 대한 이해를 도울 수 있다.</p>
 
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">SEO(search engine optimization)</code></li>
-  <li><code class="language-plaintext highlighter-rouge">빠른 페이지 렌더링</code></li>
-</ol>
+<p>간단하게 말하면, 특정 명령을 끝날 때까지 기다리지 않고 다음 코드를 먼저 실행할 수 있도록 하는 자바스크립트의 특성이다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">SEO</code>, 검색 엔진 최적화는 구글이나 네이버와 같은 검색사이트에서 검색 결과가 사용자에게 최대한 많이 노출될 수 있도록 최적화 하는 기법입니다. 
-서버 사이드 렌더링은 빈 HTML 페이지를 받아 브라우저에서 그리는 클라이언트 사이드 렌더링과 다르게 서버에서 모두 구성되어 브라우저로 보내주기 때문에 페이지를 그리는 시간이 빠릅니다.</p>
+<p>이러한 자바스크립트의 비동기 처리로 인해 <code class="language-plaintext highlighter-rouge">병렬처리</code>를 한다고 오해하는 사람들이 있다. <code class="language-plaintext highlighter-rouge">절 대</code> 아니므로 위의 포스터를 참고하길 바란다.</p>
 
 <p><br /></p>
 
-<h1 id="c"><strong>SSR(server-side rendering) VS CSR(client-side rendering)</strong></h1>
+<h1 id="비동기-처리의-이해"><strong>비동기 처리의 이해</strong></h1>
 
 <hr />
 
-<p><img data-proofer-ignore data-src="/assets/img//post/s_rendering.png" alt="image" /></p>
+<h2 id="ajax-호출"><strong>Ajax 호출</strong><a href="#ajax-호출"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<p><img data-proofer-ignore data-src="/assets/img//post/c_rendering.png" alt="image" /></p>
+<p>가장 대표적인 비동기 처리는 <code class="language-plaintext highlighter-rouge">Ajax</code>와 <code class="language-plaintext highlighter-rouge">setTimeout()</code> 이다. 
+예제를 통해 어떤 문제가 있는지 살펴보자.</p>
 
-<p style="text-align: center;">출처자료: <a href="https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8">The Benefits of Server Side Rendering Over Client Side Rendering</a></p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c1">// ajax get 요청을 통해 데이터를 응답받는다. 그 응답받은 데이터를 `res_data`에 담고 return한다. </span>
+<span class="kd">function</span> <span class="nx">asycFn</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">res_data</span><span class="p">;</span>
+	<span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">URL</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">res_data</span> <span class="o">=</span> <span class="nx">res</span><span class="p">;</span>
+	<span class="p">});</span>
+	<span class="k">return</span> <span class="nx">res_data</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">시작</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">asycFn</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">끝</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>위의 코드를 실행해보면</p>
+
+<p><code class="language-plaintext highlighter-rouge">시작</code> -&gt; <code class="language-plaintext highlighter-rouge">끝</code> -&gt; <code class="language-plaintext highlighter-rouge">undefined</code> 로 출력이 될 것이다.<br />
+자바스크립트 동작원리를 간단하게 설명하자면 비동기처리로 호출되는 함수들은 <code class="language-plaintext highlighter-rouge">Call Stack</code>으로 쌓아서 하나하나씩 처리하지 않고 
+<code class="language-plaintext highlighter-rouge">Callback Queue</code>라는 곳에 보내진다. 그리고 비동기처리가 완료 되었더라도 <code class="language-plaintext highlighter-rouge">Call Stack</code>이 비어있을 때까지 대기했다가 비어 있으면 이벤트 루프를 돌려 콜백함수를 콜스택에 <code class="language-plaintext highlighter-rouge">Call Stack</code>에 넣는다.</p>
+
+<p>음.. 실행순서가 <code class="language-plaintext highlighter-rouge">시작</code> -&gt; <code class="language-plaintext highlighter-rouge">끝</code> 까지는 이해했는데 왜 <code class="language-plaintext highlighter-rouge">asycFn()</code>함수의 값이 <code class="language-plaintext highlighter-rouge">undefined</code>으로 출력되지?</p>
+
+<p>여기서 이상한 것을 감지했다면 <code class="language-plaintext highlighter-rouge">당신은 고수</code></p>
+
+<p>비동기로 호출한 함수는 마지막에 <code class="language-plaintext highlighter-rouge">콜백함수</code>를 <code class="language-plaintext highlighter-rouge">Call Stack</code>에 넣는다. 이게 가장 중요하다.</p>
+
+<p>아까 설명했다시피 <code class="language-plaintext highlighter-rouge">$.get()</code>으로 데이터를 요청하고 받아올 때까지 기다리지 않고 다음 코드로 넘어간다.<br />
+여기서 <code class="language-plaintext highlighter-rouge">return res_data;</code>을 실행하기 때문에 <code class="language-plaintext highlighter-rouge">res_data</code>의 값은 <code class="language-plaintext highlighter-rouge">undefined</code>인 것이다.</p>
 
 <p><br /></p>
 
-<p><code class="language-plaintext highlighter-rouge">서버 사이드 렌더링</code>은 브라우저의 요청에 대해 렌더링할 준비가 된 페이지의 HTML을 응답하는 반면, 클라이언트 사이드 렌더링은 브라우저가 모든 자바스크립트의 링크가 포함된 빈 HTML 문서를 가져옵니다.
-다시 말해, 서버 사이드 렌더링은 모든 자바스크립트 파일이 다운로드 및 실행될 때까지 기다릴 필요 없이 브라우저가 서버에서 HTML 렌더링을 시작합니다.</p>
-
-<p>반면 <code class="language-plaintext highlighter-rouge">클라이언트 사이드 렌더링</code>은 서버 사이드 렌더링보다 초기 전송되는 페이지 속도는 빠르지만 서비스에서 필요한 데이터를 클라이언트(브라우저)에서 추가로 요청하여 재구성해야 하기 때문에 전체적인 페이지 완료 시점은 서버 사이드 렌더링 보다 느립니다.</p>
-
-<p><br /></p>
-
-<h1 id="d"><strong>Node.js의 기반의 SSR</strong></h1>
+<h2 id="settimeout-호출"><strong>setTimeout() 호출</strong><a href="#settimeout-호출"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <hr />
 
-<p>기본적으로 <code class="language-plaintext highlighter-rouge">SPA</code> 기반의 어플리케이션을 개발하기 위해서는 <code class="language-plaintext highlighter-rouge">프론트엔드</code>와 <code class="language-plaintext highlighter-rouge">백엔드</code> 영역의 분리가 선행되어야 합니다.</p>
+<p>자바스크립트의 비동기처리는 <code class="language-plaintext highlighter-rouge">Callback Queue</code>라는 곳에 보내진다고 했다. 이것은 코드 호출 순서를 이해하는데 중요하다.</p>
 
-<p>아래 그림과 같이 기존의 <code class="language-plaintext highlighter-rouge">JSP/Servlert</code> 페이지를 <code class="language-plaintext highlighter-rouge">CSR</code>, <code class="language-plaintext highlighter-rouge">SSR</code> 영역 <code class="language-plaintext highlighter-rouge">API</code>로 분리함으로써 프론트엔드와 <code class="language-plaintext highlighter-rouge">백엔드</code> 영역에서 담당하는 페이지의 역할을 나누어야 합니다.</p>
+<p>Web API 중 하나인 <code class="language-plaintext highlighter-rouge">setTimeout()</code>을 예제로 실행해보자.</p>
 
-<p style="text-align: center;"><img data-proofer-ignore data-src="/assets/img//post/spa.png" alt="image" /><br />
-출처자료 : <a href="https://d2.naver.com/helloworld/7804182">어서 와, SSR은 처음이지? - 도입 편</a></p>
+<p>당연히 지정한 시간만큼 기다렸다가 실행되기 때문에 <code class="language-plaintext highlighter-rouge">1</code> -&gt; <code class="language-plaintext highlighter-rouge">3</code> -&gt; <code class="language-plaintext highlighter-rouge">2</code> 순서로 출력되는 것을 예상할 수 있다.</p>
 
-<p><br /></p>
-
-<p>저 그림만 보면 무슨 차이인지 모를 수 있습니다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">SPA</code>는 Single Page Application의 약자로 하나의 <code class="language-plaintext highlighter-rouge">HTML</code> 파일을 기반으로 자바스크립트를 이용해 동적으로 화면의 컨텐츠를 바꾸는 웹 어플리케이션을 말합니다. 요즘 프론트엔드 프레임워크 중 <code class="language-plaintext highlighter-rouge">React</code>, <code class="language-plaintext highlighter-rouge">Vue</code>, <code class="language-plaintext highlighter-rouge">Angular</code>를 <code class="language-plaintext highlighter-rouge">SPA</code> 프레임워크라고도 부르는데
-<code class="language-plaintext highlighter-rouge">CSR</code>를 이용한다고 생각하면 됩니다.</p>
-
-<p><br /></p>
-
-<h3 id="너무나-빠른-프론트엔드의-생태계"><strong>너무나 빠른 프론트엔드의 생태계</strong><a href="#너무나-빠른-프론트엔드의-생태계"><i class="fas fa-hashtag"></i></a></h3></h3>
-<p>2015년 ES6 표준이 개정되면서 Javascript의 많은 변화가 일어났습니다. 또한, 이전의 자바스크립트의 단점을 보완하기 위해 나온 <code class="language-plaintext highlighter-rouge">Jquery</code>가 <code class="language-plaintext highlighter-rouge">react</code>, <code class="language-plaintext highlighter-rouge">vue</code>, <code class="language-plaintext highlighter-rouge">angular</code> 같은 강력한 프레임워크가 나오자 더이상 필요가 없어지는 상황까지 오고야 말았습니다.</p>
-
-<p>또한 ES6 이후로 프론트엔드 환경 최적화에 필요한 웹팩, 바벨, 린트 같은 기술들이 출시되면서 프론트엔드의 생태계가 빠르게 변화되고 있다는 걸 알 수 있습니다.</p>
-
-<p>이런 상황에서, 프론트엔드 개발자들은 개발영역 확장에 대한 도전이 필요하게 되었습니다.</p>
-
-<p style="text-align: center;"><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/147050643-6ad3a6ec-2f6d-482c-b393-2eb4773a2773.png" alt="image" /><br />
-<strong>[jqeury 추이 그래프]</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">3</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/155655145-3f9d1820-1b91-4212-a212-c73b79ec5a64.png" alt="image" /></p>
 
 <p><br /></p>
 
-<h3 id="full-stack-developer의-한계"><strong>Full Stack Developer의 한계</strong><a href="#full-stack-developer의-한계"><i class="fas fa-hashtag"></i></a></h3></h3>
+<p>그렇다면 지정한 시간을 <code class="language-plaintext highlighter-rouge">0</code>초로 하면 어떻게 출력될까?</p>
 
-<p>2004-현재까지 <code class="language-plaintext highlighter-rouge">Full Stack Developer</code> 트렌드를 보면 지속적으로 증가하는 것을 확인할 수 있습니다. 많은 기업에서도 <code class="language-plaintext highlighter-rouge">Full Stack Developer</code>를 육성하거나 선호하고 있는데 빠르게 변화되는 프론트 엔드 생태계에서 양쪽 모두 잘하는 개발자를 만들어 내기에는 한계가 있습니다.</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">3</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/155655648-fb21e967-1b78-413e-961b-ffd3fa1ea850.png" alt="image" /></p>
 
-<p>이에 따라, 프론트엔드 개발 영역의 확대가 커지고 있습니다. <code class="language-plaintext highlighter-rouge">Node.js</code>의 등장으로 백엔드 역할까지 모두 할 수 있으며 <code class="language-plaintext highlighter-rouge">SSR</code>, <code class="language-plaintext highlighter-rouge">CSR</code> 페이지를 프론트엔드 영역에서 모두 수행할 수 있게 되었습니다.</p>
+<p>위의 실행순서와 마찬가지로 <code class="language-plaintext highlighter-rouge">1</code> -&gt; <code class="language-plaintext highlighter-rouge">3</code> -&gt; <code class="language-plaintext highlighter-rouge">2</code> 순서로 출력되고 있다.
+아까 설명했듯이 자바스크립트의 비동기처리는 처리시간과 관계없이 무조건 <code class="language-plaintext highlighter-rouge">Callback Queue</code>으로 보내진다. 
+그리고 <code class="language-plaintext highlighter-rouge">Call Stack</code>이 비어있으면 스택에 올려 처리한다.</p>
 
-<p style="text-align: center;"><img data-proofer-ignore data-src="https://user-images.githubusercontent.com/52439201/147045749-82d7c9de-ecc1-4b07-adbd-19378e9ca646.png" alt="image" /><br />
-<strong>[Full Stack Developer 트렌드]</strong></p>
-
-<p><br /></p>
-
-<h3 id="nodejs의-기반의-ssr의-이점"><strong>Node.js의 기반의 SSR의 이점</strong><a href="#nodejs의-기반의-ssr의-이점"><i class="fas fa-hashtag"></i></a></h3></h3>
-
-<p><code class="language-plaintext highlighter-rouge">JavaScript를 최대한 사용할 수 있습니다.</code></p>
-
-<p>이게 가능한 이유는 밑의 포스트를 한번 보시기 바랍니다.</p>
-
-<p><a href="/posts/Node.js-01/">[Node.js] Node.js - 개념 이해하기</a></p>
-
-<p><br /></p>
-
-<p><code class="language-plaintext highlighter-rouge">프론트엔드와 백엔드 영역의 완전한 분리로 생산성 향상</code></p>
-
-<p>기존의 CSR 페이지는 프론트엔드에서 SSR 페이지는 백엔드에서 개발했다면, SSR 환경을 구축하면 페이지의 소유권이 온전히 프론트엔드 영역에 존재하게 되므로 페이지가 변경될 때마다 불필요한 요청/응답을 할 필요가 없습니다.</p>
-
-<p>이렇게되면 백엔드 영역에서는 API 영역과 데이터 활용에 더 집중할 수 있어 서비스 품질을 높이는 데 기여할 수 있습니다.</p>
-
-<p><img data-proofer-ignore data-src="/assets/img//post/node_ssr.png" alt="image" /></p>
+<p>이러한 자바스크립트의 동작원리를 이해하는 것은 정말 중요하다.</p>
 
 <p><br /></p>
 
-<p><code class="language-plaintext highlighter-rouge">여러 가지 대안 활용</code></p>
+<h1 id="callback-함수로-비동기처리의-문제-해결하기"><strong>Callback 함수로 비동기처리의 문제 해결하기</strong></h1>
 
-<p>필요에 따라서 CSR로만 구성할 수도 있고 CSR과 prependering을 함께 사용하도록 개발할 수도 있습니다.</p>
+<hr />
 
-<p><img data-proofer-ignore data-src="/assets/img//post/infographic.png" alt="image" /></p>
+<p>앞의 <code class="language-plaintext highlighter-rouge">Ajax</code>의 예제를 보면 서버에서 받아온 데이터로 후속 작업을 하고싶을 때 콜백(callback) 함수를 사용한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">콜백(callback)</code>를 사용하면 특정 로직이 끝났을 때 원하는 동작을 실행시킬 수 있다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">asycFn</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">res_data</span><span class="p">;</span>
+	<span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">URL</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">callback</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+	<span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">asycFn</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="c1">// // $.get()의 결과값이 data에 전달됨</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
@@ -1217,7 +1024,7 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/web/'>Web</a>
+      <a href='/categories/javascript/'>Javascript</a>
   </div>
   
 
@@ -1226,8 +1033,11 @@
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/web/"
-          class="post-tag no-text-decoration" >Web</a>
+      <a href="/tags/javascript/"
+          class="post-tag no-text-decoration" >Javascript</a>
+      
+      <a href="/tags/es6/"
+          class="post-tag no-text-decoration" >ES6</a>
       
   </div>
   
@@ -1261,19 +1071,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념 - SeongSik Seo&url=http://localhost:4000/posts/Web-SSR-CSR/" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수 - SeongSik Seo&url=http://localhost:4000/posts/javascript-07/" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념 - SeongSik Seo&u=http://localhost:4000/posts/Web-SSR-CSR/" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수 - SeongSik Seo&u=http://localhost:4000/posts/javascript-07/" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://telegram.me/share?text=[Web] 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 개념 - SeongSik Seo&url=http://localhost:4000/posts/Web-SSR-CSR/" data-toggle="tooltip" data-placement="top"
+        <a href="https://telegram.me/share?text=[Javascript] 자바스크립트 비동기처리 (1) - Callback 함수 - SeongSik Seo&url=http://localhost:4000/posts/javascript-07/" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -2422,384 +2232,384 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -3094,7 +2904,7 @@
       
       
       <div class="card">
-        <a href="/posts/restApi-api-define/">
+        <a href="/posts/javascript-05/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3106,10 +2916,10 @@
 
 
 <em class="timeago small"
-    date="2021-10-14 00:00:00 +0900"
-    >Oct 14, 2021</em>
+    date="2022-02-07 00:00:00 +0900"
+    >Feb  7</em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Web] API란 무엇이며, 좋은 API를 설계하기 위한 방법이 무엇일까?</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Javascript]] this는 어떻게 동작할까?</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3118,23 +2928,14 @@
 
 
 
-                회사에서 naver cloud server와 Docker로 서비스 환경을 구축하고, 구축된 환경에 REST API를 개발 및 배포하는 작업을 맡게되었다.
-
-개발하기 앞서, 다음과 같은 질문을 던져보았다.
-
-  REST란 무엇인가?
-  REST API란 무엇인가?
-  REST API 설계하는 방법
+                시작으로
 
 
 
+Javascript에서 함수의 this 키워드는 다른 언어들과 다르게 동작한다. 이는 Java와 같은 익숙한 언어의 개념과 달라 개발자들에게 혼동을 준다.
+대부분의 경우 this의 값은 함수를 호출한 방법에 의해 결정된다. 실행중에는 할당으로 설정할 수 없고 함수를 호출할 때 마다 다를 수 있다.
 
-1. REST란 무엇인가
-
-
-
-
-  ‘Repres...
+Java에서의 this는 인스턴스 자신...
               </p>
             </div>
           </div>
@@ -3144,7 +2945,7 @@
       
       
       <div class="card">
-        <a href="/posts/web-cors/">
+        <a href="/posts/javascript-01/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3156,10 +2957,10 @@
 
 
 <em class="timeago small"
-    date="2021-10-21 00:00:00 +0900"
-    >Oct 21, 2021</em>
+    date="2021-12-07 00:00:00 +0900"
+    >Dec  7, 2021</em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Web] CORS란 무엇이고, REST API에 어떻게 사용되는가?</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Javascript] ECMAScript?, ES6? 개념 이해</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3168,21 +2969,13 @@
 
 
 
-                FastAPI로 REST API를 개발하던 도중 CORS라는 것을 접하게 되었다.
-
-회사에서 ‘프론트엔드’를 많이 다루다 보니 백엔드 관련 경험이 부족했다.
-
-이번 FastAPI를 개발하면서 여러가지 이슈와 개념들을 접하게 되었다.
-
-그중 하나가 CORS라는 개념이다.
+                Javascript란?
 
 
 
-CORS란 무엇인가?
-
-
-
-교차 출처 리소스 공유(Cross-origin re...
+JavaScript는 1995년 넷스케이프(Netscape) 웹 브라우져에서 웹페이지에 동적인 요소를 구현하기 위해서 발명 되었다. 
+그 후 많은 다른 웹 브라우져들 또한 이 언어를 탑재하기 시작했고, 그 결과로 현대의 웹 어플리케이션의 구현을 가능하게 만든 언어이다. 
+이 언어로 인해 웹 어플리케이션에서 더 이상 사용자가...
               </p>
             </div>
           </div>
@@ -3192,7 +2985,7 @@ CORS란 무엇인가?
       
       
       <div class="card">
-        <a href="/posts/web-Autorization/">
+        <a href="/posts/javascript-02/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3204,10 +2997,10 @@ CORS란 무엇인가?
 
 
 <em class="timeago small"
-    date="2022-01-19 00:00:00 +0900"
-    >Jan 19</em>
+    date="2021-12-08 00:00:00 +0900"
+    >Dec  8, 2021</em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Web] 서버 인증방식 Cookie, Session, Token</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>[Javascript] ES2015(ES6) 표준 모듈 시스템 (export, import)</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3216,16 +3009,14 @@ CORS란 무엇인가?
 
 
 
-                이번에node.js기반 Vue.js로 웹 프론트엔드 개발을 맡게 되었는데 로그인 기능을 구현하면서 혼동되는 세션, 쿠키, 토큰의 개념을 정확하게 짚고 넘어가고 싶었다.
+                표준 모듈 시스템의 등장 배경
 
 
 
-서버 인증이 필요한 이유
+모듈 시스템이 없었던 자바스크립트 환경은 html 헤더에 script 태그를 명시하여 js를 순서대로 불러오는 방법을 사용했습니다. 
+이러한 방식은 여러가지 문제점을 발생시켰습니다. 그 중 가장 문제점은 전역 스코프가 충돌 된다는 것입니다.
 
-
-
-현재 앱/웹 서비스에서 가장 많이 쓰이는 통신 방식은 HTTP이다. 
-클라이언트는 서버에게 GET, POST, PUT, DELETE 방식 중 하나로 ...
+그 이유는, script로 태그된 js파일들을 로드할 때 함수와 변수가 전...
               </p>
             </div>
           </div>
@@ -3244,17 +3035,17 @@ CORS란 무엇인가?
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/Webpack-05/" class="btn btn-outline-primary"
+  <a href="/posts/Node.js-06/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>[Webpack] plugin</p>
+    <p>[Node.js] Docker에 Node.js 서버 배포하기</p>
   </a>
   
 
   
-  <a href="/posts/Babel-01/" class="btn btn-outline-primary"
+  <span class="btn btn-outline-primary disabled"
     prompt="Newer">
-    <p>[Babel] 바벨의 이해와 동작원리 파악하기</p>
-  </a>
+    <p>-</p>
+  </span>
   
 
 </div>
